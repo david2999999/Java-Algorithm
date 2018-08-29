@@ -2,8 +2,7 @@ package StringAndArrays;
 
 public class OneEditAwayWithMergedMethods {
     public static void main(String[] args) {
-
-
+        System.out.println(oneEditAway("hello", "hello"));
     }
 
     private static boolean oneEditAway(String first, String second) {
