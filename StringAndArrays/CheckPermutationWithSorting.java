@@ -1,6 +1,6 @@
 package StringAndArrays;
 
-public class CheckPermutation {
+public class CheckPermutationWithSorting {
     public static void main(String[] args) {
         System.out.println(permutation("wsup", "pussaw"));
     }
