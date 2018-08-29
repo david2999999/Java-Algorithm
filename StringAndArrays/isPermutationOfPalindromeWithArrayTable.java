@@ -25,7 +25,7 @@ public class isPermutationOfPalindromeWithArrayTable {
         return true;
     }
 
-    private static int getCharNumber(Character c) {
+    public static int getCharNumber(Character c) {
         int a = Character.getNumericValue('a');
         int z = Character.getNumericValue('z');
         int val = Character.getNumericValue('c');
@@ -38,7 +38,7 @@ public class isPermutationOfPalindromeWithArrayTable {
     }
 
     private static int[] buildCharFrequencyTable(String phrase) {
-        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a')];
+        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
 
         for (char c : phrase.toCharArray()) {
             int x = getCharNumber(c);
