@@ -31,13 +31,13 @@ public class ZeroMatrix {
         }
     }
 
-    private static void nullifyCol(int[][] matrix, int col) {
+    public static void nullifyCol(int[][] matrix, int col) {
         for (int row = 0; row < matrix.length; row++) {
             matrix[row][col] = 0;
         }
     }
 
-    private static void nullifyRow(int[][] matrix, int row) {
+    public static void nullifyRow(int[][] matrix, int row) {
         for (int col = 0; col < matrix[0].length; col++) {
             matrix[row][col] = 0;
         }
