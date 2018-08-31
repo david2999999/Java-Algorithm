@@ -6,7 +6,7 @@ public class StackWithMin {
     public static void main(String[] args) {
 
     }
-    
+
     private class StackWithMinimum extends Stack<NodeWithMin> {
         public void push(int value) {
             int minValue = Math.min(value, min());
