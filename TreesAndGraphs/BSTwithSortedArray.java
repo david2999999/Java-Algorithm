@@ -9,7 +9,7 @@ public class BSTwithSortedArray {
 
     private TreeNode createMinimalBST(int array[], int start, int end) {
         if (end < start) return null;
-        
+
         int middle = (end - start) / 2;
 
         TreeNode n = new TreeNode(array[middle]);
