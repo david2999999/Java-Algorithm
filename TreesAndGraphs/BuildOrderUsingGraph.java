@@ -10,7 +10,7 @@ public class BuildOrderUsingGraph {
         return orderProjects(graph.getNodes());
     }
 
-    public Graph buildGraph(String[] projects, String[][] dependencies) {
+    private Graph buildGraph(String[] projects, String[][] dependencies) {
         Graph graph = new Graph();
 
         for (String project: projects) {
