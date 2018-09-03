@@ -1,5 +1,5 @@
 package ObjectOrientedDesign.CallCenter;
 
 public enum Rank {
-    Director, Manager, Responder
+    Director, Manager, Respondent
 }
