@@ -31,7 +31,7 @@ public class Level {
     private int findAvailableSpot(Vehicle vehicle) {
         return 1;
     }
-    
+
     public void freeSpot() {
         availableSpots++;
     }
