@@ -17,7 +17,7 @@ public class FlipBitWhileFIndingMaximumSequence {
             }
 
             maxLength = Math.max(previousLength + currentLength + 1, maxLength);
-            a = a >> 1;
+            a = a >>> 1;
         }
 
         return maxLength;
