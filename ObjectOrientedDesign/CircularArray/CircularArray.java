@@ -1,6 +1,8 @@
 package ObjectOrientedDesign.CircularArray;
 
-public class CircularArray<T> {
+import java.util.Iterator;
+
+public class CircularArray<T> implements Iterable<T>{
     private T[] items;
     private int head;
 
@@ -26,5 +28,31 @@ public class CircularArray<T> {
 
     public void set(int i, T item) {
         items[convert(i)] = item;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new CircularArrayIterator();
+    }
+
+    private class CircularArrayIterator implements Iterator<T> {
+        private int _current = -1;
+
+        public CircularArrayIterator() { }
+
+        @Override
+        public boolean hasNext() {
+            return _current < items.length - 1;
+        }
+
+        @Override
+        public T next() {
+            _current++;
+            return items[convert(_current)];
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException("Remove is not supported");
+        }
     }
 }
