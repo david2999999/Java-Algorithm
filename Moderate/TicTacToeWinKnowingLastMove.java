@@ -3,6 +3,26 @@ package Moderate;
 public class TicTacToeWinKnowingLastMove {
     private enum Piece {Empty, Red, Blue}
 
+    private Piece hasWon(Piece[][] board, int row, int col) {
+        if (board.length != board[0].length) return Piece.Empty;
+
+        Piece piece = board[row][col];
+
+        if (piece == Piece.Empty) return Piece.Empty;
+
+        if (hasWonRow(board, row) || hasWonColumn(board, col)) return piece;
+
+        if (row == col && hasWonDiagonal(board, 1)) {
+            return piece;
+        }
+
+        if (row == (board.length - col - 1) && hasWonDiagonal(board, -1)) {
+            return  piece;
+        }
+
+        return Piece.Empty;
+    }
+
     private boolean hasWonRow(Piece[][] board, int row) {
         for (int c = 1; c < board[row].length; c++) {
             if (board[row][c] != board[row][0]) return false;
