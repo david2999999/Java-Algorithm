@@ -13,6 +13,28 @@ public class NumberToString {
     String hundred = "Hundred";
     String negative = "Negative";
 
+    private String convert(int num) {
+        if ( num == 0) return smalls[0];
+        else if (num < 0) {
+            return negative + " " + convert(-1 * num);
+        }
+
+        LinkedList<String> parts = new LinkedList<>();
+        int chunkCount = 0;
+
+        while (num > 0) {
+            if (num % 1000 != 0) {
+                parts.addFirst(convertChunk(num % 1000) + " " + bigs[chunkCount]);
+            }
+
+            num /= 1000;
+            chunkCount++;
+        }
+
+        return listToString(parts);
+
+    }
+
 
     private String convertChunk(int number) {
         LinkedList<String> parts = new LinkedList<>();
