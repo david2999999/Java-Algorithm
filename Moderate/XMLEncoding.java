@@ -1,6 +1,12 @@
 package Moderate;
 
 public class XMLEncoding {
+    private String encodeToString(Element root) {
+        StringBuilder sb = new StringBuilder();
+        encode(root, sb);
+        return sb.toString();
+    }
+
     private void encode(Element root, StringBuilder sb) {
         encode(root.getNameCode(), sb);
         for (Attribute attr: root.attributes) {
