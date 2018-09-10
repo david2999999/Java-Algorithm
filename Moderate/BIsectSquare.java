@@ -6,6 +6,7 @@ public class BIsectSquare {
         private int right;
         private int top;
         private int bottom;
+        private int size;
 
         public Point middle() {
             return new Point((left + right) / 2, (top + bottom) / 2);
@@ -33,6 +34,37 @@ public class BIsectSquare {
             }
 
             return new Point(x1, y1);
+        }
+
+        public Line cut(Square other) {
+            Point p1 = extend(this.middle(), other.middle(), this.size);
+            Point p2 = extend(this.middle(), other.middle(), -1 * this.size);
+            Point p3 = extend(other.middle(), this.middle(), other.size);
+            Point p4 = extend(other.middle(), this.middle(), -1 * other.size);
+
+            Point start = p1;
+            Point end = p2;
+            Point[] points = {p2, p3, p4};
+
+            for (int i = 0; i < points.length; i++) {
+                if (start.x > points[i].x || (start.x == points[i].x && start.y > points[i].y)) {
+                    start = points[i];
+                } else if (points[i].x > end.x || (end.x == points[i].x && end.y < points[i].y)){
+                    end = points[i];
+                }
+            }
+
+            return new Line(start, end);
+        }
+    }
+
+    private class Line {
+        private Point start;
+        private Point end;
+
+        public Line(Point start, Point end) {
+            this.start = start;
+            this.end = end;
         }
     }
 
