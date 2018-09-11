@@ -22,14 +22,14 @@ public class CheckPermutation {
 
         for (int i = 0; i < str1.length(); i++) {
             count[str1.charAt(i)]++;
-        }
+}
 
         for (int i = 0; i < str2.length(); i++) {
-            count[str2.charAt(i)]--;
+        count[str2.charAt(i)]--;
 
-            if (count[str2.charAt(i)] < 0) return false;
+        if (count[str2.charAt(i)] < 0) return false;
         }
 
         return true;
-    }
+        }
 }
