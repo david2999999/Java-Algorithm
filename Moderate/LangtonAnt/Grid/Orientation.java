@@ -1,4 +1,4 @@
-package Moderate.LangtonAnt;
+package Moderate.LangtonAnt.Grid;
 
 public enum Orientation {
     left, up, right, down;

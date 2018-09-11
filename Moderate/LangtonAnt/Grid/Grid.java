@@ -1,4 +1,4 @@
-package Moderate.LangtonAnt;
+package Moderate.LangtonAnt.Grid;
 
 public class Grid {
     private boolean[][] grid;

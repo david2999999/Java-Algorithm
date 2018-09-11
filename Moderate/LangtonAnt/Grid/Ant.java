@@ -1,4 +1,4 @@
-package Moderate.LangtonAnt;
+package Moderate.LangtonAnt.Grid;
 
 public class Ant {
     public Position position = new Position(0,0);
