@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class PalindromePermutation {
     public boolean isPalindrome(String phrase) {

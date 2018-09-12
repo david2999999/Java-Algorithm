@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class ZeroMatrixOptimized {
     private void setZeroes(int[][] matrix) {

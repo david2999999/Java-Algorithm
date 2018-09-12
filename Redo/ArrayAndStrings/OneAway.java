@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class OneAway {
     private boolean isOneAway(String str1, String str2) {

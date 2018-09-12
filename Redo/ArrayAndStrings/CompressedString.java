@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class CompressedString {
     private String compress(String str) {

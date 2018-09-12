@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 import java.util.Arrays;
 

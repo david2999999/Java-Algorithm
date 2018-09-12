@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class URLify {
     private void urlify(char[] str, int trueLength) {

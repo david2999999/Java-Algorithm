@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class CheckPalindromeWithCounter {
     private boolean checkPalindrome(String phrase) {

@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class SubString {
     private boolean isSubString(String str1, String str2) {

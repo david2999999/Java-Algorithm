@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class isUnique {
     private boolean checkIfUnique(String str) {

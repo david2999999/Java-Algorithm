@@ -1,4 +1,4 @@
-package Redo;
+package Redo.ArrayAndStrings;
 
 public class RotateMatrix {
     private boolean rotateMatrix(int[][] matrix) {
