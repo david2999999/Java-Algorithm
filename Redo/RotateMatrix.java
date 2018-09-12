@@ -24,5 +24,7 @@ public class RotateMatrix {
                 matrix[i][last] = top;
             }
         }
+
+        return true;
     }
 }
