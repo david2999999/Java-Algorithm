@@ -73,6 +73,6 @@ public class OneAway {
             index2++;
         }
 
-        return false;
+        return true;
     }
 }
