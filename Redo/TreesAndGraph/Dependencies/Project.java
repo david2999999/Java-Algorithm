@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Project {
+    public enum State {COMPLETE, PARTIAL, BLANK};
+    private State state = State.BLANK;
+
     private ArrayList<Project> children = new ArrayList<>();
     private HashMap<String, Project> map = new HashMap<>();
     private String name;
@@ -21,6 +24,14 @@ public class Project {
             map.put(p.name, p);
             p.incrementDependencies();
         }
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 
     public void incrementDependencies() {
