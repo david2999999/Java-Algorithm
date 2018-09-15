@@ -44,6 +44,18 @@ public class TreeNode {
         size++;
     }
 
+    public TreeNode getRandomNode(int index) {
+        int leftSize = left == null ? 0 : left.getSize();
+
+        if (index < leftSize) {
+            return left.getRandomNode(index);
+        } else if (index == size) {
+            return this;
+        } else {
+            return right.getRandomNode(index - (leftSize + 1));
+        }
+    }
+
     public TreeNode find(int data) {
         if (data == this.data) {
             return this;
@@ -62,4 +74,6 @@ public class TreeNode {
     public int getSize() {
         return size;
     }
+
+
 }
