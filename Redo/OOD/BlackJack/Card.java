@@ -1,7 +1,7 @@
 package Redo.OOD.BlackJack;
 
 public abstract class Card {
-    private int faceValue;
+    public int faceValue;
     private Suit suit;
     private boolean available;
 
@@ -10,7 +10,7 @@ public abstract class Card {
         this.suit = suit;
     }
 
-    public abstract void value();
+    public abstract int value();
 
     public boolean isAvailable() { return available; }
     public void markUnavaiable() {
