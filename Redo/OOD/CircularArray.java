@@ -1,6 +1,8 @@
 package Redo.OOD;
 
-public class CircularArray<T> {
+import java.util.Iterator;
+
+public class CircularArray<T> implements Iterable<T>{
     private T[] items;
     private int head = 0;
 
@@ -32,4 +34,24 @@ public class CircularArray<T> {
         this.items[convert(i)] = item;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new CircularArrayIterator();
+    }
+
+    private class CircularArrayIterator implements Iterator<T> {
+        private int current = -1;
+
+        public CircularArrayIterator() { }
+
+        @Override
+        public boolean hasNext() {
+            return current < items.length - 1;
+        }
+
+        @Override
+        public T next() {
+            return (T) items[convert(current)];
+        }
+    }
 }
