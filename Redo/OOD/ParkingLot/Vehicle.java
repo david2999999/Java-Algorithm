@@ -6,14 +6,14 @@ public abstract class Vehicle {
     protected ArrayList<ParkingSpot> parkingSpots;
     protected String licencePlate;
     protected int spotNeeded;
-    private VehicleSize vehicleSize;
+    protected VehicleSize size;
 
     public int getSpots() {
         return spotNeeded;
     }
 
     public VehicleSize getVehicleSize() {
-        return vehicleSize;
+        return size;
     }
 
     public void parkInSpot(ParkingSpot spot) {

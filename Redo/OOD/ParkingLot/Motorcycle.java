@@ -1,9 +1,11 @@
 package Redo.OOD.ParkingLot;
 
-public class Bus extends Vehicle{
-    public Bus() {
-        spotNeeded = 5;
-        size = VehicleSize.Large;
+public class Motorcycle extends Vehicle{
+
+    public Motorcycle() {
+        spotNeeded = 1;
+        size = VehicleSize.Motorcycle;
+
     }
 
     @Override
