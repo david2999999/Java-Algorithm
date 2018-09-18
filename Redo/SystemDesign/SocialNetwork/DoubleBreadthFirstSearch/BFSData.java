@@ -1,4 +1,4 @@
-package Redo.SystemDesign.SocialNetwork;
+package Redo.SystemDesign.SocialNetwork.DoubleBreadthFirstSearch;
 
 import java.util.HashMap;
 import java.util.LinkedList;

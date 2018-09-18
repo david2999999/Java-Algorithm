@@ -1,4 +1,4 @@
-package Redo.SystemDesign.SocialNetwork;
+package Redo.SystemDesign.SocialNetwork.DoubleBreadthFirstSearch;
 
 import java.util.ArrayList;
 
