@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SortValleyAndPeak {
     private void sort(int[] array) {
         Arrays.sort(array);
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i+= 2) {
             swap(array, i - 1, i);
         }
     }
