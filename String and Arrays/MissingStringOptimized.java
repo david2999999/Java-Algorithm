@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 
 public class MissingStringOptimized {
     public static void main(String[] args) {
-        System.out.println(findMissingString("This is an example hello world", "is example"));
+        System.out.println(findMissingString("This is an example hello world", "is example random"));
     }
 
     private static String findMissingString(String str1, String str2) {
@@ -28,14 +28,24 @@ public class MissingStringOptimized {
             while (table2.get(key) != 0) {
                 if (table1.get(key) == null) {
                     sb.append(key + " ");
+                } else {
+                    table1.put(key, table1.get(key) - 1);
                 }
 
                 table2.put(key, table2.get(key) - 1);
             }
         }
 
+        for (String key: table1.keySet()) {
+            while (table1.get(key) != 0) {
+                sb.append(key + " ");
+                table1.put(key, table1.get(key) - 1);
+            }
+        }
+
         return sb.toString();
     }
+
 
     private static LinkedHashMap<String, Integer> buildStringFrequencyTable(String[] strings) {
         if (strings.length == 0) return null;
