@@ -19,4 +19,27 @@ public class Operations {
 
         return neg;
     }
+
+    private int abs(int n) {
+        if (n < 0) return negate(n);
+
+        return n;
+    }
+
+    private int subtract(int a, int b) {
+        return a + negate(b);
+    }
+
+    private int multiply(int a, int b) {
+        if (a < b) return multiply(b, a);
+
+        int sum = 0;
+        for (int i = abs(b); i > 0; i = subtract(i, 1)) {
+            sum += a;
+        }
+
+        if (b < 0) return negate(sum);
+
+        return sum;
+    }
 }
