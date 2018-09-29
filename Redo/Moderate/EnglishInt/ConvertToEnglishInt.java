@@ -12,7 +12,7 @@ public class ConvertToEnglishInt {
 
     private String convert(int num) {
         if (num == 0) return smalls[0];
-        else if (num < 0) return convert(-1 * num);
+        else if (num < 0) return negative + " " + convert(-1 * num);
 
         LinkedList<String> parts = new LinkedList<>();
         int chunkCount = 0;
