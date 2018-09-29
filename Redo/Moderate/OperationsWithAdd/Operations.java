@@ -42,4 +42,25 @@ public class Operations {
 
         return sum;
     }
+
+    private int divide(int a, int b) throws ArithmeticException{
+        if (b == 0) throw new ArithmeticException("ERROR");
+
+        int absA = abs(a);
+        int absB = abs(b);
+
+        int product = 0;
+        int x = 0;
+
+        while (product + absB <= absA) {
+            product += absB;
+            x++;
+        }
+
+        if ((a < 0 && b < 0) || (a > 0 && b > 0)) {
+            return x;
+        } else {
+            return negate(x);
+        }
+    }
 }
