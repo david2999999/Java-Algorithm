@@ -30,7 +30,7 @@ public class BruteForce {
     }
 
     private char[] getT9Letter(char digit) {
-        if (Character.isDigit(digit)) return null;
+        if (!Character.isDigit(digit)) return null;
 
         int index = Character.getNumericValue(digit) - Character.getNumericValue('0');
 
