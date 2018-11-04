@@ -21,13 +21,15 @@ public class FindWord {
     // Assuming we are only looking for one result
     private static ArrayList<Location> findLocationOfWord(char[][] letters, String word) {
         if (word == null || word.length() == 0) return null;
-        ArrayList<Location> locations = null;
-        char[] chars = word.toCharArray();
+        ArrayList<Location> locations = null; // list of locations
+        char[] chars = word.toCharArray(); // changing the word to letters
+
+        // checking for matches in these directions, can be changed to all directions, just need to add a few more variables
         boolean right, bottom, bottomRight;
 
         outerloop: for (int r = 0; r < letters.length; r++) {
             for (int c = 0; c < letters[r].length; c++) {
-                if (letters[r][c] == chars[0]) {
+                if (letters[r][c] == chars[0]) {    // if there is a match with the first letter
                     right = foundWord(letters, chars, 0, r, c, 0, 1);
                     bottom = foundWord(letters, chars, 0, r, c, 1, 0);
                     bottomRight = foundWord(letters, chars, 0, r, c, 1, 1);
@@ -53,18 +55,21 @@ public class FindWord {
         return locations;
     }
 
+    // recursively matching letters
     private static boolean foundWord(char[][] letters, char[] word, int index,
                                      int row, int col, int rDir, int colDir) {
         if (index >= word.length || row < 0 || row >= letters.length || col < 0 || col >= letters[row].length) return false;
 
         int letter = word[index];
 
+        // if the letter doesn't match, short circuit the recursive loop
         if (letter != letters[row][col]) {
             return false;
         } else if (index == word.length - 1) {
             return true;
         } else {
             index++;
+            // recursively loop to the assigned direction
             return foundWord(letters, word, index, row + rDir, col + colDir, rDir, colDir);
         }
     }
