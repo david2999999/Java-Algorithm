@@ -11,8 +11,14 @@ public class Array {
         intArray[5] = 20;
         intArray[6] = 20;
 
+        int index = -1;
         for (int i = 0; i < intArray.length; i++) {
-            System.out.println(intArray[i]);
+            if (intArray[i] == 10) {
+                index = i;
+                break;
+            }
         }
+
+        System.out.println(index);
     }
 }
