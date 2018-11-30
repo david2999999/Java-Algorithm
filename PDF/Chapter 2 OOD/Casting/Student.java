@@ -13,11 +13,12 @@ public class Student implements Person {
     public String getID( ) { return id;} // ID of the student
     public String getName( ) { return name; } // from Person interface
     public int getAge( ) { return age; } // from Person interface
-    public boolean equals(Person other) { // from Person interface
     
-    if (!(other instanceof Student)) return false; // cannot possibly be equal
-         Student s = (Student) other; // explicit cast now safe
-         return id.equals(s.id); // compare IDs
+    public boolean equals(Person other) { // from Person interface
+        if (!(other instanceof Student)) return false; // cannot possibly be equal
+        
+        Student s = (Student) other; // explicit cast now safe
+        return id.equals(s.id); // compare IDs
     }
     
     public String toString( ) { // for printing
