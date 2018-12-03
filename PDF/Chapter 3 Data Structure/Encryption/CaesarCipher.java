@@ -30,7 +30,8 @@ public class CaesarCipher {
     }
     
     
-    public static void main(String[ ] args) { 32 CaesarCipher cipher = new CaesarCipher(3);
+    public static void main(String[ ] args) { 
+        CaesarCipher cipher = new CaesarCipher(3);
         System.out.println("Encryption code = " + new String(cipher.encoder));
         System.out.println("Decryption code = " + new String(cipher.decoder));
         String message = "THE EAGLE IS IN PLAY; MEET AT JOE'S.";
