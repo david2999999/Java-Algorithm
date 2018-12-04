@@ -36,4 +36,20 @@ public CircularLinkedList {
         if (isEmpty()) return null;
         return tail.getElement();
     }
+    
+    public void rotate() {
+        if (tail != null) 
+            tail = tail.getNext();
+    }
+    
+    public void addFirst(E e) {
+        if (size == 0) {
+            tail = new Node<>(e, null);
+            tail.setNext(tail);
+        } else {
+            Node<E> newest = new Node<>(e, tail.getNext());
+            tail.setNext(newest);
+        }
+        size++;
+    }
 }
