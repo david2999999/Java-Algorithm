@@ -19,4 +19,24 @@ public class SinglyLinkedList<E> {
             next = n;
         }
     }
+    
+    
+    private Node<E> head = null;
+    private Node<E> tail = null;
+    private int size = 0;
+    
+    public SinglyLinkedList() {}
+    
+    public int size() { return size;}
+    public boolean isEmpty() { return size == 0; }
+    
+    public E first() {
+        if (isEmpty()) return null;
+        return head.getElement();
+    }
+    
+    public E last() {
+        if (isEmpty()) return null;
+        return tail.getElement();
+    }
 }
