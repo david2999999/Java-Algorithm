@@ -39,4 +39,11 @@ public class SinglyLinkedList<E> {
         if (isEmpty()) return null;
         return tail.getElement();
     }
+    
+    public void addFirst(E e) {
+        head = new Node<>(e, head);
+        if (size == 0)
+            tail = head;
+        size++;
+    }
 }
