@@ -56,4 +56,11 @@ public class DoublyLinkedList<E> {
         if (isEmpty()) return null;
         return remove(trailer.getPrev());
     }
+    
+    private void addBetween(E e, Node<E> predecessor, Node<E> successor) {
+        Node<E> newest = new Node<>(e, predecessor, successor);
+        predecessor.setNext(newest);
+        successor.setPrev(newest);
+        size++;
+    }
 }
