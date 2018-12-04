@@ -57,4 +57,14 @@ public class SinglyLinkedList<E> {
         tail = newest;
         size++;
     }
+    
+    public E removeFirst() {
+        if (isEmpty()) return null;
+        E answer = head.getElement();
+        head = head.getNext();
+        size--;
+        
+        if (size == 0) tail = null;
+        return answer;
+    }
 }
