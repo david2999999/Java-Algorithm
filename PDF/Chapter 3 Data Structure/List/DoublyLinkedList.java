@@ -38,4 +38,12 @@ public class DoublyLinkedList<E> {
         if (isEmpty()) return null;
         return trailer.getPrev().getElement();
     }
+    
+    public void addFirst(E e) {
+        addBetween(e, header, header.getNext());
+    }
+    
+    public void addLast(E e) {
+        addBetween(e, trailer.getPrev(), trailer);
+    }
 }
