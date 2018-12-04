@@ -46,4 +46,14 @@ public class DoublyLinkedList<E> {
     public void addLast(E e) {
         addBetween(e, trailer.getPrev(), trailer);
     }
+    
+    public E removeFirst() {
+        if (isEmpty()) return null;
+        return remove(header.getNext());
+    }
+    
+    public E removeLast() {
+        if (isEmpty()) return null;
+        return remove(trailer.getPrev());
+    }
 }
