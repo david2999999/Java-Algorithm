@@ -46,4 +46,15 @@ public class SinglyLinkedList<E> {
             tail = head;
         size++;
     }
+    
+    public void addLast(E e) {
+        Node<E> newest = new Node<>(e, null);
+        if (isEmpty())
+            head = newest;
+        else 
+            tail.setNext(newest);
+            
+        tail = newest;
+        size++;
+    }
 }
