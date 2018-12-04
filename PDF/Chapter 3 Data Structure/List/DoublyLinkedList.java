@@ -63,4 +63,13 @@ public class DoublyLinkedList<E> {
         successor.setPrev(newest);
         size++;
     }
+    
+    private E remove(Node<E> node) {
+        Node<E> predecessor = node.getPrev();
+        Node<E> successor = node.getNext();
+        predecessor.setNext(successor);
+        successor.setPrev(predecessor);
+        size--;
+        return node.getElement();
+    }
 }
