@@ -28,4 +28,14 @@ public class DoublyLinkedList<E> {
     
     public int size() { return size; }
     public boolean isEmpty() { return size == 0; }
+    
+    public E first() {
+        if (isEmpty()) return null;
+        return header.getNext().getElement();
+    }
+    
+    public E last() {
+        if (isEmpty()) return null;
+        return trailer.getPrev().getElement();
+    }
 }
