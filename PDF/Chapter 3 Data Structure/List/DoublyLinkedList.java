@@ -15,4 +15,17 @@ public class DoublyLinkedList<E> {
         public void setPrev(Node<E> p) { prev = p; }
         public void setNext(Node<E> n) { next = n; }
     }
+    
+    private Node<E> header;
+    private Node<E> trailer;
+    private int size = 0;
+    
+    public DoublyLinkedList() {
+        header = new Node<>(null, null, null);
+        trailer = new Node<>(null, header, null);
+        header.setNext(trailer);
+    }
+    
+    public int size() { return size; }
+    public boolean isEmpty() { return size == 0; }
 }
