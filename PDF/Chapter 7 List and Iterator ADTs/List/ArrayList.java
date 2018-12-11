@@ -35,6 +35,17 @@ public class ArrayList<E> implements List<E> {
         size++;
     }
     
+    public E remove(int i) throws IndexOutOfBoundsException {
+        checkIndex(i, size);
+        E temp = data[i];
+        for (int k = i; k < size - 1; k++)
+            data[k] = data[k + 1];
+            
+        data[size - 1] = null;
+        size--;
+        return temp;
+    }
+    
     protected void checkIndex(int i, int n) throws IndexOutOfBoundsException {
         if (i < 0 || i >= n)
             throw new IndexOutOfBoundsException("Illegal index: " + i);
