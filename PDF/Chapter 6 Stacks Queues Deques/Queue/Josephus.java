@@ -11,4 +11,11 @@ public class Josephus {
         
         return queue.dequeue();
     }
+    
+    public static <E> CircularQueue<E> buildQueue(E a[]) {
+        CircularQueue<E> queue = new LinkedCircularQueue<>();
+        for (int i = 0; i < a.length; i++)
+            queue.enqueue(a[i]);
+        return queue;
+    }
 }
