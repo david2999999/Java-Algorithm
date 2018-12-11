@@ -23,6 +23,18 @@ public class ArrayList<E> implements List<E> {
         return temp;
     }
     
+    public void add(int i, E e) throws IndexOutOfBoundsException{
+        checkIndex(i, size + 1);
+        if (size == data.length)
+            throw new IllegalStateException("Array is full");
+            
+        for (int k = size - 1; k >= i; k--) 
+            data[k + 1] = data[k];
+            
+        data[i] = e;
+        size++;
+    }
+    
     protected void checkIndex(int i, int n) throws IndexOutOfBoundsException {
         if (i < 0 || i >= n)
             throw new IndexOutOfBoundsException("Illegal index: " + i);
