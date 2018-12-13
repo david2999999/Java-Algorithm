@@ -45,4 +45,30 @@ public class LinkedPositionalList implements PositionalList<E> {
             return null;
         return node;
     }
+    
+    public int size() {
+        return size;
+    }
+    
+    public boolean isEmpty() {
+        return size == 0;
+    }
+    
+    public Position<E> first() {
+        return position(header.getNext());
+    }
+    
+    public Position<E> last() {
+        return position(trailer.getPrev());
+    }
+    
+    public Position<E> before(Position<E> p) throws IllegalStateException {
+        Node<E> node = validate(p);
+        return position(node.getPrev());
+    }
+    
+    public Position<E> after(Position<E> p) throws IllegalStateException {
+        Node<E> node = validate(p);
+        return position(node.getNext());
+    }
 }
