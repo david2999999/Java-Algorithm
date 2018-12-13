@@ -79,4 +79,12 @@ public class LinkedPositionalList implements PositionalList<E> {
         size++;
         return newest;
     }
+    
+    public Position<E> addFirst(E e) {
+        return addBetween(e, header, header.getNext());
+    }
+    
+    public Position<E> addLast(E e) {
+        return addBetween(e, trailer.getPrev(), trailer);
+    }
 }
