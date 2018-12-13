@@ -37,11 +37,16 @@ public class EmployeeDoublyLinkedList {
 
     public EmployeeDoublyNode removeFromFront() {
         if (isEmpty()) return null;
-
         EmployeeDoublyNode removedNode = head;
+
+        if (head.getNext() == null) {
+            tail = null;
+        } else {
+            head.getNext().setPrev(null);
+        }
+
         head = head.getNext();
         size--;
-
         removedNode.setNext(null);
         return removedNode;
     }
