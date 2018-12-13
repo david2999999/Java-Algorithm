@@ -71,4 +71,12 @@ public class LinkedPositionalList implements PositionalList<E> {
         Node<E> node = validate(p);
         return position(node.getNext());
     }
+    
+    private Position<E> addBetween(E e, Node<E> pred, Node<E> succ) {
+        Node<E> newest = new Node<>(e, pred, succ);
+        pred.setNext(newest);
+        succ.setPrev(newest);
+        size++;
+        return newest;
+    }
 }
