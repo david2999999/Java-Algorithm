@@ -119,4 +119,26 @@ public class LinkedPositionalList implements PositionalList<E> {
         node.setPrev(null);
         return answer;
     }
+    
+    private class PositionIterator implements Iterator<Position<E>> {
+        private Position<E> cursor = first();
+        private Position<E> recent = null;
+        
+        public boolean hasNext() {
+            return cursor != null;
+        }
+        
+        public Position<E> next() throws NoSuchElementException {
+            if (cursor == null) throw new NoSuchElementException("Nothing left");
+            recent = cursor;
+            cursor = after(cursor);
+            return recent;
+        }
+        
+        public void remove() throws IllegalStateException {
+            if (recent == null) throw new IllegalStateException("Nothign to remove");
+            LinkedPositionalList.this.remove(recent);
+            recent = null;
+        }
+    }
 }

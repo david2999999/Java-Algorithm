@@ -80,4 +80,8 @@ public class ArrayList<E> implements List<E> {
             removable = true;
         }
     }
+    
+    public Iterator<E> iterator() {
+        return new ArrayIterator();
+    }
 }
