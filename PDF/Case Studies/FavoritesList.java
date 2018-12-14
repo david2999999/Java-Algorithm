@@ -46,4 +46,41 @@ public class FavoritesList<E> {
         if (walk != p)
             list.addBefore(walk, list.remove(p));
     }
+    
+    public int size() {
+        return list.size();
+    }
+    
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+    
+    public void access(E e) {
+        Position<Item<E>> p = findPosition(e);
+        if (p == null)
+            p = list.addLast(new item<E>(e));
+            
+        p.getElement().increment();
+        moveUp(p);
+    }
+    
+    public void remove(E e) {
+        Position<Item<E>> p = findPosition(e);
+        if (p != null) 
+            list.remove(p);
+    }
+    
+    public Iterable<E> getFavorites(int k) throws IllegalArgumentException {
+        if (k < 0 || k > size()) 
+            throw new IllegalArgumentException("Invalid k");
+            
+        PositionalList<E> result = new LinkedPositionalList<>();
+        Iterator<Item<E>> iter = list.iterator();
+        
+        for (int j = 0; j < k; j++) {
+            result.addLast(iter.next().getValue());
+        }
+        
+        return result;
+    }
 }
