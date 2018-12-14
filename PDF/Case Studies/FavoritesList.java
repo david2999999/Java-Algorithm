@@ -36,4 +36,14 @@ public class FavoritesList<E> {
             walk = list.after(walk);
         return walk;
     }
+    
+    protected void moveUp(Position<Item<E>> p) {
+        int cnt = count(p);
+        Position<Item<E>> walk = p;
+        while(walk != list.first() && count(list.before(walk)) < cnt)
+            walk = list.before(walk);
+            
+        if (walk != p)
+            list.addBefore(walk, list.remove(p));
+    }
 }
