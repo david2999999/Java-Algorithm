@@ -4,5 +4,30 @@ public class FavoritesListMTF<E> extends FavoritesList<E> {
             list.addFirst(list.remove(p));
     }
     
-    
+    public Iterable<E> getFavorites(int k) throws IllegalArgumentException {
+        if (k < 0 || k > size()) 
+            throw new IllegalArgumentException("Invalid k");
+            
+        PositionalList<Item<E>> temp = new LinkedPositionalList<>();
+        for(Item<E> item: list) {
+            temp.addLast(item);
+        }
+        
+        PositionalList<E> result = new LinkedPositionalList<>();
+        for(int j = 0; j < k; j++) {
+            Position<Item<E>> highPos = temp.first();
+            Position<item<E>> walk = temp.after(highPos);
+            
+            while(walk != null) {
+                if (count(walk) > count(highPos))
+                    highPos = walk;
+                walk = temp.after(walk);
+            }
+            
+            result.addLast(value(highPos));
+            temp.remove(highPos);
+        }
+        
+        return result;
+    }
 }
