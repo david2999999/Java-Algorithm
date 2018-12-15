@@ -1,4 +1,4 @@
-package Stacks;
+package Stacks.StackWithArray;
 
 import java.util.EmptyStackException;
 
