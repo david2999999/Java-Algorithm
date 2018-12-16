@@ -13,7 +13,7 @@ public class Optimized {
         Queue<Integer> queue7 = new LinkedList<>();
         queue3.add(1);
 
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i <= k; i++) {
             int v3 = queue3.size() > 0 ? queue3.peek() : Integer.MAX_VALUE;
             int v5 = queue3.size() > 0 ? queue5.peek() : Integer.MAX_VALUE;
             int v7 = queue3.size() > 0 ? queue7.peek() : Integer.MAX_VALUE;
