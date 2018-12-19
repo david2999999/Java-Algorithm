@@ -4,6 +4,11 @@ import java.util.HashSet;
 
 public class Respace {
 
+    public String bestSplit(HashSet<String> dictionary, String sentence) {
+        ParseResult r = split(dictionary, sentence, 0);
+        return r == null ? null : r.parsed;
+    }
+
     private ParseResult split(HashSet<String> dictionary, String sentence, int start) {
         if (start >= sentence.length()) {
             return new ParseResult(0, "");
