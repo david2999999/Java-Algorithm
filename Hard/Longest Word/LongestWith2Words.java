@@ -23,7 +23,8 @@ public class LongestWith2Words {
                 String left = s.substring(0, i);
                 String right = s.substring(i);
 
-                if (map.get(left) && map.get(right)) {
+                if ( map.containsKey(left) && map.get(left)
+                        && map.containsKey(right) && map.get(right)) {
                     return s;
                 }
             }
