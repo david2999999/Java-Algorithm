@@ -50,23 +50,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         return new Node<E>(e, parent, left, right);
     }
     
-    private class ElementIterator implements Iterator<E> {
-        Iterator<Position<E>> posIterator = positions().iterator();
-        public boolean hasNext() {
-            return posIterator.hasNext();
-        }
-        
-        public E next() {
-            return posIterator.next().getElement();
-        }
-        
-        public void remove() {
-            posIterator.remove();
-        }
-    }
-    
-    public Iterator<E> iterator() { return new ElementIterator(); }
-    
     protected Node<E> root = null;
     private int size = 0;
     

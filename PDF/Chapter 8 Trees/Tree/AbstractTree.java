@@ -1,4 +1,23 @@
 public abstract class AbstractTree<E> implements Tree<E> {
+    private class ElementIterator implements Iterator<E> {
+        Iterator<Position<E>> posIterator = positions().iterator();
+        public boolean hasNext() {
+            return posIterator.hasNext();
+        }
+        
+        public E next() {
+            return posIterator.next().getElement();
+        }
+        
+        public void remove() {
+            posIterator.remove();
+        }
+    }
+    
+    public Iterable<Position<E>> positions() { return preorder(); }
+    
+    public Iterator<E> iterator() { return new ElementIterator(); }
+    
     public boolean isInternal(Position<E> p) {
         return numChildren(p) > 0;
     }
