@@ -12,7 +12,7 @@ public class RecursiveSolution {
         }
 
         int bestWith = messages[index] + maxMinutes(messages, index + 2);
-        int bestWithout = messages[index];
+        int bestWithout = maxMinutes(messages, index + 1);
 
         return Math.max(bestWith, bestWithout);
     }
