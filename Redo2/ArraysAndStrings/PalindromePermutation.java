@@ -2,9 +2,9 @@ package Redo2.ArraysAndStrings;
 
 public class PalindromePermutation {
 
-    private boolean isPalindromePermutation(String phrase) {
+    private boolean isPermutationOfPalindrome(String phrase) {
         int[] table = buildCharFrequencyTable(phrase);
-        return checkMaxOneOdd(table);   
+        return checkMaxOneOdd(table);
     }
 
     private boolean checkMaxOneOdd(int[] table) {
@@ -19,6 +19,28 @@ public class PalindromePermutation {
         }
 
         return true;
+    }
+
+    private boolean isPermutationOfPalindrome2(String phrase) {
+        int countOdd = 0;
+
+        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
+
+        for (char c: phrase.toCharArray()) {
+            int x = getCharNumber(c);
+
+            if (x != -1) {
+                table[x]++;
+
+                if (table[x] % 2 == 1) {
+                    countOdd++;
+                } else {
+                    countOdd--;
+                }
+            }
+        }
+
+        return countOdd <= 1;
     }
 
     private int getCharNumber(Character c) {
