@@ -31,4 +31,20 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements B
             
         return snapshot;
     }
+    
+    public Iterable<Position<E>> breadthfirst() {
+        List<Position<E>> snapshot = new ArrayList<>();
+        if (!isEmpty()) {
+            Queue<Position<E>> fringe = new LinkedQueue<>();
+            fringe.enqueue(root());
+            while(!fringe.isEmpty()) {
+                Position<E> p = fringe.dequeue();
+                snapshot.add(p);
+                for (Position<E> c: children(p))
+                    fringe.enqueue(c);
+            }
+        }
+        
+        return snapshot;
+    }
 }
