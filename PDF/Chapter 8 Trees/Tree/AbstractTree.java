@@ -45,7 +45,21 @@ public abstract class AbstractTree<E> implements Tree<E> {
         snapshot.add(p);
     }
     
-    
+    public Iterable<Position<E>> breadthfirst() {
+        List<Position<E>> snapshot = new ArrayList<>();
+        if (!isEmpty()) {
+            Queue<Position<E>> fringe = new LinkedQueue<>();
+            fringe.enqueue(root());
+            while(!fringe.isEmpty()) {
+                Position<E> p = fringe.dequeue();
+                snapshot.add(p);
+                for (Position<E> c: children(p))
+                    fringe.enqueue(c);
+            }
+        }
+        
+        return snapshot;
+    }
     
     public boolean isInternal(Position<E> p) {
         return numChildren(p) > 0;
