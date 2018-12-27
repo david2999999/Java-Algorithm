@@ -61,6 +61,21 @@ public abstract class AbstractTree<E> implements Tree<E> {
         return snapshot;
     }
     
+    public static <E> void printPreorderIndent(Tree<E> T, Position<E> p, int d) {
+        System.out.println(spaces(2 * d) + p.getElement());
+        for (Position<E> c: T.children(p))
+            printPreorderIndent(T, c, d + 1);
+    }
+    
+    private static String spaces(int num) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < num; i++) {
+            sb.append(' ');
+        }
+        
+        return sb.toString();
+    } 
+    
     public boolean isInternal(Position<E> p) {
         return numChildren(p) > 0;
     }
