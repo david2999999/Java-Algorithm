@@ -25,4 +25,23 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
             j = p;
         }
     }
+    
+    protected void downHeap(int j) {
+        while(hasLeft(j)) {
+            int leftIndex = left(i);
+            int smallChildIndex = leftIndex;
+            
+            if (hasRight(j)) {
+                int rightIndex = right(j);
+                if (compare(heap.get(leftIndex), heap.get(rightIndex)) > 0)
+                    smallChildIndex = rightIndex;
+            }
+            
+            if (compare(heap.get(smallChildIndex), heap.get(j)) >= 0)
+                break;
+                
+            swap(i , smallChildIndex);
+            j = smallChildIndex;
+        }
+    }
 }
