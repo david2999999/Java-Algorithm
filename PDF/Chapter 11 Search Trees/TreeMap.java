@@ -85,4 +85,48 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
         rebalanceDelete(sib);
         return old;
     }
+    
+    protected Position<Entry<K, V>> treeMax(Position<Entry<K, V>> p) {
+        Position<Entry<K,V>> walk = p;
+        while(isInternal(walk))
+            walk = right(walk);
+        return parent(walk);
+    }
+    
+    public Entry<K, V> lastEntry() {
+        if (isEmpty()) return null;
+        return treeMax(root()).getElement();
+    }
+    
+    public Entry<K,V> floorEntry(K key) throws IllegalArgumentException {
+        checkKey(key);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        if (isInternal(p)) return p.getElement();
+        
+        while (!isRoot(p)) {
+            if (p == right(parent(p)))
+                return parent(p).getElement();
+            else 
+                p = parent(p);
+        }
+        
+        return null;
+    }
+    
+    public Entry<K,V> lowerEntry(K key) throws IllegalArgumentException {
+        checkKey(key);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        
+        if (isInternal(p) && isInternal(left(p)))
+            return treeMax(left(p)).getElement();
+            
+        while (!isRoot(p)) {
+            if (p == right(parent(p)))
+                return parent(p).getElement();
+            else 
+                p = parent(p);
+        }
+        
+        return null;
+    }
 }
