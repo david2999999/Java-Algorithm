@@ -45,4 +45,28 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
         table.remove(n - 1);
         return answer;
     }
+    
+    private class EntryIterator implements iterator<Entry<K, V>> {
+        private int j = 0;
+        public boolean hasNext() {
+            return j < table.size();
+        }
+        
+        public Entry<K, V> next() {
+            if (j == table.size()) throw new NoSuchElementException();
+            return table.get(j++);
+        }
+        
+        public void remove() { throw new UnsupportedOperationException(); }
+    }
+    
+    private class EntryIterable implements Iterable<Entry<K, V>> {
+        public Iterator<Entry<K, V>> iterator {
+            return new EntryIterator();
+        }
+    }
+    
+    public Iterable<Entry<K, V>> entrySet() {
+        return new EntryIterable();
+    }
 }
