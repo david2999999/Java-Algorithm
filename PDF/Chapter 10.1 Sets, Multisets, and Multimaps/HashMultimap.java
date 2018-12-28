@@ -41,4 +41,28 @@ public class HashMultimap<K, V> {
         
         return wasRemoved;
     }
+    
+    public Iterable<V> removeAll(K key) {
+        List<V> secondary = map.get(key);
+        if (secondary != null) {
+            total -= secondary.size();
+            map.remove(key);
+        } else {
+            secondary = new ArrayList<>();
+        }
+        
+        return secondary;
+    }
+    
+    Iterable<Map.Entry<K,V>> entries() {
+        List<Map.Entry<K,V>> result = new ArrayList<>();
+        
+        for (Map.Entry<K,List<V>> secondary : map.entrySet()) {
+            K key = secondary.getKey();
+            for (V value : secondary.getValue())
+                result.add(new AbstractMap.SimpleEntry<K,V>(key,value));
+        }
+        
+        return result;
+    }
 }
