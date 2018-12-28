@@ -1,0 +1,1 @@
+public class HeapAdaptablePriorityQueue<K, V> extends HeapPriorityQueue<K, V> 
