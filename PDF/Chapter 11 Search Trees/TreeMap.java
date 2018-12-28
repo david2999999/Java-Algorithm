@@ -129,4 +129,33 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
         
         return null;
     }
+    
+    public Iterable<Entry<K,V>> entrySet() {
+        ArrayList<Entry<K,V>> buffer = new ArrayList<>(size());
+        for (Position<Entry<K,V>> p : tree.inorder())
+            if (isInternal(p)) buffer.add(p.getElement());
+            
+        return buffer;
+    }
+    
+    public Iterable<Entry<K,V>> subMap(K fromKey, K toKey) {
+        ArrayList<Entry<K,V>> buffer = new ArrayList<>(size());
+        if (compare(fromKey, toKey) < 0)
+            subMapRecurse(fromKey, toKey, root(), buffer);
+        return buffer;
+    }
+    
+    private void subMapRecurse(K fromKey, K toKey, Position<Entry<K,V>> p,
+                                   ArrayList<Entry<K,V>> buffer) {
+       if (isInternal(p))       
+            if (compare(p.getElement(), fromKey) < 0)
+                subMapRecurse(fromKey, toKey, right(p), buffer);
+            else {
+                subMapRecurse(fromKey, toKey, left(p), buffer);
+                if (compare(p.getElement( ), toKey) < 0) {
+                    buffer.add(p.getElement( ));
+                    subMapRecurse(fromKey, toKey, right(p), buffer);
+                }
+            }
+    }
 }
