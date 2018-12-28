@@ -63,4 +63,16 @@ public class HeapAdaptablePriorityQueue<K, V>
             bubble(j);
         }
     }
+    
+    public void replaceKey(Entry<K, V> entry, K key) throws IllegalArgumentException {
+        AdaptablePQEntry<K, V> locator = validate(entry);
+        checkKey(key);
+        locator.setKey(key);
+        bubble(locator.getIndex());
+    }
+    
+    public void replaceValue(Entry<K, V> entry, V value) throws IllegalArgumentException {
+        AdaptablePQEntry<K, V> locator = validate(entry);
+        locator.setValue(value);
+    }
 }
