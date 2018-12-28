@@ -36,4 +36,53 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
         else 
             return treeSearch(right(p), key);
     }
+    
+    public V get(K key) throws IllegalArgumentException {
+        checkKey(key);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        rebalanceAccess(p); // hook for balanced tree subclasses
+        if (isExternal(p)) return null;
+        return p.getElement().getValue();
+    }
+    
+    public V put(K key, V value) throws IllegalArgumentException {
+        checkKey(key);
+        Entry<K,V> newEntry = new MapEntry<>(key, value);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        
+        if (isExternal(p)) {
+            expandExternal(p, newEntry);
+            rebalanceInsert(p); // hook for balanced tree subclasses
+            return null;
+        } else {
+            V old = p.getElement().getValue();
+            set(p, newEntry);
+            rebalanceAccess(p);
+            return old;
+        }
+    }
+    
+    public V remove(K key) throws IllegalArgumentException {
+        checkKey(key);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        
+        if (isExternal(p)) {
+            rebalanceAccess(p);
+            return null;
+        } else {
+            V old = p.getElement().getValue();
+            if (isInternal(left(p)) && isInternal(right(p))) { // both children are internal
+                Position<Entry<K,V>> replacement = treeMax(left(p));
+                set(p, replacement.getElement());
+                p = replacement;
+            }
+        }
+        
+        Position<Entry<K,V>> leaf = (isExternal(left(p)) ? left(p) : right(p));
+        Position<Entry<K,V>> sib = sibling(leaf);
+        remove(leaf);
+        remove(p);
+        rebalanceDelete(sib);
+        return old;
+    }
 }
