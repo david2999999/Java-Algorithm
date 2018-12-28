@@ -31,4 +31,22 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
     private int hashValue(K key) {
         return (int) ((Math.abs(key.hashCode()*scale + shift) % prime) % capacity);
     }
+    
+    private void resize(int newCap) {
+        ArrayList<Entry<K,V>> buffer = new ArrayList<>(n);
+        for (Entry<K,V> e: entrySet())
+            buffer.add(e);
+            
+        capacity = newCap;
+        createTable();
+        n = 0;
+        for (Entry<K, V> e: buffer) {
+            put(e.getKey(), e.getValue());
+        }
+    }
+    
+    protected abstract void createTable();
+    protected abstract V bucketGet(int h, K k);
+    protected abstract V bucketPut(int h, K k, V v);
+    protected abstract V bucketRemove(int h, K k);
 }
