@@ -34,4 +34,33 @@ public class HeapAdaptablePriorityQueue<K, V>
         ((AdaptablePQEntry<K,V>) heap.get(i)).setIndex(i);
         ((AdaptablePQEntry<K,V>) heap.get(j)).setIndex(j);
     }
+    
+    protected void bubble(int j) {
+        if (j > 0 && compare(heap.get(j), heap.get(parent(j))) < 0)
+            upheap(j);
+        else 
+            downHeap(j);
+    }
+    
+    
+    public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+        checkKey(key);
+        Entry<K, V> newest = new AdaptablePQEntry<>(key, value, heap.size());
+        heap.add(newest);
+        upheap(heap.size() - 1);
+        return newest;
+    }
+    
+    public void remove(Entry<K, V> entry) throws IllegalArgumentException {
+        AdaptablePQEntry<K, V> locator = validate(entry);
+        int j = locator.getIndex();
+        
+        if (j == heap.size() - 1) 
+            heap.remove(heap.size() - 1);
+        else {
+            swap(j, heap.size());
+            heap.remove(heap.size() - 1);
+            bubble(j);
+        }
+    }
 }
