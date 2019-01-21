@@ -17,7 +17,7 @@ class Reverser
             theStack.push(ch); // push it
             }
             
-        output = “”;
+        output = "";
         while( !theStack.isEmpty() )
             {
             char ch = theStack.pop(); // pop a char,

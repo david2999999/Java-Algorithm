@@ -31,9 +31,28 @@ class StackX
         return (top == -1);
         }
     //--------------------------------------------------------------
+    public int size() // return size
+        { return top+1; }
+    //--------------------------------------------------------------
+    public char peekN(int n) // return item at index n
+        { return stackArray[n]; }
+    //--------------------------------------------------------------
     public boolean isFull() // true if stack is full
         {
         return (top == maxSize-1);
         }
     //--------------------------------------------------------------
+    public void displayStack(String s)
+        {
+        System.out.print(s);
+        System.out.print(“Stack (bottom-->top): “);
+            
+        for(int j=0; j<size(); j++)
+            {
+            System.out.print( peekN(j) );
+            System.out.print(‘ ‘);
+            }
+        
+        System.out.println(“”);
+        }
     } // end class StackX
