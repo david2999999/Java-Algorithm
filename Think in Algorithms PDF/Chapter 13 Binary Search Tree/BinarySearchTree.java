@@ -48,4 +48,45 @@ public class BinarySearchTree {
         
         return null;
     }
+    
+    public V put(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException();
+        }
+        if (root == null) {
+            root = new Node(key, value);
+            size++;
+            return null;
+        }
+        
+        return putHelper(root, key, value);
+    }
+    
+    private V putHelper(Node node, K key, V value) {
+        Comparable<? super K> k = (Comparable<? super K>) key;
+        int cmp = k.compareTo(node.key);
+        if (cmp < 0) {
+            if (node.left == null) {
+                node.left = new Node(key, value);
+                size++;
+                return null;
+            } else {
+                return putHelper(node.left, key, value);
+            }
+        }
+        
+        if (cmp > 0) {
+            if (node.right == null) {
+                node.right = new Node(key, value);
+                size++;
+                return null;
+            } else {
+                return putHelper(node.right, key, value);
+            }
+        }
+        
+        V oldValue = node.value;
+        node.value = value;
+        return oldValue;
+    }
 }
