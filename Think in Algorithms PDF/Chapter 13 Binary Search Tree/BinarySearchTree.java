@@ -1,4 +1,4 @@
-public class BinarySearchTree {
+public class BinarySearchTree<K, V> {
     
     public boolean containsValue(Object target) {
         return containsValueHelper(root, target);
@@ -88,5 +88,19 @@ public class BinarySearchTree {
         V oldValue = node.value;
         node.value = value;
         return oldValue;
+    }
+    
+    public Set<K> keySet() {
+        Set<K> set = new LinkedHashSet<K>();
+        addInOrder(root, set);
+        return set;
+    }
+    
+    private void addInOrder(Node node, Set<K> set) {
+        if (node == null) return;
+        
+        addInOrder(node.left, set);
+        set.add(node.key);
+        addInOrder(node.right, set);
     }
 }
