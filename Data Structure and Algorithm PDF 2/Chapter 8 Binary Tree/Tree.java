@@ -55,10 +55,41 @@ class Tree
                 } // end while
             } // end else not root
         } // end insert()
-    public void delete(int id)
-        {
+        
+    public boolean delete(int key) // delete node with given key
+        { // (assumes non-empty list)
+        Node current = root;
+        Node parent = root;
+        boolean isLeftChild = true;
+        
+        while(current.iData != key) // search for node
+            {
+            parent = current;
+            if(key < current.iData) // go left?
+                {
+                isLeftChild = true;
+                current = current.leftChild;
+                }
+            else // or go right?
+                {
+                isLeftChild = false;
+                current = current.rightChild;
+                }
+            if(current == null) // end of the line,
+                return false; // didn’t find it
+            } // end while
+        // if no children, simply delete it
+        if(current.leftChild==null && current.rightChild==null)
+            {
+            if(current == root) // if root,
+                root = null; // tree is empty
+            else if(isLeftChild)
+                parent.leftChild = null; // disconnect
+            else // from parent
+                parent.rightChild = null;
+            }
         }
-    // various other methods
+
     private void inOrder(node localRoot)
         {
         if(localRoot != null)
@@ -67,5 +98,33 @@ class Tree
             System.out.print(localRoot.iData + “ “);
             inOrder(localRoot.rightChild);
             }
+        }
+        
+    public Node minimum() // returns node with minimum key value
+        {
+        Node current, last;
+        current = root; // start at root
+        
+        while(current != null) // until the bottom,
+            {
+            last = current; // remember node
+            current = current.leftChild; // go to left child
+            }
+            
+        return last;
+        }
+        
+    public Node maximum() // returns node with minimum key value
+        {
+        Node current, last;
+        current = root; // start at root
+        
+        while(current != null) // until the bottom,
+            {
+            last = current; // remember node
+            current = current.rightChild; // go to right child
+            }
+            
+        return last;
         }
     } // end class Tree
