@@ -59,4 +59,13 @@ class Tree
         {
         }
     // various other methods
+    private void inOrder(node localRoot)
+        {
+        if(localRoot != null)
+            {
+            inOrder(localRoot.leftChild);
+            System.out.print(localRoot.iData + “ “);
+            inOrder(localRoot.rightChild);
+            }
+        }
     } // end class Tree
