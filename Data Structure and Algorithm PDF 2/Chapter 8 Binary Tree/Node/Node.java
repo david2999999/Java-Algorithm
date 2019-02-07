@@ -5,8 +5,12 @@ class Node
     node leftChild; // this node’s left child
     node rightChild; // this node’s right child
     
-    public void displayNode()
+    public void displayNode() // display ourself
         {
-        // (see Listing 8.1 for method body)
+        System.out.print(‘{‘);
+        System.out.print(iData);
+        System.out.print(“, “);
+        System.out.print(dData);
+        System.out.print(“} “);
         }
     }
