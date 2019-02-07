@@ -120,6 +120,34 @@ class Tree
             // (successor cannot have a left child)
         }
         
+        // -------------------------------------------------------------
+    public void traverse(int traverseType)
+        {
+        switch(traverseType)
+            {
+            case 1: System.out.print(“\nPreorder traversal: “);
+                    preOrder(root);
+                    break;
+            case 2: System.out.print(“\nInorder traversal: “);
+                    inOrder(root);
+                    break;
+            case 3: System.out.print(“\nPostorder traversal: “);
+                    postOrder(root);
+                    break;
+            }
+        System.out.println();
+        }
+        
+    // -------------------------------------------------------------
+    private void preOrder(Node localRoot)
+        {
+        if(localRoot != null)
+            {
+            System.out.print(localRoot.iData + “ “);
+            preOrder(localRoot.leftChild);
+            preOrder(localRoot.rightChild);
+            }
+        }
 
     private void inOrder(node localRoot)
         {
@@ -130,7 +158,18 @@ class Tree
             inOrder(localRoot.rightChild);
             }
         }
-        
+    
+        // -------------------------------------------------------------
+    private void postOrder(Node localRoot)
+        {
+        if(localRoot != null)
+            {
+            postOrder(localRoot.leftChild);
+            postOrder(localRoot.rightChild);
+            System.out.print(localRoot.iData + “ “);
+            }
+        }
+            
     public Node minimum() // returns node with minimum key value
         {
         Node current, last;
