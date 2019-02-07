@@ -103,7 +103,23 @@ class Tree
                 parent.leftChild = current.rightChild;
             else // right child of parent
                 parent.rightChild = current.rightChild;
+        else // two children, so replace with inorder successor
+            {
+            // get successor of node to delete (current)
+            Node successor = getSuccessor(current);
+            // connect parent of current to successor instead
+            if(current == root)
+                root = successor;
+            else if(isLeftChild)
+                parent.leftChild = successor;
+            else
+                parent.rightChild = successor;
+            // connect successor to current’s left child
+            successor.leftChild = current.leftChild;
+            } // end else two children
+            // (successor cannot have a left child)
         }
+        
 
     private void inOrder(node localRoot)
         {
