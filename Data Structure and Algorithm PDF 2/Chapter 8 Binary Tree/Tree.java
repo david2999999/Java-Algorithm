@@ -88,6 +88,21 @@ class Tree
             else // from parent
                 parent.rightChild = null;
             }
+        else if(current.rightChild==null)
+            if(current == root)
+                root = current.leftChild;
+            else if(isLeftChild) // left child of parent
+                parent.leftChild = current.leftChild;
+            else // right child of parent
+                parent.rightChild = current.leftChild;
+            // if no left child, replace with right subtree
+        else if(current.leftChild==null)
+            if(current == root)
+                root = current.rightChild;
+            else if(isLeftChild) // left child of parent
+                parent.leftChild = current.rightChild;
+            else // right child of parent
+                parent.rightChild = current.rightChild;
         }
 
     private void inOrder(node localRoot)
