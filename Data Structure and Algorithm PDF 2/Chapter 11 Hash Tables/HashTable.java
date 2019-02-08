@@ -44,4 +44,22 @@ class HashTable
             }
         hashArray[hashVal] = item; // insert item
         } // end insert()
+        
+        // -------------------------------------------------------------
+    public DataItem delete(int key) // delete a DataItem
+        {
+        int hashVal = hashFunc(key); // hash the key
+        while(hashArray[hashVal] != null) // until empty cell,
+            { // found the key?
+            if(hashArray[hashVal].getKey() == key)
+                {
+                DataItem temp = hashArray[hashVal]; // save item
+                hashArray[hashVal] = nonItem; // delete item
+                return temp; // return item
+                }
+            ++hashVal; // go to next cell
+            hashVal %= arraySize; // wraparound if necessary
+            }
+        return null; // can’t find item
+        } // end delete()
     }
