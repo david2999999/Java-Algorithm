@@ -52,4 +52,22 @@ class HashTable
         hashArray[hashVal] = item; // insert item
         } // end insert()
     // -------------------------------------------------------------
+    public DataItem delete(int key) // delete a DataItem
+        {
+        int hashVal = hashFunc1(key); // hash the key
+        int stepSize = hashFunc2(key); // get step size
+        
+        while(hashArray[hashVal] != null) // until empty cell,
+            { // is correct hashVal?
+            if(hashArray[hashVal].getKey() == key)
+                {
+                DataItem temp = hashArray[hashVal]; // save item
+                hashArray[hashVal] = nonItem; // delete item
+                return temp; // return item
+                }
+            hashVal += stepSize; // add the step
+            hashVal %= arraySize; // for wraparound
+            }
+        return null; // can’t find item
+        } // end delete()
     }
