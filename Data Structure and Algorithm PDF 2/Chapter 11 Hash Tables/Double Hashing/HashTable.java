@@ -70,4 +70,22 @@ class HashTable
             }
         return null; // can’t find item
         } // end delete()
+        // -------------------------------------------------------------
+    public DataItem find(int key) // find item with key
+        // (assumes table not full)
+        {
+        int hashVal = hashFunc1(key); // hash the key
+        int stepSize = hashFunc2(key); // get step size
+        
+        while(hashArray[hashVal] != null) // until empty cell,
+            { // is correct hashVal?
+            if(hashArray[hashVal].getKey() == key)
+                return hashArray[hashVal]; // yes, return item
+                
+            hashVal += stepSize; // add the step
+            hashVal %= arraySize; // for wraparound
+            }
+        return null; // can’t find item
+        }
+// -------------------------------------------------------------
     }
