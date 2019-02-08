@@ -62,4 +62,18 @@ class HashTable
             }
         return null; // can’t find item
         } // end delete()
+    // -------------------------------------------------------------
+    public DataItem find(int key) // find item with key
+        {
+        int hashVal = hashFunc(key); // hash the key
+        while(hashArray[hashVal] != null) // until empty cell,
+            { // found the key?
+            if(hashArray[hashVal].getKey() == key)
+                return hashArray[hashVal]; // yes, return item
+                
+            ++hashVal; // go to next cell
+            hashVal %= arraySize; // wraparound if necessary
+            }
+        return null; // can’t find item
+        }
     }
