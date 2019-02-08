@@ -37,4 +37,19 @@ class HashTable
         return 5 - key % 5;
         }
         // -------------------------------------------------------------
+    public void insert(int key, DataItem item)
+    // (assumes table not full)
+        {
+        int hashVal = hashFunc1(key); // hash the key
+        int stepSize = hashFunc2(key); // get step size
+        // until empty cell or -1
+        while(hashArray[hashVal] != null &&
+                hashArray[hashVal].getKey() != -1)
+            {
+            hashVal += stepSize; // add the step
+            hashVal %= arraySize; // for wraparound
+            }
+        hashArray[hashVal] = item; // insert item
+        } // end insert()
+    // -------------------------------------------------------------
     }
