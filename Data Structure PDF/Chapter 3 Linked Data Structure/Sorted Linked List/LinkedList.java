@@ -52,4 +52,28 @@ public class LinkedList {
         
         return count;
     }
+    
+    int sum() {
+        int sum = 0;
+        Node current = start;
+         
+        while (current != null) {
+            sum += current.data;
+            current = current.next;
+        }
+        
+        return sum;
+    }
+    
+    void removeLast(Node list) {
+        if (list == null || list.next == null) {
+            throw new IllegalStateException();
+        }
+        
+        while (list.next.next != null) {
+            list = list.next;
+        }
+        
+        list.next = null;
+    }
 }
