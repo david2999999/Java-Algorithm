@@ -76,4 +76,17 @@ public class LinkedList {
         
         list.next = null;
     }
+    
+    Node copy(Node list) {
+        if (list == null) {
+            return null;
+        }
+        
+        Node clone = new Node(list.data);
+        
+        for (Node p=list, q=clone; p.next != null; p=p.next, q=q.next) {
+            q.next = new Node(p.next.data);
+        }
+        return clone;
+    }
 }
