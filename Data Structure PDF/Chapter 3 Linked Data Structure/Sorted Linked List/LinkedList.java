@@ -90,7 +90,7 @@ public class LinkedList {
         return clone;
     }
     
-    Node sublist(Node list, int p, int q) {
+    Node sublist(Node list, int m, int n) {
         if (m < 0 || n < m) {
             throw new IllegalArgumentException();
         } else if (n == m) {
@@ -124,5 +124,20 @@ public class LinkedList {
             list1 = list1.next;
         }
         list1.next = list2;
+    }
+    
+    void set(Node list, int i, int x) {
+        if (i < 0) {
+            throw new IllegalArgumentException();
+        }
+        
+        for (int j=0; j<i; j++) {
+            if (list == null) {
+                throw new IllegalStateException();
+            }
+            list = list.next;
+        }
+        list.data = x;
+        return;
     }
 }
