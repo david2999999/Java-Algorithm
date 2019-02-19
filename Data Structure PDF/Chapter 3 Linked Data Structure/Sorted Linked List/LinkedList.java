@@ -89,4 +89,29 @@ public class LinkedList {
         }
         return clone;
     }
+    
+    Node sublist(Node list, int p, int q) {
+        if (m < 0 || n < m) {
+            throw new IllegalArgumentException();
+        } else if (n == m) {
+            return null;
+        }
+        
+        for (int i=0; i<m; i++) {
+            list = list.next;
+        }
+        
+        Node clone = new Node(list.data);
+        Node p=list, q=clone;
+        for (int i=m+1; i<n; i++) {
+            if (p.next == null) {
+                throw new IllegalArgumentException();
+            }
+            
+            q.next = new Node(p.next.data);
+            p = p.next;
+            q = q.next;
+        }
+        return clone;
+    }
 }
