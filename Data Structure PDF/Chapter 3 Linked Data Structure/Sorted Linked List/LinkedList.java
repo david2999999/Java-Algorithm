@@ -1,4 +1,5 @@
 public class LinkedList {
+    private Node start;
     
     Node insert(Node start, int x) {
         // precondition: the list is in ascending order;
@@ -38,5 +39,17 @@ public class LinkedList {
             }
         }
         return start;
+    }
+    
+    int size() {
+        Node current = start;
+        int count = 0;
+        
+        while (current != null) {
+            ++count;
+            current = current.next;
+        }
+        
+        return count;
     }
 }
