@@ -114,4 +114,15 @@ public class LinkedList {
         }
         return clone;
     }
+    
+    void append(Node list1, Node list2) {
+        if (list1 == null) {
+            throw new IllegalStateException();
+        }
+        
+        while (list1.next != null) {
+            list1 = list1.next;
+        }
+        list1.next = list2;
+    }
 }
