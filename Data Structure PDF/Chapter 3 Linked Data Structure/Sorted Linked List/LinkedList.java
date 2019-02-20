@@ -179,4 +179,31 @@ public class LinkedList {
         p.next = new Node(x, p.next);
         }
     }
+
+    void swap(Node list, int i, int j) {
+        if (i < 0 || j < 0) {
+            throw new IllegalArgumentException();
+        } else if (i == j) {
+            return;
+        }
+        
+        Node p=list, q=list;
+        for (int ii=0; ii<i; ii++) {
+            if (p == null) {
+                throw new IllegalStateException();
+            }
+            p = p.next;
+        }
+        for (int jj=0; jj<j; jj++) {
+            if (q == null) {
+                throw new IllegalStateException();
+            }
+            q = q.next;
+        }
+        
+        int pdata = p.data, qdata = q.data;
+        p.data = qdata;
+        q.data = pdata;
+        return;
+    }
 }
