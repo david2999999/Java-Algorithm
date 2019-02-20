@@ -140,4 +140,43 @@ public class LinkedList {
         list.data = x;
         return;
     }
+    
+    int void get(Node list, int i) {
+        // returns the value of element number i;
+        Node p = list;
+        int j = 0;
+        
+        while (j < i && p != null) {
+            ++j;
+            p = p.next;
+        }
+        
+        if (p == null) {
+            throw new java.util.NoSuchElementException();
+        }
+        return p.data;
+    }
+    
+    void put(Node list, int i, int x) {
+        // inserts x as element number i;
+        if (list == null) {
+            throw new java.util.NoSuchElementException("list is empty");
+        } else if (i == 0) {
+            list.next = new Node(list.data, list.next);
+            list.data = x;
+        } else {
+            Node p = list;
+            int j = 1;
+            
+            while (j < i && p != null) {
+                ++j;
+                p = p.next;
+            }
+            if (p == null) {
+                String error=String.format("the list has onlt %d elements",j-1);
+                throw new java.util.NoSuchElementException(error);
+            }
+        p.next = new Node(x, p.next);
+        }
+    }
 }
