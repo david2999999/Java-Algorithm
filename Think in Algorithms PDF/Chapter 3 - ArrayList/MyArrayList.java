@@ -15,6 +15,15 @@ public class MyArrayList implements List<E> {
         return old;
     }
     
+    public E remove(int index) {
+        E element = get(index);
+        for (int i=index; i<size-1; i++) {
+            array[i] = array[i+1];
+        }
+        size--;
+        return element;
+    }
+    
     public int indexOf(Object target) {
         for (int i = 0; i<size; i++) {
             if (equals(target, array[i])) {
