@@ -34,3 +34,7 @@ public class SelectionSort {
         }
     }
 }
+
+// the indexLowest method finds the smallest index in a linear time.
+// the indexLowest method is performed for n comparison. For each comparison, there is one less comparison.
+// in total there is n(n+1)/2 comparison, so the O(n)=n^2
