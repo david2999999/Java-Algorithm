@@ -24,6 +24,18 @@ public class MyArrayList implements List<E> {
         return element;
     }
     
+    public boolean add(E element) {
+        if (size >= array.length) {
+            // make a bigger array and copy over the elements
+            E[] bigger = (E[]) new Object[array.length * 2];
+            System.arraycopy(array, 0, bigger, 0, array.length);
+            array = bigger;
+        }
+        array[size] = element;
+        size++;
+        return true;
+    }
+    
     public int indexOf(Object target) {
         for (int i = 0; i<size; i++) {
             if (equals(target, array[i])) {
