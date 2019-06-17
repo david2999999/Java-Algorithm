@@ -16,6 +16,17 @@ public class MyLinkedList<E> implements List<E> {
         size = 0;
     }
     
+    public int indexOf(Object target) {
+        Node node = head;
+        for (int i=0; i<size; i++) {
+            if (equals(target, node.data)) {
+                return i;
+            }
+            node = node.next;
+        }
+        return -1;
+    }
+    
     public boolean add(E element) {
         if (head == null) {
             head = new Node(element);
