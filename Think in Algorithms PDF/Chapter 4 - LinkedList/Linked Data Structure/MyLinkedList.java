@@ -27,6 +27,16 @@ public class MyLinkedList<E> implements List<E> {
         return -1;
     }
     
+    public void add(int index, E element) {
+        if (index == 0) {
+            head = new Node(element, head);
+        } else {
+            Node node = getNode(index-1);
+            node.next = new Node(element, node.next);
+        }
+        size++;
+    }
+
     public boolean add(E element) {
         if (head == null) {
             head = new Node(element);
