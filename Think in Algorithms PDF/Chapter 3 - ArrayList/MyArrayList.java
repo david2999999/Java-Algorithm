@@ -24,6 +24,20 @@ public class MyArrayList implements List<E> {
         return element;
     }
     
+    public void add(int index, E element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        // add the element to get the resizing
+        add(element);
+        // shift the other elements
+        for (int i=size-1; i>index; i--) {
+            array[i] = array[i-1];
+        }
+        // put the new one in the right place
+        array[index] = element;
+    }
+    
     public boolean add(E element) {
         if (size >= array.length) {
             // make a bigger array and copy over the elements
