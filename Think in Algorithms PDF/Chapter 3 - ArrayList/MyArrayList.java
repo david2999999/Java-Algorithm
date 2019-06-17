@@ -24,6 +24,14 @@ public class MyArrayList implements List<E> {
         return element;
     }
     
+    public boolean removeAll(Collection<?> collection) {
+        boolean flag = true;
+        for (Object obj: collection) {
+            flag &= remove(obj);
+        }
+        return flag;
+    }
+    
     public void add(int index, E element) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
@@ -67,3 +75,11 @@ public class MyArrayList implements List<E> {
         }
     }
 }
+
+// In this method, the loop runs once for each element in collection. If collection
+// contains m elements and the list we are removing from contains n elements,
+// this method is in O(nm). If the size of collection can be considered con-
+// stant, removeAll is linear with respect to n. But if the size of the collection
+// is proportional to n, removeAll is quadratic. For example, if collection al-
+// ways contains 100 or fewer elements, removeAll is linear. But if collection
+// generally contains 1% of the elements in the list, removeAll is quadratic.
