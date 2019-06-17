@@ -36,6 +36,17 @@ public class MyLinkedList<E> implements List<E> {
         }
         size++;
     }
+    
+    private Node getNode(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node node = head;
+        for (int i=0; i<index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
 
     public boolean add(E element) {
         if (head == null) {
