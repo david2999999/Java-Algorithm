@@ -15,4 +15,20 @@ public class MyArrayList implements List<E> {
         return old;
     }
     
+    public int indexOf(Object target) {
+        for (int i = 0; i<size; i++) {
+            if (equals(target, array[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    private boolean equals(Object target, Object element) {
+        if (target == null) {
+            return element == null;
+        } else {
+            return target.equals(element);
+        }
+    }
 }
