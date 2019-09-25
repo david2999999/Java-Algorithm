@@ -38,4 +38,18 @@ public class Traversal {
             if ( n != null ) stack.push( n );
         }
     }
+
+    Node findLowestCommonAncestor( Node root, int value1, int value2 ){
+        while ( root != null ){
+            int value = root.getValue();
+            if ( value > value1 && value > value2 ){
+                root = root.getLeft();
+            } else if ( value < value1 && value < value2 ){
+                root = root.getRight();
+            } else {
+                return root;
+            }
+        }
+        return null; // only if empty tree
+    }
 }
