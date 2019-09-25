@@ -23,4 +23,18 @@ public class UnflatteningList {
             current = current.next;
         }
     }
+
+    public void unflattenListIteratively(Element start, Element tail) {
+        Element current = tail;
+
+        while (current != null) {
+            if (current.child != null) {
+                tail = current.child.prev;
+                current.child.prev = null;
+                tail.next = null;
+            }
+
+            current = current.prev;
+        }
+    }
 }
