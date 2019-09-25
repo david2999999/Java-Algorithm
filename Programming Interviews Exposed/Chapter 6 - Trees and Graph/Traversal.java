@@ -22,4 +22,20 @@ public class Traversal {
         postorderTraversal( root.getRight() );
         root.printValue();
     }
+
+    void preorderTraversalIteratively(Node root) {
+        Stack<Node> stack = new Stack<Node>();
+        stack.push( root );
+
+        while( !stack.empty() ){
+            Node curr = stack.pop();
+            curr.printValue();
+
+            Node n = curr.getRight();
+            if ( n != null ) stack.push( n );
+
+            n = curr.getLeft();
+            if ( n != null ) stack.push( n );
+        }
+    }
 }
