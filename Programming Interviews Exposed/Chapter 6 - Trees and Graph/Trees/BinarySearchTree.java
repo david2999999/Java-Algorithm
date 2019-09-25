@@ -16,4 +16,16 @@ public class BinarySearchTree {
 
         return null;
     }
+
+    public TreeNode findNodeRecursively(TreeNode root, int value) {
+        if (root == null) return null;
+
+        if (root.getValue() == value) return root;
+
+        if (root.getValue() < value) {
+            return findNodeRecursively(root.getRight(), value);
+        } else {
+            return findNodeRecursively(root.getLeft(), value);
+        }
+    }
 }
