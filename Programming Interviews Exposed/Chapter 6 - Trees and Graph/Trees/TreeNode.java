@@ -1,15 +1,15 @@
 public class TreeNode {
-    private Node left;
-    private Node right;
+    private TreeNode left;
+    private TreeNode right;
     private int value;
 
-    public TreeNode( Node left, Node right, int value ){
+    public TreeNode( TreeNode left, TreeNode right, int value ){
         this.left = left;
         this.right = right;
         this.value = value;
     }
 
-    public Node getLeft() { return left; }
-    public Node getRight() { return right; }
+    public TreeNode getLeft() { return left; }
+    public TreeNode getRight() { return right; }
     public int getValue() { return value; }
 }
