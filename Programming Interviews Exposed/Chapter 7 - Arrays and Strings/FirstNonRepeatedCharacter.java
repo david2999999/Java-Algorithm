@@ -22,4 +22,36 @@ public class FirstNonRepeatedCharacter {
 
         return null;
     }
+
+    public String firstNonRepeated(String str) {
+        HashMap<Integer, Object> charMap = new HashMap<>();
+        Object seenOnce = new Object();
+        Object seenTwice = new Object();
+        Object seen;
+
+        for (int i = 0; i < str.length(); ) {
+            int codePoint = str.codePointAt(i);
+            i += Character.charCount(codePoint);
+            seen = charMap.get(codePoint);
+
+            if (seen == null) {
+                charMap.put(codePoint, seenOnce);
+            } else {
+                if (seen == seenOnce) {
+                    charMap.put(codePoint, seenTwice);
+                }
+            }
+        }
+
+        for (int i = 0; i < str.length(); ) {
+            int codePoint = str.codePointAt(i);
+            i += Character.charCount(codePoint);
+
+            if (charMap.get(codePoint) == seenOnce) {
+                return new String(Character.toChars(codePoint));
+            }
+        }
+
+        return null;
+    }
 }
