@@ -9,6 +9,8 @@ public class IntegerToString {
         boolean isNegative = false;
 
         if (num < 0) {
+            if (num == Integer.MIN_VALUE) return "-2147483648";
+
             isNegative = true;
             num = -num;
         }
@@ -16,10 +18,10 @@ public class IntegerToString {
         int currentIndex = 0;
         char[] temp = new char[MAX_DIGITS + 1];
 
-        while (num != 0) {
+        do {
             temp[currentIndex++] = (char) ((num % 10) + '0');
             num /= 10;
-        }
+        } while (num != 0);
 
         StringBuilder sb = new StringBuilder();
         if (isNegative) sb.append("-");
