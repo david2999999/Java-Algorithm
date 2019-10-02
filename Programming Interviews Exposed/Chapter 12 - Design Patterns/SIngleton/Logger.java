@@ -1,14 +1,12 @@
 // Implements a simple logging class using a singleton.
 public class Logger {
-    // Create and store the singleton.
-    private static final Logger instance = new Logger();
-
-    // Prevent anyone else from creating this class.
-    private Logger(){
+    // Inner class initializes instance on load, won’t be loaded
+    // until referenced by getInstance()
+    private static class LoggerHolder {
+        public static final Logger instance = new Logger();
     }
-
     // Return the singleton instance.
-    public static Logger getInstance() { return instance; }
+    public static Logger getInstance() { return LoggerHolder.instance; }
 
     // Log a string to the console.
     //
