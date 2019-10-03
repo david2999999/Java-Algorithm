@@ -16,6 +16,20 @@ public class UniqueCharacter {
 
         return true;
     }
+
+    public boolean isUniqueCharWithAlphabet(String str) {
+        int checker = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            int value = str.charAt(i) - 'a';
+
+            if ((checker & (1 << value)) > 0) return false;
+
+            checker |= (1 << value);
+        }
+
+        return true;
+    }
 }
 
 // The time complexity for this code isO( n ), where n is the length of the string. The space complexity isO(l ).
