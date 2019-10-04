@@ -53,7 +53,7 @@ public class OrderedArray {
             return false;
         else // found it
         {
-            for(int k=j; k<nElems; k++) // move bigger ones down
+            for(int k=j; k < nElems - 1; k++) // move bigger ones down
                 a[k] = a[k+1];
             nElems--; // decrement size
             return true;
