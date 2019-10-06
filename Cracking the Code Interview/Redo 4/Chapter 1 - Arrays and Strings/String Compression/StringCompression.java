@@ -13,6 +13,8 @@ public class StringCompression {
             }
         }
 
-        return compressed.toString();
+        return compressed.length() < str.length() ? compressed.toString() : str;
     }
+
+
 }
