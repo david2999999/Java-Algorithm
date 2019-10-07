@@ -1,6 +1,6 @@
 public class Stack {
     private int maxSize; // size of stack array
-    private long[] stackArray;
+    private char[] stackArray;
     private int top; // top of stack
 
     public Stack(int s) {
@@ -9,19 +9,19 @@ public class Stack {
         top = -1;
     }
 
-    public void push(long j) {
+    public void push(char j) {
         if (isFull()) throw new FullStackException();
 
         stackArray[++top] = j; // increment top, insert item
     }
 
-    public long pop() {
+    public char pop() {
         if (isEmpty()) throw new EmptyStackException();
 
         return stackArray[top--]; // access item, decrement top
     }
 
-    public long peek() {
+    public char peek() {
         if (isEmpty()) throw new EmptyStackException();
 
         return stackArray[top];
