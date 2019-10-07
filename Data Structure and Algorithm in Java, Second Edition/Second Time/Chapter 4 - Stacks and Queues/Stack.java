@@ -10,14 +10,20 @@ public class Stack {
     }
 
     public void push(long j) {
+        if (isFull()) throw new FullStackException();
+
         stackArray[++top] = j; // increment top, insert item
     }
 
     public long pop() {
+        if (isEmpty()) throw new EmptyStackException();
+
         return stackArray[top--]; // access item, decrement top
     }
 
     public long peek() {
+        if (isEmpty()) throw new EmptyStackException();
+
         return stackArray[top];
     }
 
