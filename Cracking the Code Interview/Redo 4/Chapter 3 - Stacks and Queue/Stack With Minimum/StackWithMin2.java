@@ -29,6 +29,4 @@ public class StackWithMin2 extends Stack<Integer> {
 
         return s2.peek();
     }
-
-
 }
