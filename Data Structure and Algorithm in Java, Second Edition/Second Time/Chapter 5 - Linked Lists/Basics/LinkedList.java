@@ -27,4 +27,28 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    public boolean delete(int key) {
+        if (isEmpty()) return false;
+
+        if (first.data == key) {
+            first = first.next;
+            return true;
+        }
+
+        Link current = first;
+        Link previous = first;
+
+        while (current != null) {
+            if (current.data == key) {
+                previous.next = current.next;
+                return true;
+            }
+
+            previous = current;
+            current = current.next;
+        }
+
+        return false;
+    }
 }
