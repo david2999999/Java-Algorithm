@@ -22,4 +22,14 @@ public class SetOfStacks {
             stacks.push(stack);
         }
     }
+
+    public int pop() {
+        Stack last = getLastStack();
+        if (last == null) throw new EmptyStackException();
+
+        int value = last.pop();
+        if (last.size() == 0) stacks.remove(stacks.size() - 1);
+
+        return value;
+    }
 }
