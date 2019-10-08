@@ -18,4 +18,13 @@ public class LinkedList {
         first = first.next;
         return temp;
     }
+
+    public void displayList() {
+        Link current = head;
+
+        while (current != null) {
+            System.out.println("data = " + current.data);
+            current = current.next;
+        }
+    }
 }
