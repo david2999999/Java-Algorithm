@@ -38,6 +38,10 @@ public class SetOfStacks {
         return last == null || last.isEmpty();
     }
 
+    public int popAt(int index) {
+        return leftShift(index, true);
+    }
+
     public int leftShift(int index, boolean removeTop) {
         Stack stack = stacks.get(index);
         int removedItem;
