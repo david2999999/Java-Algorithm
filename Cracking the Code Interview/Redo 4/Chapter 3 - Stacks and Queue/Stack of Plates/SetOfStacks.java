@@ -32,4 +32,26 @@ public class SetOfStacks {
 
         return value;
     }
+
+    public boolean isEmpty() {
+        Stack last = getLastStack();
+        return last == null || last.isEmpty();
+    }
+
+    public int leftShift(int index, boolean removeTop) {
+        Stack stack = stacks.get(index);
+        int removedItem;
+
+        if (removeTop) removedItem = stack.pop();
+        else removedItem = stack.removeBottom();
+
+        if (stack.isEmpty()) {
+            stacks.remove(index);
+        } else if (stacks.size() > index + 1) {
+            int v = leftShift(index + 1, false);
+            stack.push(v);
+        }
+
+        return removedItem;
+    }
 }
