@@ -5,6 +5,13 @@ public class SortedLinkedList {
         return first == null;
     }
 
+    public SortedLinkedList(Link[] linkArr) {
+        first = null;
+        for (int j = 0; j < linkArr.length; j++) {
+            insert(linkArr[j]);
+        }
+    }
+
     public void insert(long key) {
         Link newLink = new Link(key);
         Link previous = null;
