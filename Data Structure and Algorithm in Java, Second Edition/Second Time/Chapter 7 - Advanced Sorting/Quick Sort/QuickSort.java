@@ -7,7 +7,7 @@ public class QuickSort {
             long pivot = array[right];
             int partition = partition(left, right, pivot);
             quickSort(left, partition - 1);
-            quickSort(right, partition + 1);
+            quickSort(partition + 1, right);
         }
     }
 
