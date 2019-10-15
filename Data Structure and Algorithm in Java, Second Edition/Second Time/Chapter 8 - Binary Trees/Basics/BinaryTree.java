@@ -34,7 +34,29 @@ public class BinaryTree {
     }
 
     public void insert(int key) {
+        Node newNode = new Node(key);
 
+        if (root == null) {
+            root = newNode;
+        } else {
+            Node current = root, parent;
+            while (true) {
+                parent = current;
+                if (key < current.data) {
+                    current = current.leftChild;
+                    if (current == null) {
+                        parent.leftChild = newNode;
+                        return;
+                    }
+                } else {
+                    current = current.rightChild;
+                    if (current == null) {
+                        parent.rightChild = newNode;
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public void delete(int key) {
