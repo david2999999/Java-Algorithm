@@ -17,6 +17,22 @@ public class BinaryTree {
         return current;
     }
 
+    public Node findImproved(int key) {
+        Node current = root;
+
+        while (current != null) {
+            if (current.data == key) {
+                return current;
+            } else if (current.data < key) {
+                current = current.rightChild;
+            } else {
+                current = current.leftChild;
+            }
+        }
+
+        return null;
+    }
+
     public void insert(int key) {
 
     }
