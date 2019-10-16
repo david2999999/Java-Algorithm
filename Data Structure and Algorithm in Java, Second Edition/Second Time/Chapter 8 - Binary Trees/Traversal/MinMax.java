@@ -10,4 +10,16 @@ public class MinMax {
 
         return last;
     }
+
+    public Node maximum() {
+        Node current, last;
+        current = root;
+
+        while (current != null) {
+            last = current;
+            current = current.rightChild;
+        }
+
+        return last;
+    }
 }
