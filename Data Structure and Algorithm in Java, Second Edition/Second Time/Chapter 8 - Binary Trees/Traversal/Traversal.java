@@ -14,4 +14,12 @@ public class Traversal {
             preOrderTraversal(root.right);
         }
     }
+
+    private void postOrderTraversal(Node root) {
+        if (root != null) {
+            postOrderTraversal(root.left);
+            postOrderTraversal(root.right);
+            visit(root);
+        }
+    }
 }
