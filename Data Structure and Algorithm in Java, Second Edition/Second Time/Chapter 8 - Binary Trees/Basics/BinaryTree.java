@@ -86,6 +86,22 @@ public class BinaryTree {
             } else {
                 parent.rightChild = null;
             }
+        } else if (current.rightChild == null) {
+            if (current == root) {
+                root = current.leftChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.leftChild;
+            } else {
+                parent.rightChild = current.leftChild;
+            }
+        } else if (current.leftChild == null) {
+            if (current == null) {
+                root = current.rightChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.rightChild;
+            } else {
+                parent.rightChild = current.rightChild;
+            }
         }
     }
 }
