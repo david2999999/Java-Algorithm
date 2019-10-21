@@ -35,4 +35,21 @@ public class HashTable {
         }
         hashArray[hashVal] = item; // insert item
     }
+
+    public DateItem delete(int key) {
+        int hashVal = hashFunc(key);
+
+        while (hashArray[hashVal] != null) {
+            if (hashArray[hashVal].getKey() == key) {
+                DataItem temp = hashArray[hashVal];
+                hashArray[hashVal] = nonItem;
+                return temp;
+            }
+
+            ++hashVal;
+            hashVal %= arraySize;
+        }
+
+        return null;
+    }
 }
