@@ -1,11 +1,11 @@
 public class DataItem {
-    private int data;
+    private int key;
 
     public DataItem(int data) {
         this.data = data;
     }
 
-    public int getData() {
-        return this.data;
+    public int getKey() {
+        return this.key;
     }
 }

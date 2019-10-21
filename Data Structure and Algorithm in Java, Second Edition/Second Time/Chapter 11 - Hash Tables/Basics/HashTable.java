@@ -52,4 +52,19 @@ public class HashTable {
 
         return null;
     }
+
+    public DataItem find(int key) {
+        int hashVal = hashFunc(key);
+
+        while (hashArray[hashVal] != null) {
+            if (hashArray[hashVal].getKey() == key) {
+                return hashArray[hashVal];
+            }
+
+            ++hashVal;
+            hashVal %= arraySize;
+        }
+
+        return null;
+    }
 }
