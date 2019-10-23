@@ -34,4 +34,35 @@ public class Heap {
 
         heapArray[index] = bottom;
     }
+
+    public Node remove() {
+        Node root = heapArray[0];
+        heapArray[0] = heapArray[--currentSize];
+        trickleDown(0);
+        return root;
+    }
+
+    public void trickleDown(int index) {
+        int largerChild;
+        Node top = heapArray[index];
+        while (index < currentSize / 2) {
+            int leftChild = 2 * index + 1;
+            int rightChild = leftChild + 1;
+
+            if (rightChild < currentSize && heapArray[leftChild].getKey() < heapArray[rightChild].getKey()) {
+                largerChild = rightChild;
+            } else {
+                largerChild = leftChild;
+            }
+
+            if (top.getKey() >= heapArray[largerChild].getKey()) {
+                break;
+            }
+
+            heapArray[index] = heapArray[largerChild];
+            index = largerChild;
+        }
+
+        heapArray[index] = top;
+    }
 }
