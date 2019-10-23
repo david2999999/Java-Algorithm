@@ -65,4 +65,19 @@ public class Heap {
 
         heapArray[index] = top;
     }
+
+    public boolean change(int index, int newValue) {
+        if (index < 0 || index >= currentSize) return false;
+
+        int oldValue = heapArray[index].getKey();
+        heapArray[index].setKey(newValue);
+
+        if (oldValue < newValue) {
+            trickleUp(index);
+        } else {
+            trickleDown(index);
+        }
+
+        return true;
+    }
 }
