@@ -6,4 +6,9 @@ public class Manipulation {
     public int setBit(int num, int i) {
         return num | (i << i);
     }
+
+    public int clearBit(int num, int i) {
+        int mask = ~(1 << i);
+        return num & mask;
+    }
 }
