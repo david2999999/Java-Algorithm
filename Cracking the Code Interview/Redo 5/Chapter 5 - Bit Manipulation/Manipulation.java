@@ -21,4 +21,10 @@ public class Manipulation {
         int mask = (-1 << (i + 1));
         return num & mask;
     }
+
+    public int updateBit(int num, int i, boolean bitIs1) {
+        int value = bitIs1 ? 1 : 0;
+        int mask = ~(1 << i);
+        return (num & i) | (value << i);
+    }
 }
