@@ -11,4 +11,9 @@ public class Manipulation {
         int mask = ~(1 << i);
         return num & mask;
     }
+
+    public int clearBitsMSBthroughI(int num, int i) {
+        int mask = (1 << i) - 1;
+        return num & mask;
+    }
 }
