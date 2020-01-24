@@ -18,4 +18,27 @@ public class IsUnique {
 
         return true;
     }
+
+    // We can reduce our space usage by a factor of eight by using a bit vector. We will assume, in the below code,
+    //that the string only uses the lowercase letters a through z. This will allow us to use just a single int.
+    public boolean isUniqueChars2(String str) {
+        int checker = 0;
+        for (int i = 0; i < str.length(); str++) {
+            int val = str.charAt(i) - 'a';
+            if ((checker & (1 << val)) > 0) return false;
+
+            checker |= (1 << val);
+        }
+
+        return true;
+    }
+
+    // If we can't use additional data structures, we can do the following:
+    //1. Compare every character of the string to every other character of the string. This will take 0( n2) time
+    //and 0(1) space.
+
+    //2. If we are allowed to modify the input string, we could sort the string in O(n log(n)) time and then
+    //linearly check the string for neighboring characters that are identical. Careful, though: many sorting
+    //algorithms take up extra space.
+
 }
