@@ -15,7 +15,7 @@ public class Progression {
         return answer;
     }
 
-    public void advance() {
+    protected void advance() {
         current++;
     }
 
