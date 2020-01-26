@@ -17,4 +17,28 @@ public class LinkedList<T> {
 
         return elem;
     }
+
+    public boolean delete(T data) {
+        if (isEmpty()) return false;
+
+        ListElement<T> elem = head;
+
+        if (elem.value() == data) {
+            head = head.next();
+            return true;
+        }
+
+        while (elem.next() != null) {
+            if (elem.next().value() == data) {
+                elem.setNext(elem.next().next());
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean isEmpty() {
+        return head == null;
+    }
 }
