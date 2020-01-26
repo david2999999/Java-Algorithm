@@ -1,10 +1,20 @@
 public class LinkedList<T> {
-    private ListElement<T> list;
+    private ListElement<T> head;
 
-    public ListElement<T> insertInFront(int data) {
+    public ListElement<T> insertInFront(T data) {
         ListElement<T> newElement = new ListElement<T>(data);
-        list.setNext(newElement);
-        list = newElement;
-        return list;
+        head.setNext(newElement);
+        head = newElement;
+        return head;
+    }
+
+    public ListElement<T> find(T data) {
+        ListElement<T> elem = head;
+
+        while (elem != null && elem.value() != data) {
+            elem = elem.next();
+        }
+
+        return elem;
     }
 }
