@@ -21,4 +21,19 @@ public class ScoredBoard {
             board[j] = e;
         }
     }
+
+    public GameEntry remove(int i) throws IndexOutOfBoundsException {
+        if (i < 0 || i >= numEntries)
+            throw new IndexOutOfBoundsException();
+
+        GameEntry temp = board[i];
+
+        for (int j = i; j < numEntries - 1; j++) {
+            board[j] = board[j + 1];
+        }
+
+        board[numEntries - 1] = null;
+        numEntries--;
+        return temp;
+    }
 }
