@@ -1,0 +1,6 @@
+What is the difference between the design stage and the implementation stage in the development
+of software?
+
+In the development of software, the design stage identifies the components (classes) to be used and the
+relationships among them. The implementation stage is where the computer program code is actually
+written.
