@@ -1,8 +1,7 @@
 public class ListOperation {
-    public void insert(Node start, int x) {
-        if (start == null) {
-            start = new Node(x);
-            return;
+    public Node insert(Node start, int x) {
+        if (start == null || start.data > x) {
+           return new Node(x, start);
         }
 
         Node p = start;
@@ -12,5 +11,6 @@ public class ListOperation {
         }
 
         p.next = new Node(x, p.next);
+        return start;
     }
 }
