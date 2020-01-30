@@ -1,0 +1,4 @@
+What constitutes a Java program?
+
+A Java program is a Java class with a main() method.
+The main() method must have this header: public static void main(String[] args)

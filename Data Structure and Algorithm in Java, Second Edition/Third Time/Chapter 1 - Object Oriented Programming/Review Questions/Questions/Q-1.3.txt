@@ -1,0 +1,3 @@
+What is the difference between the state and the behavior of a class?
+
+The state of a class consists of the values of its fields. The behavior of a class is defined by its methods.

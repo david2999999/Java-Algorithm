@@ -1,0 +1,3 @@
+What is an abstract data type?
+
+An abstract data type is a specification of the type’s operations: what an instance of that type can do.
