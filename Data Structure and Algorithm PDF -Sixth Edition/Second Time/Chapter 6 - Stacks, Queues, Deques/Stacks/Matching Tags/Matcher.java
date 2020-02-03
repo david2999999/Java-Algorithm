@@ -5,14 +5,14 @@ public class Matcher {
     public static boolean isMatched(String expression) {
         Stack<Character> buffer = new LinkedStack<>();
 
-        for (char c: expression.toCharArray()) {
-            if (isOpeningBracket(c)) {
-                buffer.push(c);
-            } else if (isClosingBracket(c)) {
+        for (char bracket: expression.toCharArray()) {
+            if (isOpeningBracket(bracket)) {
+                buffer.push(bracket);
+            } else if (isClosingBracket(bracket)) {
                 if (buffer.isEmpty()) return false;
 
                 char previousBracket = buffer.pop();
-                boolean matchingBracket = OPENING.indexOf(previousBracket) == CLOSING.indexOf(c);
+                boolean matchingBracket = OPENING.indexOf(previousBracket) == CLOSING.indexOf(bracket);
 
                 if (!matchingBracket) return false;
             }
