@@ -56,4 +56,51 @@ public class Ring<E> extends AbstractList<E> implements List<E> {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    private class RingIterator implements Iterator<E> {
+        private E last;
+        private E preLast = last;
+
+        public boolean hasNext() {
+            return size > 0;
+        }
+
+        public E getNext() {
+            if (last == null) {
+                last = preLast.next;
+            } else {
+                preLast = last;
+                last = last.next;
+            }
+
+            return last.element;
+        }
+
+        public void remove() {
+            if (last == null) throw new IllegalStateException();
+
+            if (size == 1) {
+                end = preLast = null;
+            } else {
+                preLast.next = end.next;
+            }
+
+            if (last == end) {
+                end = preLast;
+            }
+
+            last = null;
+            --size;
+        }
+    }
+
+    private static class Node<E> {
+        public E element;
+        private Node<E> next;
+
+        public Node(E element, Node<E> next) {
+            this.element = element;
+            this.next = next;
+        }
+    }
 }
