@@ -34,7 +34,7 @@ public class ArrayList<E> implements List<E> {
     public void add(int i, E e) throws IndexOutOfBoundsException, IllegalStateException {
         checkIndex(i, size + 1);
         if (size == data.length) {
-            throw new IllegalStateException("Array is full");
+            resize(2 * data.length);
         }
 
         for (int k = size - 1; k >= i; k--) {
