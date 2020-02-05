@@ -57,6 +57,24 @@ public class Stack<E> {
         return value;
     }
 
+    public boolean insertBottom(E value) {
+        if (isFull()) return false;
+
+        Node<E> newNode = new Node<>(value, bottomSentinel, bottomSentinel.above);
+        bottomSentinel.above.below = newNode;
+        bottomSentinel.above = newNode;
+        size++;
+        return true;
+    }
+
+    public void insert(boolean insertTop, E value) {
+        if (insertTop) {
+            push(value);
+        } else {
+            insertBottom(value);
+        }
+    }
+
     private void join(Node<E> above, Node<E> below) {
         if (above != null) above.below = below;
         if (below != null) below.above = above;

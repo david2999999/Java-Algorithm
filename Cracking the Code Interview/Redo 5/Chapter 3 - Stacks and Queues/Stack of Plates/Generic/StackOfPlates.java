@@ -22,13 +22,12 @@ public class StackOfPlates<E> {
             stacks.add(stack);
         }
 
-        if (!stack.isFull()) {
-            insert(stack, insertTop, value);
-        } else {
+        if (stack.isFull()) {
             E top = stack.pop();
             rightShift(index + 1, top, false);
-            insert(stack, insertTop, value);
         }
+
+        stack.insert(insertTop, value);
     }
 
     private void insert(Stack<E> stack, boolean insertTop, E value) {
