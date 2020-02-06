@@ -136,4 +136,30 @@ public class BinaryTree<E> extends AbstractCollection {
             return null;
         }
     }
+
+    public class LevelOrder extends BinaryTreeIterator {
+        Queue<BinaryTree<E>> queue = new ArrayDequeue<BinaryTree<E>>();
+
+        public boolean hasNext() {
+            return !rootDone || !queue.isEmpty();
+        }
+
+        public Object next() {
+            if (!rootDone) {
+                if (left != null) queue.add(left);
+                if (right != null) queue.add(right);
+                rootDone = true;
+                return root;
+            }
+
+            if (!queue.isEmpty()) {
+                BinaryTree<E> tree = queue.remove();
+                if (tree.left != null) queue.add(tree.left);
+                if (tree.right != null) queue.add(tree.right);
+                return tree.root;
+            }
+
+            return null;
+        }
+    }
 }
