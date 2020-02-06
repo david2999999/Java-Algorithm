@@ -40,4 +40,48 @@ public class BinaryTree<E> extends AbstractCollection {
                 that.left.equals(this.left) &&
                 that.parent.equals(this.parent);
     }
+
+    public int hashCode() {
+        return root.hashCode() + left.hashCode() + right.hashCode() + size;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public Iterator iterator() {
+        return new java.util.Iterator() { // anonymous inner class
+            private boolean rootDone;
+            private Iterator lIt, rIt; // child iterators
+
+            public boolean hasNext() {
+                return !rootDone || lIt != null && lIt.hasNext()
+                        || rIt != null && rIt.hasNext();
+            }
+
+            public Object next() {
+                if (rootDone) {
+                    if (lIt != null && lIt.hasNext()) {
+                        return lIt.next();
+                    }
+                    if (rIt != null && rIt.hasNext()) {
+                        return rIt.next();
+                    }
+                    return null;
+                }
+                if (left != null) {
+                    lIt = left.iterator();
+                }
+                if (right != null) {
+                    rIt = right.iterator();
+                }
+                rootDone = true;
+                return root;
+            }
+
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
 }
