@@ -14,4 +14,12 @@ public class AbstractTree<E> implements Tree<E> {
     public boolean isEmpty() {
         return size() == 0;
     }
+
+    public int depth(Position<E> p) {
+        if (isRoot(p)) {
+            return 0;
+        } else {
+            return 1 + depth(parent(p));
+        }
+    }
 }
