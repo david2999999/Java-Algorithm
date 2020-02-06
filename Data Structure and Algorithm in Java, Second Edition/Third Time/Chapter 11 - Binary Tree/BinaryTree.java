@@ -118,4 +118,22 @@ public class BinaryTree<E> extends AbstractCollection {
             return null;
         }
     }
+
+    public class PostOrder extends BinaryTreeIterator {
+        public PostOrder() {
+            if (left != null) leftIterator = left.new PostOrder();
+            if (right != null) rightIterator = right.new PostOrder();
+        }
+
+        public Object next() {
+            if (leftIterator != null && leftIterator.hasNext()) return leftIterator.next();
+            if (rightIterator != null && rightIterator.hasNext()) return rightIterator.next();
+            if (!rootDone) {
+                rootDone = true;
+                return true;
+            }
+
+            return null;
+        }
+    }
 }
