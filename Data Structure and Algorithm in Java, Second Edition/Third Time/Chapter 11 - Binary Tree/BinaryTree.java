@@ -84,4 +84,38 @@ public class BinaryTree<E> extends AbstractCollection {
             }
         };
     }
+
+    public abstract class BinaryTreeIterator implements Iterator {
+        protected boolean rootDone;
+        protected Iterator leftIterator, rightIterator;
+
+        public boolean hasNext() {
+            return !rootDone ||
+                    leftIterator != null && leftIterator.hasNext() ||
+                    rightIterator != null && rightIterator.hasNext();
+        }
+
+        public abstract Object next();
+        public void remove () {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    public class PreOrder extends BinaryTreeIterator {
+        public PreOrder() {
+            if (left != null) lIt = left.new PreOrder();
+            if (right != null) rIt = right.new PreOrder();
+        }
+
+        public Object next() {
+            if (!rootDone) {
+                rootDone = true;
+                return root;
+            }
+
+            if (leftIterator != null && leftIterator.hasNext()) return leftIterator.next();
+            if (rightIterator != null && rightIterator.hasNext()) return rightIterator.next();
+            return null;
+        }
+    }
 }
