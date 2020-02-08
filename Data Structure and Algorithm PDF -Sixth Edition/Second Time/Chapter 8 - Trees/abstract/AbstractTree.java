@@ -30,4 +30,24 @@ public class AbstractTree<E> implements Tree<E> {
 
         return h;
     }
+
+    private class ElementIterator implements Iterator<E> {
+        Iterator<Position<E>> positionIterator = positions().iterator();
+
+        public boolean hasNext() {
+            return positionIterator.hasNext();
+        }
+
+        public E next() {
+            return positionIterator.next().getElement();
+        }
+
+        public void remove() {
+            positionIterator.remove();
+        }
+    }
+
+    public Iterator<E> iterator() {
+        return new ElementIterator();
+    }
 }
