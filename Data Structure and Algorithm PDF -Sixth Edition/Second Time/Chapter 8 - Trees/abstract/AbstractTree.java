@@ -87,7 +87,37 @@ public class AbstractTree<E> implements Tree<E> {
 
         snapshot.add(p);
     }
+
+    public Iterable<Position<E>> breathFirst() {
+        List<Position<E>> snapshot = new ArrayList<>();
+        if (!isEmpty()) {
+            Queue<Position<E>> fringe = new LinkedQueue<>();
+            fringe.enqueue(root());
+
+            while (!fringe.isEmpty()) {
+                Position<E> p = fringe.dequeue();
+                snapshot.add(p);
+
+                for (Position<E> child: children(p)) {
+                    fringe.enqueue(child);
+                }
+            }
+        }
+
+        return snapshot;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
