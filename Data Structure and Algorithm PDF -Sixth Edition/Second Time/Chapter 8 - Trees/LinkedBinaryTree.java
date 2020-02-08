@@ -49,4 +49,24 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         return new Node<E>(e, parent, left, right);
     }
 
+    protected Node<E> root = null;
+    private int size = 0;
+
+    public LinkedBinaryTree() {}
+
+    protected Node<E> validate(Position<E> p) throws IllegalArgumentException {
+        if (!(p instanceof Node))
+            throw new IllegalArgumentException("Not valid position type");
+
+        Node<E> node = (Node<E>) p;
+        if (node.getParent() == node) {
+            throw new IllegalArgumentException("P is no longer in the tree");
+        }
+
+        return node;
+    }
+
+
+
+
 }
