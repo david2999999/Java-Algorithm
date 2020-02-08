@@ -80,4 +80,13 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
         upheap(heap.size() - 1);
         return newest;
     }
+
+    public Entry<K, V> removeMin() {
+        if (heap.isEmpty()) return null;
+        Entry<K, V> answer = heap.get(0);
+        swap(0, heap.size() - 1);
+        heap.remove(heap.size() - 1);
+        downheap(0);
+        return answer;
+    }
 }
