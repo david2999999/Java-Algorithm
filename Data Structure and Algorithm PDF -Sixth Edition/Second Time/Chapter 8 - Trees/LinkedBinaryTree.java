@@ -66,7 +66,26 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         return node;
     }
 
+    public int size() {
+        return size;
+    }
 
+    public Position<E> root() {
+        return root;
+    }
 
+    public Position<E> parent(Position<E> p) throws IllegalArgumentException {
+        Node<E> node = validate(p);
+        return node.getParent();
+    }
 
+    public Position<E> left(Position<E> p) throws IllegalArgumentException {
+        Node<E> node = validate(p);
+        return node.getLeft();
+    }
+
+    public Position<E> right(Position<E> p) throws IllegalArgumentException {
+        Node<E> node = validate(p);
+        return node.getRight();
+    }
 }
