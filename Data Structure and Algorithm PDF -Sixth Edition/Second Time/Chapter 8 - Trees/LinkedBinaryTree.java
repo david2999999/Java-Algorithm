@@ -44,4 +44,9 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
             this.right = right;
         }
     }
+
+    protected Node<E> createNode(E e, Node<E> parent, Node<E> left, Node<E> right) {
+        return new Node<E>(e, parent, left, right);
+    }
+
 }
