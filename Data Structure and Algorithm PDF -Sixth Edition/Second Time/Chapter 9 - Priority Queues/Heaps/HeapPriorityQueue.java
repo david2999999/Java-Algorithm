@@ -34,4 +34,13 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
         heap.set(i, heap.get(j));
         heap.set(j, temp);
     }
+
+    protected void upheap(int currentIndex) {
+        while (currentIndex > 0) {
+            int parentIndex = parent(currentIndex);
+            if (compare(heap.get(currentIndex), heap.get(parentIndex)) > 0) break;
+            swap(currentIndex, parentIndex);
+            currentIndex = parentIndex;
+        }
+    }
 }
