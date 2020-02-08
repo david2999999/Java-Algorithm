@@ -7,14 +7,29 @@ public class TableOfContent {
         }
     }
 
-    private static String createIndentedElement(int numOfSpaces, E element) {
-        StringBuilder sb = new StringBuilder();
+    public static <E> void printPreorderLabel(Tree<E> tree, Position<E> p,
+                                              ArrayList<Integer> path) {
+        int depth = path.size();
+        System.out.print(spaces(2 * d));
 
-        while (numOfSpaces > 0) {
-            numOfSpaces--;
-            sb.append(" ");
+        for (int j = 0; j < path.size(); j++) {
+            System.out.print(path.get(j) + (j == d - 1 ? " " : "."));
         }
 
+        System.out.println(p.getElement());
+        path.add(1);
+
+        for (Position<E> c: tree.children(p)) {
+            printPreorderLabel(tree, c, path);
+            path.set(depth, path.get(depth) + 1);
+        }
+
+        path.remove(depth);
+    }
+
+    private static String createIndentedElement(int numOfSpaces, E element) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(spaces(numOfSpaces));
         sb.append(element);
         return sb.toString();
     }
