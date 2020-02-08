@@ -63,4 +63,21 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
             currentIndex = smallChildIndex;
         }
     }
+
+    public int size() {
+        return heap.size();
+    }
+
+    public Entry<K, V> min() {
+        if (heap.isEmpty()) return null;
+        return heap.get(0);
+    }
+
+    public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+        checkKey(key);
+        Entry<K, V> newest = new PQEntry<>(key, value);
+        heap.add(newest);
+        upheap(heap.size() - 1);
+        return newest;
+    }
 }
