@@ -50,4 +50,24 @@ public class AbstractTree<E> implements Tree<E> {
     public Iterator<E> iterator() {
         return new ElementIterator();
     }
+
+    public Iterable<Position<E>> positions() {
+        return preorder();
+    }
+
+    public Iterable<Position<E>> preorder() {
+        List<Position<E>> snapshot = new ArrayList<>();
+        if (!isEmpty()) {
+            preOrderSubtree(root(), snapshot);
+        }
+
+        return snapshot;
+    }
+
+    private void preOrderSubtree(Position<E> p, List<Position<E>> snapshot) {
+        snapshot.add(p);
+        for (Position<E> c: children(p)) {
+            preOrderSubtree(c, snapshot);
+        }
+    }
 }
