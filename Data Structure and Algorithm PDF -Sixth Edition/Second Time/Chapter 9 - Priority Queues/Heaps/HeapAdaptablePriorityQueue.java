@@ -58,6 +58,19 @@ public class HeapAdaptablePriorityQueue<K, V> extends HeapPriorityQueue<K, V>
         upheap(heap.size() - 1);
         return newest;
     }
+
+    public void remove(Entry<K, V> entry) throws IllegalArgumentException {
+        AdaptablePQEntry<K, V> locator = validate(entry);
+        int index = locator.getIndex();
+
+        if (index == heap.size() - 1) {
+            heap.remove(heap.size() - 1);
+        } else {
+            swap(index, heap.size() - 1);
+            heap.remove(heap.size() - 1);
+            bubble(index);
+        }
+    }
 }
 
 
