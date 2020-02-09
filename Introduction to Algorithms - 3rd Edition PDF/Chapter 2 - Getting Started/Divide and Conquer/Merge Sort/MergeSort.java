@@ -1,4 +1,4 @@
-public class Merge {
+public class mergeSort {
     public static void main(String[] args) {
         int[] arr = {
                 23, 124, 125, 123, 512, 21, 42, 52, 199
@@ -9,6 +9,19 @@ public class Merge {
         int mid = (low + high) / 2;
 
         merge(arr, low, mid, high);
+    }
+
+    public void sort(int[] arr) {
+        sort(arr, 0, arr.length - 1);
+    }
+
+    private void sort(int[] arr, int low, int high) {
+        if (low < high) {
+            int mid = (low + high) / 2;
+            sort(arr, low, mid);
+            sort(arr, mid + 1, high);
+            merge(arr, low, mid, high);
+        }
     }
 
     public void merge(int[] arr, int low, int mid, int high) {
