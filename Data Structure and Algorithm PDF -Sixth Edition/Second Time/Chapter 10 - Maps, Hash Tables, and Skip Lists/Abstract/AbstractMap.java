@@ -60,6 +60,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
 
     private class ValueIterator implements Iterator<V> {
         private Iterator<Entry<K, V>> entries = entrySet().iterator();
+
         public boolean hasNext() {
             return entries.hasNext();
         }
