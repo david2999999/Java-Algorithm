@@ -21,16 +21,16 @@ public class LinkedList<T> {
     public boolean delete(T data) {
         if (isEmpty()) return false;
 
-        ListElement<T> elem = head;
+        ListElement<T> current = head;
 
-        if (elem.value() == data) {
+        if (current.value() == data) {
             head = head.next();
             return true;
         }
 
-        while (elem.next() != null) {
-            if (elem.next().value() == data) {
-                elem.setNext(elem.next().next());
+        while (current.next() != null) {
+            if (current.next().value() == data) {
+                current.setNext(current.next().next());
                 return true;
             }
         }
