@@ -34,4 +34,33 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
             return table.get(j).setValue(value);
         }
     }
+
+    public V remove(K key) {
+        int index = findIndex(key);
+        int lastIndex = size() - 1;
+
+        if (index == -1) return null;
+
+        V answer = table.get(index).getValue();
+        if (index != lastIndex) {
+            table.set(index, table.get(lastIndex));
+        }
+
+        table.remove(lastIndex);
+        return answer;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
