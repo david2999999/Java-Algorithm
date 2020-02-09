@@ -38,17 +38,44 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
 
     public V remove(K key) {
         int index = findIndex(key);
-        int lastIndex = size() - 1;
-
         if (index == NOT_FOUND) return null;
 
         V answer = table.get(index).getValue();
+
+        int lastIndex = size() - 1;
         if (index != lastIndex) {
             table.set(index, table.get(lastIndex));
         }
 
         table.remove(lastIndex);
         return answer;
+    }
+
+    private class EntryIterator implements Iterator<Entry<K, V>> {
+        private int j = 0;
+
+        public boolean hasNext() {
+            return j < table.size();
+        }
+
+        public Entry<K, V> next() {
+            if (j == table.size()) throw new NoSuchElementException();
+            return table.get(j++);
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    private class EntryIterable implements Iterable<Entry<K, V>> {
+        public Iterator<Entry<K, V>> iterator() {
+            return new EntryIterator();
+        }
+    }
+
+    public Iterable<Entry<K, V>> entrySet() {
+        return new EntryIterable();
     }
 }
 
