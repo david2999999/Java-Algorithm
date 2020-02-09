@@ -15,4 +15,25 @@ public class HeapAdaptablePriorityQueue<K, V> extends HeapPriorityQueue<K, V>
             this.index = index;
         }
     }
+
+    public HeapAdaptablePriorityQueue() {
+        super();
+    }
+
+    public HeapAdaptablePriorityQueue(Comparator<K> comp) {
+        super(comp);
+    }
+
+    protected AdaptablePQEntry<K, V> validate(Entry<K, V> entry) throws IllegalArgumentException {
+        if (!(entry instanceof AdaptablePQEntry))
+            throw new IllegalArgumentException("Invalid entry");
+
+        AdaptablePQEntry<K, V> locator = (AdaptablePQEntry<K, V>) entry;
+        int index = locator.getIndex();
+
+        if (index >= heap.size() || heap.get(index) != locator)
+            throw new IllegalArgumentException("Invalid entry");
+
+        return locator;
+    }
 }
