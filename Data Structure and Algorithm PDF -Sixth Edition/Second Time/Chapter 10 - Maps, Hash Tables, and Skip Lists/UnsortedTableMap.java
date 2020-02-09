@@ -23,4 +23,15 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
         if (j == -1) return null;
         return table.get(i).getValue();
     }
+
+    public V put(K key, V value) {
+        int j = findIndex(key);
+
+        if (j == -1) {
+            table.add(new MapEntry<K, V>(key, value));
+            return null;
+        } else {
+            return table.get(j).setValue(value);
+        }
+    }
 }
