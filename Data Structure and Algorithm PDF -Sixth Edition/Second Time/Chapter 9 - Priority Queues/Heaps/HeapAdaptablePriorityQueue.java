@@ -36,4 +36,39 @@ public class HeapAdaptablePriorityQueue<K, V> extends HeapPriorityQueue<K, V>
 
         return locator;
     }
+
+    protected void swap(int i, int j) {
+        super.swap(i, j);
+        ((AdaptablePQEntry<K, V>) heap.get(i)).setIndex(i);
+        ((AdaptablePQEntry<K, V>) heap.get(j)).setIndex(j);
+    }
+
+    protected void bubble(int j) {
+        if (j > 0 && compare(heap.get(j), heap.get(parent(j))) < 0) {
+            upheap(j);
+        } else {
+            downheap(j);
+        }
+    }
+
+    public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+        checkKey(key);
+        Entry<K, V> newest = new AdaptablePQEntry<>(key, value, heap.size());
+        heap.add(newest);
+        upheap(heap.size() - 1);
+        return newest;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
