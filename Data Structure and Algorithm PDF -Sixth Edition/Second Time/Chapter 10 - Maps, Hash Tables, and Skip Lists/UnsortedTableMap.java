@@ -1,17 +1,18 @@
 public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
-    private ArrayList<MapEntry<k, V>> table = new ArrayList<>();
+    private static final int NOT_FOUND = -1;
+    private ArrayList<MapEntry<K, V>> table = new ArrayList<>();
 
     public UnsortedTableMap() {}
 
     private int findIndex(K key) {
-        int n = table.size();
-        for (int j = 0; j < n; j++) {
-            if (table.get(j).getKey().equals(key)) {
-                return j;
+        int size = table.size();
+        for (int index = 0; index < size; index++) {
+            if (table.get(index).getKey().equals(key)) {
+                return index;
             }
         }
 
-        return -1;
+        return NOT_FOUND;
     }
 
     public int size() {
@@ -19,19 +20,19 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
     }
 
     public V get(K key) {
-        int j = findIndex(key);
-        if (j == -1) return null;
+        int index = findIndex(key);
+        if (index == NOT_FOUND) return null;
         return table.get(i).getValue();
     }
 
     public V put(K key, V value) {
-        int j = findIndex(key);
+        int index = findIndex(key);
 
-        if (j == -1) {
+        if (index == NOT_FOUND) {
             table.add(new MapEntry<K, V>(key, value));
             return null;
         } else {
-            return table.get(j).setValue(value);
+            return table.get(index).setValue(value);
         }
     }
 
@@ -39,7 +40,7 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
         int index = findIndex(key);
         int lastIndex = size() - 1;
 
-        if (index == -1) return null;
+        if (index == NOT_FOUND) return null;
 
         V answer = table.get(index).getValue();
         if (index != lastIndex) {
