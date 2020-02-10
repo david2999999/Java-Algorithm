@@ -19,6 +19,22 @@ public class Graph {
         start.addNeighbor(end);
     }
 
+    public void createNode(String name) {
+        if (!map.containsKey(name)) {
+            Project newProject = new Project(name);
+            nodes.add(newProject);
+            map.put(name, newProject);
+        }
+    }
+
+    public void addDependencies(String[][] dependencies) {
+        for (String[] element: dependencies) {
+            String dependency = element[0];
+            String dependent = element[1];
+            addEdge(dependency, dependent);
+        }
+    }
+
     public ArrayList<Project> getNodes() {
         return nodes;
     }
