@@ -56,4 +56,43 @@ public class SortedTableMap<K, V> extends AbstractSortedMap<K, V> {
 
         return table.remove(index).getValue();
     }
+
+    private Entry<K, V> safeEntry(int index) {
+        if (index < 0 || index >= table.size()) return null;
+        return table.get(index);
+    }
+
+    public Entry<K, V> firstEntry() {
+        return safeEntry(0);
+    }
+
+    public Entry<K, V> lastEntry() {
+        return safeEntry(table.size() - 1);
+    }
+
+    public Entry<K, V> ceilingEntry(K key) {
+        return safeEntry(findIndex(key));
+    }
+
+    public Entry<K, V> floor(K key) {
+        int index = findIndex(key);
+        if (index == size() || !key.equals(table.get(index).getKey())) {
+            index--;
+        }
+
+        return safeEntry(index);
+    }
+
+    public Entry<K, V> lowerEntry(K key) {
+        return safeEntry(findIndex(key) - 1);
+    }
+
+    public Entry<K, V> higherEntry(K key) {
+        int index = findIndex(key);
+        if (index < size() && key.equals(table.get(index).getKey())) {
+            index++;
+        }
+
+        return safeEntry(index);
+    }
 }
