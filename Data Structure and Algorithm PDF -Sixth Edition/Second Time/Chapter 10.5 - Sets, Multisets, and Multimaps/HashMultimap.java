@@ -61,6 +61,19 @@ public class HashMultimap<K, V> {
 
         return secondary;
     }
+
+    public Iterable<Map.Entry<K, V>> entries() {
+        List<Map.Entry<K, V>> result = new ArrayList<>();
+
+        for (Map.Entry<K, List<V>> secondary: map.entrySet()) {
+            K key = secondary.getKey();
+            for (V value: secondary.getValue()) {
+                result.add(new AbstractMap.SimpleEntry<K, V>(key, value));
+            }
+        }
+
+        return result;
+    }
 }
 
 
