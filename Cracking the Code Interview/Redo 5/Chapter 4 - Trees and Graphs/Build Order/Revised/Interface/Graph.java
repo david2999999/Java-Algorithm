@@ -1,5 +1,5 @@
 public interface Graph {
-    void addEdge(Node start, Node end);
+    void addEdge(String start, String end);
     void createNode(String name);
     Node getOrCreateNode(String name);
 }
