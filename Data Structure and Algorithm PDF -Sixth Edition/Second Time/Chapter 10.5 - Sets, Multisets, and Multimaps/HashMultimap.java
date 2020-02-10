@@ -32,4 +32,42 @@ public class HashMultimap<K, V> {
         secondary.add(value);
         total++;
     }
+
+    public boolean remove(K key, V value) {
+        boolean wasRemoved = false;
+        List<V> secondary = map.get(key);
+        if (secondary != null) {
+            wasRemoved = secondary.remove(value);
+
+            if (wasRemoved) {
+                total--;
+                if (secondary.isEmpty()) {
+                    map.remove(key);
+                }
+            }
+        }
+
+        return wasRemoved;
+    }
+
+    public Iterable<V> removeAll(K key) {
+        List<V> secondary = map.get(key);
+        if (secondary != null) {
+            total -= secondary.size();
+            map.remove(key);
+        } else {
+            secondary = new ArrayList<>();
+        }
+
+        return secondary;
+    }
 }
+
+
+
+
+
+
+
+
+
