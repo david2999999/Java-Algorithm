@@ -95,4 +95,24 @@ public class SortedTableMap<K, V> extends AbstractSortedMap<K, V> {
 
         return safeEntry(index);
     }
+
+    private Iterable<Entry<K, V>> snapshot(int startIndex, K stop) {
+        ArrayList<Entry<K, V>> buffer = new ArrayList<>();
+        int currentIndex = startIndex;
+
+        while (currentIndex < table.size() &&
+                (stop == null || compare(stop, table.get(currentIndex)) > 0)) {
+            buffer.add(table.get(currentIndex++));
+        }
+
+        return buffer;
+    }
+
+    public Iterable<Entry<K, V>> entrySet() {
+        return snapshot(0, null);
+    }
+
+    public Iterable<Entry<K, V>> subMap(K fromKey, K toKey) {
+        return snapshot(findIndex(fromKey), toKey);
+    }
 }
