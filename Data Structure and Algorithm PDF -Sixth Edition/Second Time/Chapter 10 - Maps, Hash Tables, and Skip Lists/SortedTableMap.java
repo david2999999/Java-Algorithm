@@ -37,4 +37,14 @@ public class SortedTableMap<K, V> extends AbstractSortedMap<K, V> {
         if (index == size() || compare(key, table.get(index)) != 0) return null;
         return table.get(index).getValue();
     }
+
+    public V put(K key, V value) {
+        int index = findIndex(key);
+        if (index < size() && compare(key, table.get(index)) == 0) {
+            return table.get(index).setValue(value);
+        }
+
+        table.add(index, new MapEntry<K, V>(key, value));
+        return null;
+    }
 }
