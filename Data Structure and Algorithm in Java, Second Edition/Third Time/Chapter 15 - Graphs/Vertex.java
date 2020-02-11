@@ -5,4 +5,5 @@ public class Vertex<E> {
     public boolean done;
     public int distance;
     public Vertex<E> back;
+    public boolean visited;
 }
