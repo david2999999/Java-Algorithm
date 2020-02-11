@@ -29,4 +29,35 @@ public class BalanceableBinaryTree<K, V>
                                            Node<Entry<K, V>> left, Node<Entry<K, V>> right) {
         return new BSTNode<>(e, parent, left, right);
     }
+
+    private void relink(Node<Entry<K, V>> parent, Node<Entry<K, V>> child,
+                        boolean makeLeftChild) {
+        child.setParent(parent);
+        if (makeLeftChild) {
+            parent.setLeft(child);
+        } else {
+            parent.setRight(child);
+        }
+    }
+
+    public void rotate(Position<Entry<K, V>> p) {
+        Node<Entry<K, V>> x = validate(p);
+        Node<Entry<K, V>> y = x.getParent();
+        Node<Entry<K, V>> z = y.getParent();
+
+        if (z == null) {
+            root = x;
+            x.setParent(null);
+        } else {
+            relink(z, x, y == z.getLeft());
+        }
+
+        if (x == y.getLeft()) {
+            relink(y, x.getRight(), true);
+            relink(x, y, false);
+        } else {
+            relink(y, x.getLeft(), false);
+            relink(x, y, true);
+        }
+    }
 }
