@@ -16,4 +16,17 @@ public class BalanceableBinaryTree<K, V>
             aux = value;
         }
     }
+
+    public int getAux(Position<Entry<K, V>> p) {
+        return ((BSTNode<Entry<K, V>>)p).getAux();
+    }
+
+    public void setAux(Position<Entry<K, V>> p, int value) {
+        ((BSTNode<Entry<K, V>>)p).setAux(value);
+    }
+
+    protected Node<Entry<K, V>> createNode(Entry<K, V> e, Node<Entry<K, V>> parent,
+                                           Node<Entry<K, V>> left, Node<Entry<K, V>> right) {
+        return new BSTNode<>(e, parent, left, right);
+    }
 }
