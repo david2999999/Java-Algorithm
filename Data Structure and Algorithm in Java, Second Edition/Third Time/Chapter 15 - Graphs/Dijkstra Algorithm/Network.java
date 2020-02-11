@@ -2,20 +2,6 @@ public class Network<E> {
     private List<Vertex<E>> vertexes = new ArrayList<>();
     private Vertex<E> start = new Vertex<E>();
 
-    private static class Vertex<E> {
-        public E value;
-        public List<Edge> edges;
-        public List<Vertex<E>> neighbors;
-        public boolean done;
-        public int distance;
-        public Vertex<E> back;
-    }
-
-    private class Edge<E> {
-        public Vertex<E> to;
-        public int weight;
-    }
-
     public Network() {
         start.distance = 0;
         for (Vertex<E> vertex: vertexes) {
