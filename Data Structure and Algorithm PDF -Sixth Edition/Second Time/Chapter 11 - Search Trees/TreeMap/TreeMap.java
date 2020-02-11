@@ -24,4 +24,20 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
     protected Position<Entry<K, V>> root() {
         return tree.root();
     }
+
+    private Position<Entry<K, V>> treeSearch(Position<Entry<K, V>> p, K key) {
+        if (isExternal(p)) {
+            return p;
+        }
+
+        int comp = compare(key, p.getElement());
+
+        if (comp == 0) {
+            return p;
+        } else if (comp < 0) {
+            return treeSearch(left(p), key);
+        } else {
+            return treeSearch(right(p), key);
+        }
+    }
 }
