@@ -60,12 +60,12 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
 
         if (isExternal(position)) {
             expandExternal(position, newEntry);
-            rebalanceInsert(p);
+            rebalanceInsert(position);
             return null;
         } else {
             V old = position.getElement().getValue();
             set(position, newEntry);
-            rebalanceAccess(p);
+            rebalanceAccess(position);
             return old;
         }
     }
@@ -75,7 +75,7 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
         Position<Entry<K, V>> position = treeSearch(root(), key);
 
         if (isExternal(position)) {
-            rebalanceAccess(p);
+            rebalanceAccess(position);
             return null;
         } else {
             V old = position.getElement().getValue();
@@ -85,10 +85,10 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
                 position = replacement;
             }
 
-            Position<Entry<K, V>> leaf = (isExternal(left(p)) ? left(p) : right(p));
+            Position<Entry<K, V>> leaf = (isExternal(left(position)) ? left(position) : right(position));
             Position<Entry<K, V>> sibling = sibling(leaf);
             remove(leaf);
-            remove(p);
+            remove(position);
             rebalanceDelete(sibling);
             return old;
         }
@@ -150,7 +150,7 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
     public Iterable<Entry<K, V>> entrySet() {
         ArrayList<Entry<K, V>> buffer = new ArrayList<>(size());
 
-        for (Position<Entry<K, V>> position: tree.inorder()) {
+        for (Position<Entry<K, V>> position: tree.inOrder()) {
             if (isInternal(position)) {
                 buffer.add(position.getElement());
             }
