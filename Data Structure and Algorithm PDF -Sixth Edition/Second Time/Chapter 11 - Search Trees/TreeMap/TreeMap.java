@@ -182,6 +182,10 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
             }
         }
     }
+
+    protected void rebalanceInsert(Position<Entry<K,V>> p) { }
+    protected void rebalanceDelete(Position<Entry<K,V>> p) { }
+    protected void rebalanceAccess(Position<Entry<K,V>> p) { }
 }
 
 
