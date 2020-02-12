@@ -2,8 +2,25 @@ public class Knapsack {
     private int[][] matrix;
 
     public Knapsack(int maxWeight, int[] weights, int[] values) {
-        this.matrix = new int[weights.length + 1][maxWeight + 1];
+        if (weights.length == 0 || values.length == 0)
+            throw new IllegalArgumentException();
+
+        int highestWeight = getHighestWeight(weights);
+
+        this.matrix = new int[highestWeight + 1][maxWeight + 1];
         generateKnapsackMatrix(maxWeight, weights, values);
+    }
+
+    private int getHighestWeight(int[] weights) {
+        int highestWeight = 0;
+
+        for (int i = 0; i < weights.length; i++) {
+            if (weights[i] > highestWeight) {
+                highestWeight = weights[i];
+            }
+        }
+
+        return highestWeight;
     }
 
     private void generateKnapsackMatrix(int maxWeight, int[] weights, int[] values) {
@@ -11,9 +28,19 @@ public class Knapsack {
             for (int maxWeightIndex = 1; maxWeightIndex < matrix[weightIndex].length; maxWeightIndex++) {
                 matrix[weightIndex][maxWeightIndex] = Math.max(
                         excludeValue(weightIndex, maxWeightIndex),
-                        includeValue(weightIndex, maxWeightIndex, values[weightIndex - 1]));
+                        includeValue(weightIndex, maxWeightIndex, getValue(weightIndex, weights, values)));
             }
         }
+    }
+
+    private int getValue(int weightIndex, int[] weights, int[] values) {
+        for (int i = 0; i < weights.length; i++) {
+            if (weights[i] == weightIndex) {
+                return values[i];
+            }
+        }
+
+        return 0;
     }
 
     private int excludeValue(int weightIndex, int maxWeightIndex) {
@@ -50,9 +77,9 @@ public class Knapsack {
     }
 
     public static void main(String[] args) {
-        int[] weights = {1, 2, 3};
-        int[] values = {6, 10, 12};
-        Knapsack knapsack = new Knapsack(5, weights, values);
+        int[] weights = {10, 20, 30};
+        int[] values = {60, 100, 120};
+        Knapsack knapsack = new Knapsack(50, weights, values);
         knapsack.print();
 
         System.out.println("Max value = " + knapsack.getMaxValue());
