@@ -6,10 +6,10 @@ public class Knapsack {
             throw new IllegalArgumentException();
 
         this.matrix = new int[weights.length + 1][maxWeight + 1];
-        generateKnapsackMatrix(maxWeight, weights, values);
+        generateKnapsackMatrix(weights, values);
     }
 
-    private void generateKnapsackMatrix(int maxWeight, int[] weights, int[] values) {
+    private void generateKnapsackMatrix(int[] weights, int[] values) {
         for (int weightIndex = 1; weightIndex < matrix.length; weightIndex++) {
             int value = values[weightIndex - 1];
             int weight = weights[weightIndex - 1];
