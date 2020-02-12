@@ -5,55 +5,34 @@ public class Knapsack {
         if (weights.length == 0 || values.length == 0)
             throw new IllegalArgumentException();
 
-        int highestWeight = getHighestWeight(weights);
-
-        this.matrix = new int[highestWeight + 1][maxWeight + 1];
+        this.matrix = new int[weights.length + 1][maxWeight + 1];
         generateKnapsackMatrix(maxWeight, weights, values);
-    }
-
-    private int getHighestWeight(int[] weights) {
-        int highestWeight = 0;
-
-        for (int i = 0; i < weights.length; i++) {
-            if (weights[i] > highestWeight) {
-                highestWeight = weights[i];
-            }
-        }
-
-        return highestWeight;
     }
 
     private void generateKnapsackMatrix(int maxWeight, int[] weights, int[] values) {
         for (int weightIndex = 1; weightIndex < matrix.length; weightIndex++) {
+            int value = values[weightIndex - 1];
+            int weight = weights[weightIndex - 1];
+
             for (int maxWeightIndex = 1; maxWeightIndex < matrix[weightIndex].length; maxWeightIndex++) {
                 matrix[weightIndex][maxWeightIndex] = Math.max(
                         excludeValue(weightIndex, maxWeightIndex),
-                        includeValue(weightIndex, maxWeightIndex, getValue(weightIndex, weights, values)));
+                        includeValue(weightIndex, maxWeightIndex, weight, value));
             }
         }
-    }
-
-    private int getValue(int weightIndex, int[] weights, int[] values) {
-        for (int i = 0; i < weights.length; i++) {
-            if (weights[i] == weightIndex) {
-                return values[i];
-            }
-        }
-
-        return 0;
     }
 
     private int excludeValue(int weightIndex, int maxWeightIndex) {
         return matrix[weightIndex - 1][maxWeightIndex];
     }
 
-    private int includeValue(int weightIndex, int maxWeightIndex, int value) {
-        int difference = maxWeightIndex - weightIndex;
+    private int includeValue(int weightIndex, int maxWeightIndex, int weight, int value) {
+        int difference = maxWeightIndex - weight;
         int maxComplementValue = 0;
 
         if (difference < 0) {
             return matrix[weightIndex - 1][maxWeightIndex];
-        }  else if (difference >= weightIndex) {
+        } else if (difference >= weight) {
             maxComplementValue = matrix[weightIndex - 1][maxWeightIndex];
         } else {
             maxComplementValue = matrix[weightIndex][difference];
@@ -77,9 +56,9 @@ public class Knapsack {
     }
 
     public static void main(String[] args) {
-        int[] weights = {10, 20, 30};
-        int[] values = {60, 100, 120};
-        Knapsack knapsack = new Knapsack(50, weights, values);
+        int[] weights = {1, 2, 3};
+        int[] values = {6, 10, 12};
+        Knapsack knapsack = new Knapsack(5, weights, values);
         knapsack.print();
 
         System.out.println("Max value = " + knapsack.getMaxValue());
