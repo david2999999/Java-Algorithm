@@ -1,6 +1,6 @@
 public class QuickSortArray {
     public <K> void sort(K[] arr) {
-        return sort(arr, new Comparator<K>(), 0, arr.length - 1);
+        sort(arr, new Comparator<K>(), 0, arr.length - 1);
     }
 
     public <K> void sort(K[] arr, Comparator<K> comp, int low, int high) {
@@ -31,7 +31,7 @@ public class QuickSortArray {
         sort(arr, comp, left + 1, high);
     }
 
-    private void swap(K[] arr, int index1, int index2) {
+    private <K> void swap(K[] arr, int index1, int index2) {
         K temp = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = temp;
