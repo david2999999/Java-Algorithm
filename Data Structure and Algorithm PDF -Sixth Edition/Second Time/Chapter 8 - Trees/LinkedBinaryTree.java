@@ -180,4 +180,16 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         node.setParent(node);
         return temp;
     }
+
+    public static <V, E> void DFS(Graph<V, E> g, Vertex<V> u, Set<Vertex<V>> known,
+                                  Map<Vertex<V>, Edge<E>> forest) {
+        known.add(u);
+        for (Edge<E> e: g.outgoingEdges(u)) {
+            Vertex<V> v = g.opposite(u, e);
+            if (!known.contains(v)) {
+                forest.put(v, e);
+                DFS(g, v, known, forest);
+            }
+        }
+    }
 }
