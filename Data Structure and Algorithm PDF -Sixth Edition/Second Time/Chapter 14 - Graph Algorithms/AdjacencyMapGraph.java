@@ -116,4 +116,17 @@ public class AdjacencyMapGraph<V, E> implements Graph<V, E> {
         InnerEdge<E> edge = validate(e);
         return edge.getEndpoints();
     }
+
+    public Vertex<V> opposite(Vertex<V> v, Edge<E> e) {
+        InnerEdge<E> edge = validate(e);
+        Vertex<V>[] endpoints = edge.getEndpoints();
+
+        if (endpoints[0] == v) {
+            return endpoints[1];
+        } else if (endpoints[1] == v) {
+            return endpoints[0];
+        } else {
+            throw new IllegalArgumentException("v is not incident to this edge.");
+        }
+    }
 }
