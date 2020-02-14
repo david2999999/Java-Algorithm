@@ -35,4 +35,31 @@ public class AdjacencyMapGraph {
             return incoming;
         }
     }
+
+    private class InnerEdge<E> implements Edge<E> {
+        private E element;
+        private Position<Edge<E>> position;
+        private Vertex<V>[] endpoints;
+
+        public InnerEdge(Vertex<V> u, Vertex<V> v, E element) {
+            this.element = element;
+            endpoints = (Vertex<V>[]) new Vertex[]{u, v};
+        }
+
+        public E getElement() {
+            return element;
+        }
+
+        public Position<Edge<E>> getPosition() {
+            return position;
+        }
+
+        public void setPosition(Position<Edge<E>> position) {
+            this.position = position;
+        }
+
+        public Vertex<V>[] getEndpoints() {
+            return endpoints;
+        }
+    }
 }
