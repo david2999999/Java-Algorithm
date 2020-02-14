@@ -150,4 +150,18 @@ public class AdjacencyMapGraph<V, E> implements Graph<V, E> {
             throw new IllegalArgumentException("Edge from u to v exists.");
         }
     }
+
+    public void removeVertex(Vertex<V> v) {
+        InnerVertex<V> vert = validate(v);
+
+        for (Edge<E> e: vert.getOutgoing().values()) {
+            removeEdge(e);
+        }
+
+        for (Edge<E> e: vert.getIncoming().values()) {
+            removeEdge(e);
+        }
+
+        vertices.remove(vert.getPosition());
+    }
 }
