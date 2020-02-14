@@ -46,7 +46,6 @@ public class RotationalSymmetric {
             highIndex--;
         }
 
-
         return true;
     }
 
@@ -54,7 +53,6 @@ public class RotationalSymmetric {
         if (!rotationMap.containsKey(low)) {
             throw new IllegalArgumentException();
         }
-
 
         return rotationMap.get(low);
     }
