@@ -208,4 +208,17 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
         return path;
     }
+
+    public static <V, E> Map<Vertex<V>, Edge<E>> DFSComplete(Graph<V, E> g) {
+        Set<Vertex<V>> known = new HashSet<>();
+        Map<Vertex<V>, Edge<E>> forest = new ProbHashMap<>();
+
+        for (Vertex<V> u: g.vertices()) {
+            if (!known.contains(u)) {
+                DFS(g, u, known, forest);
+            }
+        }
+
+        return forest;
+    }
 }
