@@ -129,4 +129,25 @@ public class AdjacencyMapGraph<V, E> implements Graph<V, E> {
             throw new IllegalArgumentException("v is not incident to this edge.");
         }
     }
+
+    public Vertex<V> insertVertex(V element) {
+        InnerVertex<V> v = new InnerVertex<>(element, isDirected);
+        v.setPosition(vertices.addLast(v));
+        return v;
+    }
+
+    public Edge<E> insertEdge(Vertex<V> u, Vertex<V> v, E element) throws IllegalArgumentException {
+        if (getEdge(u, v) == null) {
+            InnerEdge<E> e = new InnerEdge<>(u, v, element);
+            e.setPosition(edges.addLast(e));
+
+            InnerVertex<V> origin = validate(u);
+            InnerVertex<V> dest = validate(v);
+            origin.getOutgoing().put(v, e);
+            dest.getIncoming().put(u, e);
+            return e;
+        } else {
+            throw new IllegalArgumentException("Edge from u to v exists.");
+        }
+    }
 }
