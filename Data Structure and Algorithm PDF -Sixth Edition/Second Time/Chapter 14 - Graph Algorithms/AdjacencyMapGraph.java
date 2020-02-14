@@ -1,4 +1,4 @@
-public class AdjacencyMapGraph {
+public class AdjacencyMapGraph<V, E> implements Graph<V, E> {
     private class InnerVertex<V> implements Vertex<V> {
         private V element;
         private Position<Vertex<V>> pos;
@@ -61,5 +61,59 @@ public class AdjacencyMapGraph {
         public Vertex<V>[] getEndpoints() {
             return endpoints;
         }
+    }
+
+    private boolean isDirected;
+    private PositionalList<Vertex<V>> vertices = new LinkedPositionalList<>();
+    private PositionalList<Edge<E>> edges = new LinkedPositionalList<>();
+
+    public AdjacencyMapGraph(boolean directed) {
+        this.isDirected = directed;
+    }
+
+    public int numVertices() {
+        return vertices.size();
+    }
+
+    public Iterable<Vertex<V>> vertices() {
+        return vertices;
+    }
+
+    public int numEdges() {
+        return edges.size();
+    }
+
+    public Iterable<Edge<E>> edges() {
+        return edges;
+    }
+
+    public int outDegree(Vertex<V> v) {
+        InnerVertex<V> vertex = validate(v);
+        return vertex.getOutgoing().size();
+    }
+
+    public Iterable<Edge<E>> outgoingEdges(Vertex<V> v) {
+        InnerVertex<V> vert = validate(v);
+        return vert.getOutgoing().values();
+    }
+
+    public int inDegree(Vertex<V> v) {
+        InnerVertex<V> vert = validate(v);
+        return vert.getIncoming().size();
+    }
+
+    public Iterable<Edge<E>> incomingEdges(Vertex<V> v) {
+        InnerVertex<V> vert = validate(v);
+        return vert.getIncoming().values();
+    }
+
+    public Edge<E> getEdge(Vertex<V> u, Vertex<V> v) {
+        InnerVertex<V> origin = validate(u);
+        return origin.getOutgoing().get(v);
+    }
+
+    public Vertex<V>[] endVertices(Edge<E> e) {
+        InnerEdge<E> edge = validate(e);
+        return edge.getEndpoints();
     }
 }
