@@ -192,4 +192,20 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
             }
         }
     }
+
+    public static <V, E> PositionalList<Edge<E>> constructPath(Graph<V, E> g, Vertex<V> u, Vertex<V> v,
+                                                               Map<Vertex<V>, Edge<E>> forest) {
+        PositionalList<Edge<E>> path = new LinkedPositionalList<>();
+
+        if (forest.get(v) != null) {
+            Vertex<V> walk = v;
+            while (walk != u) {
+                Edge<E> edge = forest.get(walk);
+                path.addFirst(edge);
+                walk = g.opposite(walk, edge);
+            }
+        }
+
+        return path;
+    }
 }
