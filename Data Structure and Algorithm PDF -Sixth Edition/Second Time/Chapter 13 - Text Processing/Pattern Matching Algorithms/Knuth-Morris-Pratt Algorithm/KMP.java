@@ -5,12 +5,12 @@ public class KMP {
 
         if (patternLength == 0) return 0;
 
-        int[] failTable(pattern);
+        int[] failTable = computeKMPFunction(pattern);
 
         int j = 0;
         int k = 0;
 
-        while (j < n) {
+        while (j < text) {
             if (text[j] == pattern[k]) {
                 if (k == patternLength - 1) {
                     return j - patternLength + 1;
@@ -36,7 +36,7 @@ public class KMP {
         int j = 1;
         int k = 0;
 
-        while (j < m) {
+        while (j < patternLength) {
             if (pattern[j] == pattern[k]) {
                 fail[j] = k + 1;
                 j++;
