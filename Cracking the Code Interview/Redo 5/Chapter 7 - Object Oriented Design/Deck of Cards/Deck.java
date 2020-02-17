@@ -13,5 +13,6 @@ public class Deck <T extends Card> {
     }
 
     public T[] dealHand(int number) {}
+
     public T dealCard() {}
 }
