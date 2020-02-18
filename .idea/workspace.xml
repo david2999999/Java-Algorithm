@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="17add400-d4a5-4a1d-8466-20562f8a7f15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 8 - Recursion and Dynamic Programming/Triple Steps/TripleStepBruteForce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 8 - Recursion and Dynamic Programming/Triple Steps/TripleStepBruteForce.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Paths with Sum/PathCount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 2 - Selection Sort/SelectionSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Udemy/Software Engineer Interview Unleashed/Interview Example/InsertedVariable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#94#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Udemy/Software Engineer Interview Unleashed/Interview Example/RotationalSymmetric.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/KeyFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/Box.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="e#237#238#0" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Edge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>”</find>
+      <find>“</find>
+      <find>numChildren</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Successor/Successor.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Project.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Graph.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/BuildOrder.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Node.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Project.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/ProjectGraph.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/Project.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 8 - Trees/Abstract/AbstractTree.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Abstract/AbstractNode.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/ProjectNode.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Abstract/AbstractGraph.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/ProjectNode.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/Graph.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/Node.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/DependencyProject.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/BuildOrder.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/GraphNode.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/Project.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/ProjectGraph.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 2/Project.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 2/BuildOrderDFS.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Links to Parents/CommonAncestor.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Links to Parents/CommonAncestor2.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 14 - Sorting/Radix Sort/RadixSort.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 14 - Sorting/Bucket Sort/Bucket.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 14 - Sorting/Bucket Sort/BucketSort.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Dijkstra Algorithm/Network.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Edge.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Vertex.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Traversals/BreathFirstSearch.java" />
+        <option value="$PROJECT_DIR$/Byte-By-Byte/0-1 Knapsack/Self/Knapsack.java" />
+        <option value="$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Traversals/DepthFirstTraversal.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Without Links to Parent/CommonAncestor.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Without Links to Parent/CommonAncestor2.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Check Subtree/StringApproach.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Check Subtree/SearchApproach.java" />
+        <option value="$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 1 - Introduction to Algorithms/Binary Search/BinarySearch.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Random Node/Probability Based on Size/TreeNode.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Random Node/Optimized/Tree.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Random Node/Optimized/TreeNode.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Paths with Sum/BruteForce.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Paths with Sum/Optimized.java" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Paths with Sum/PathCount.java" />
+        <option value="$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 2 - Selection Sort/SelectionSort.java" />
+        <option value="$PROJECT_DIR$/Udemy/Software Engineer Interview Unleashed/Interview Example/RotationalSymmetric.java" />
+        <option value="$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/KeyFinder.java" />
+        <option value="$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/Item.java" />
+        <option value="$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/Box.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 8 - Recursion and Dynamic Programming/Triple Steps/TripleStepBruteForce.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Java-Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java-Algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java-Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="Cracking the Code Interview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java-Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="Cracking the Code Interview" type="462c0819:PsiDirectoryNode" />
+              <item name="Redo 5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java-Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="Cracking the Code Interview" type="462c0819:PsiDirectoryNode" />
+              <item name="Redo 5" type="462c0819:PsiDirectoryNode" />
+              <item name="Chapter 8 - Recursion and Dynamic Programming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java-Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="Cracking the Code Interview" type="462c0819:PsiDirectoryNode" />
+              <item name="Redo 5" type="462c0819:PsiDirectoryNode" />
+              <item name="Chapter 8 - Recursion and Dynamic Programming" type="462c0819:PsiDirectoryNode" />
+              <item name="Triple Steps" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 2" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Cracking the Code Interview\Redo 5\Chapter 4 - Trees and Graphs\Build Order\Solution 2" />
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Data Structure and Algorithm in Java, Second Edition\Second Time\Chapter 11 - Hash Tables\Separate Chaining" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Byte-By-Byte\0-1 Knapsack\Solution" />
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Data Structure and Algorithm in Java, Second Edition\Third Time\Chapter 15 - Graphs\Traversals" />
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Cracking the Code Interview\Redo 5\Chapter 4 - Trees and Graphs\Build Order\Revised\Concrete" />
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Cracking the Code Interview\Redo 5\Chapter 4 - Trees and Graphs\Build Order\Revised\Interface" />
+      <recent name="C:\Users\DJiang\IntellIJ Projects\Java-Algorithm\Cracking the Code Interview\Redo 5\Chapter 4 - Trees and Graphs\Build Order\Original" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17add400-d4a5-4a1d-8466-20562f8a7f15" name="Default Changelist" comment="" />
+      <created>1569330061961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569330061961</updated>
+      <workItem from="1569330064670" duration="6783000" />
+      <workItem from="1569410338990" duration="12173000" />
+      <workItem from="1569501010503" duration="4851000" />
+      <workItem from="1569583762784" duration="8636000" />
+      <workItem from="1569843057261" duration="1255000" />
+      <workItem from="1569929878761" duration="7451000" />
+      <workItem from="1570016018684" duration="9655000" />
+      <workItem from="1570102269355" duration="6771000" />
+      <workItem from="1570188532099" duration="3676000" />
+      <workItem from="1570223688077" duration="971000" />
+      <workItem from="1570225455998" duration="45569000" />
+      <workItem from="1570447640983" duration="6538000" />
+      <workItem from="1570483745767" duration="15484000" />
+      <workItem from="1570534212707" duration="3286000" />
+      <workItem from="1570556580647" duration="6282000" />
+      <workItem from="1570570404404" duration="41250000" />
+      <workItem from="1571053324028" duration="4131000" />
+      <workItem from="1571139934422" duration="3104000" />
+      <workItem from="1571227462279" duration="2064000" />
+      <workItem from="1571312398429" duration="2218000" />
+      <workItem from="1571400123911" duration="1560000" />
+      <workItem from="1571658297682" duration="2109000" />
+      <workItem from="1571744918696" duration="1710000" />
+      <workItem from="1571830544936" duration="2753000" />
+      <workItem from="1571844855678" duration="664000" />
+      <workItem from="1572263322740" duration="36000" />
+      <workItem from="1575550211736" duration="369000" />
+      <workItem from="1578916163290" duration="613000" />
+      <workItem from="1579260566395" duration="2969000" />
+      <workItem from="1579519013891" duration="2847000" />
+      <workItem from="1579606310394" duration="2971000" />
+      <workItem from="1579693953361" duration="4427000" />
+      <workItem from="1579700284271" duration="6000" />
+      <workItem from="1579782953253" duration="1635000" />
+      <workItem from="1579865392264" duration="3900000" />
+      <workItem from="1579874698012" duration="1425000" />
+      <workItem from="1580123839299" duration="10923000" />
+      <workItem from="1580210057715" duration="6521000" />
+      <workItem from="1580219125003" duration="3259000" />
+      <workItem from="1580296667406" duration="9744000" />
+      <workItem from="1580383213017" duration="8043000" />
+      <workItem from="1580469287887" duration="19878000" />
+      <workItem from="1580501448270" duration="793000" />
+      <workItem from="1580727766410" duration="8292000" />
+      <workItem from="1580814549987" duration="8355000" />
+      <workItem from="1580825764017" duration="12129000" />
+      <workItem from="1580900540447" duration="17989000" />
+      <workItem from="1580987588793" duration="16295000" />
+      <workItem from="1581074017450" duration="10816000" />
+      <workItem from="1581333079977" duration="14396000" />
+      <workItem from="1581419307954" duration="12018000" />
+      <workItem from="1581505600485" duration="8909000" />
+      <workItem from="1581592533857" duration="8064000" />
+      <workItem from="1581678151239" duration="11585000" />
+      <workItem from="1581705285136" duration="8000" />
+      <workItem from="1582023883427" duration="597000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="410756000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34701493" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25641027" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32552955" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Traversals/DepthFirstTraversal.java</url>
+          <line>7</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/Abstract/AbstractHashMap.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/Abstract/AbstractMap.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/ChainHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-738" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/Interface/SortedMap.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/Abstract/AbstractSortedMap.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/UnsortedTableMap.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/SortedTableMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1506" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm PDF -Sixth Edition/Second Time/Chapter 10 - Maps, Hash Tables, and Skip Lists/ProbeHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Abstract/AbstractGraph.java" />
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/Project.java" />
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Interface/DependencyProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/BuildOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/GraphNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Revised/Concrete/ProjectGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 2/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 1/BuildOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 1/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="37" column="38" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="38" />
+          <folding>
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 2/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Build Order/Solution 2/BuildOrderDFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Links to Parents/CommonAncestor2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 14 - Sorting/Radix Sort/RadixSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 14 - Sorting/Bucket Sort/Bucket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 14 - Sorting/Bucket Sort/BucketSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Links to Parents/CommonAncestor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Dijkstra Algorithm/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Byte-By-Byte/0-1 Knapsack/Self/Knapsack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1639#1640#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Without Links to Parent/CommonAncestor2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Check Subtree/StringApproach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Check Subtree/SearchApproach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Traversals/BreathFirstSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" selection-start-line="23" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 1 - Introduction to Algorithms/Binary Search/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Random Node/Probability Based on Size/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1154#1155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Random Node/Optimized/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#70#71#0" expanded="true" />
+            <element signature="e#115#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Random Node/Optimized/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/First Common Ancestor/Without Links to Parent/CommonAncestor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Paths with Sum/BruteForce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Traversals/DepthFirstTraversal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 4 - Trees and Graphs/Paths with Sum/PathCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 2 - Selection Sort/SelectionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Udemy/Software Engineer Interview Unleashed/Interview Example/InsertedVariable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Udemy/Software Engineer Interview Unleashed/Interview Example/RotationalSymmetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/KeyFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/Box.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data Structure and Algorithm in Java, Second Edition/Third Time/Chapter 15 - Graphs/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grokking Algorithms PDF/Chapter 3 - Recursion/Key in the Box/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cracking the Code Interview/Redo 5/Chapter 8 - Recursion and Dynamic Programming/Triple Steps/TripleStepBruteForce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
