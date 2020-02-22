@@ -1,8 +1,0 @@
-Gotchas
-    - When making recursive calls, sometimes there are overlapping recursive calls (the calls that runs on the same input multiple times)
-    - In order to not make overlapping calls, we create a cache or memo to hold previously calculated results.
-        - The cache is mostly a hashtable, where the input of the function is the key and the result of the recursive call it the value.
-        - So, during every recursive call, we can check the memo to check if we already calculated the result for this input value
-            - If there is a value in the memo, return the value
-            - Else, calculate the result
-                - add the input and result into the memo

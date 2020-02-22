@@ -1,4 +1,4 @@
-## Data Structures and Algorithms in Java
+# Data Structures and Algorithms in Java
 
 Data structures and algorithms are essential to computer science, which is the study of data, 
 its representation in memory, and its transformation from one form to another. In programming, 
