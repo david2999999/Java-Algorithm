@@ -24,7 +24,31 @@ Different Approaches to the Problem
                     - We will first start with zero (3 coin) and check how many ways to make amount (5) with (5)
                     - Then we will use one (3 coin) and check how many ways to make (amount - 3 = 2) with (5)
                     - we can not use 2 * (3 coin) because it will overshoot our amount
-        - Cases we have to consider
+        - Base cases we have to consider
             - If the amount left after each recursive call is 0, that means we have found 1 way to create the amount.
             - If the amount left is negative, that means this is an invalid way to create the amount, return 0.
             - If we finish using all our denominators, there are no more denominators to meet the amount, return 0.
+    2) Top down approach, recursive method with memoization
+        - If we are using the approach as described in 1). There will be overlapping recursion when calculating the number of ways.
+        - In order to prevent doing redundant work, we will use memoization to cache previously calculated results
+            - We will be using a hashtable to cache previous results
+                - What should the key be?
+                    - Can the key be just be the denominator that we are calculating?
+                        - No, our overlapping recursions are concerned with the number of ways to make an amount with a certain denominator,
+                          that means our keys need to know the current denominator and the amount left.
+                    - key = amountLeft + ", " + currentIndex (our current index specifies which denominator we are currently using)
+                    - value = the number of ways to create this amount with the specific denominator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
