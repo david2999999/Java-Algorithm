@@ -36,8 +36,14 @@ Different Approaches to the Problem
                     - Can the key be just be the denominator that we are calculating?
                         - No, our overlapping recursions are concerned with the number of ways to make an amount with a certain denominator,
                           that means our keys need to know the current denominator and the amount left.
-                    - key = amountLeft + ", " + currentIndex (our current index specifies which denominator we are currently using)
-                    - value = the number of ways to create this amount with the specific denominator
+                - key = amountLeft + ", " + currentIndex (our current index specifies which denominator we are currently using)
+                - value = the number of ways to create this amount with the specific denominator
+        - What is the time and space complexity of this method?
+            - n = size of amount, m = number of items in denominations
+            - Time is O(n * m), because we are trying to all the ways to create an amount with a certain number of denominations
+            - Space is O(m) + O(n * m) = O(n * m)
+                - O(m) is used by our recursive stack based on the number of denominations
+                - O(n * m) is used by our hashtable memo
 
 
 
