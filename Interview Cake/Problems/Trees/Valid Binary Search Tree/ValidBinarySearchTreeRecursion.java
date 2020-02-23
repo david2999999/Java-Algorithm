@@ -13,6 +13,6 @@ public class ValidBinarySearchTreeRecursion {
         }
 
         return isBinarySearchTree(root.left, lowerBound, node.value) &&
-                isBinarySearchTree(root.rught, root.value, upperBound);
+                isBinarySearchTree(root.right, root.value, upperBound);
     }
 }

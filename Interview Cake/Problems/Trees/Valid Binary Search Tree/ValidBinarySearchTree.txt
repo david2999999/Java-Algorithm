@@ -1,0 +1,22 @@
+Question
+    Write a method to check that a binary tree is a valid binary search tree
+
+Thoughts before Coding
+    - What does it mean to be a valid binary search tree?
+        - If a node is on the ancestor's left subtree, it must be less than the ancestor
+        - If a node is on the ancestor's right subtree, it must be larger than the ancestor
+    - So, we need to keep track of the ancestor and make sure the left/right subtrees follow this rule
+    - What are the different ways we can approach this problem? What traversals can be choose?
+        - What is the difference between choosing breath first search and depth first search?
+            - Both of them uses O(n) memory in the worst case
+            - Depth first search is likely to be more space efficient than breath first traversal, if the tree is balanced
+              then the space will be O(lgn), but if it is unbalanced it'll be O(n)
+            - The memory required for breath first search is the breath of the tree, which doubles in size as we traverse deeper into the tree.
+        - But, we also need to keep track of the parent nodes other than the nodes themselves.
+            - How many parent nodes are there for a single node?
+                - For a balanced tree, there are logn parents
+                - For an unbalanced tree, there are n parents
+            - So this may result in O(nlogn) or O(n^2) memory, can we do better?
+        - When we looking at the binary tree, we do not need to keep track of all the parent nodes. We just need to know the lower/upper bound values
+          for each of the nodes based on its parent.
+
