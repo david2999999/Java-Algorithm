@@ -20,3 +20,25 @@ Thoughts before Coding
         - When we looking at the binary tree, we do not need to keep track of all the parent nodes. We just need to know the lower/upper bound values
           for each of the nodes based on its parent.
 
+Answer
+    - We can create a new class to hold our current node, upperbound and lowerbound values.
+        - This new class will be used as we push nodes into the stack for the depth first search
+    - But, before we start the depth first search, we need to push our root node into the stack. What should the lower/upper bound be our root node be?
+        - Since, we are allowing any value for our root node. The lower bound can be Integer.MIN_VALUE and upper bound can be Integer.MAX_VALUE.
+    - Then for each depth first search iteration we can compare the value of our current node with the upper/lower bound values.
+        - If the value is less than or equal to the lower bound, return false
+        - If the value is greater than or equal to the upper bound, return false
+    - How do we add new child nodes into our stack?
+        - When adding our left node, we first need to check if it is null or not.
+            - If it is not null, we can add it into our stack, but what is the new lower/upper bound for this left child?
+            - Since, we are traversing to the left, we have to update our upper bound to the value of our parent node.
+            - The lower bound can stay the same, because we only want to make sure our left child does not have a greater value than our parent node.
+        - When adding our right node, we first need to check if it is null or not.
+            - If it is not null, we can add it into our stack, but what is the new lower/upper bound for this right child?
+            - Since, we are traversing to the right, we have to update our lower bound to the value of our parent node.
+            - The upper bound can stay the same, because we only want to make sure our right child has a greater value than our parent node.
+    - What is the time and space complexity of this solution?
+        - Time complexity - O(n) - where n is the number of nodes in the tree.
+        - Space complexity
+            - O(logn) - balanced tree
+            - O(n) - unbalanced tree
