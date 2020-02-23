@@ -42,3 +42,18 @@ Answer
         - Space complexity
             - O(logn) - balanced tree
             - O(n) - unbalanced tree
+
+    - We can actually use a recursive solution, then we do not need our new class from our previous example
+        - For each of the recursive call, we will provide our lower/upper bound in the parameters of our recursive function
+        - We can start with our root node again
+            - Our initial lower bound for root node will be the same Integer.MIN_VALUE
+            - Our initial upper bound for root node will be the same Integer.MAX_VALUE
+        - What is our base case for our recursive call?
+            - If we have hit the null nodes, we can return true
+            - That means we have checked all the nodes above it
+        - For each recursive call
+            - we will check if our current node is greater than our lower bound
+            - we will check if our current node is smaller than our upper bound
+            - Then we will make a recursive call to our left node and update the upper bound to the value of our current node
+            - Then we will make a recursive call to our right node and update the lower bound to the value of our current node
+
