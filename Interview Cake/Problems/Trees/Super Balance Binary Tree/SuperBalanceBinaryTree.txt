@@ -40,6 +40,20 @@ Answer
             - Add the right node if not null
     - return true
 
+    - What is the time and space complexity of this solution?
+        - The space complexity is O(3) + O(n) = O(n)
+            - We have 2 data structures
+                - one list to keep track of the depths, which will store at most 3 elements - O(3)
+                - one stack to keep track of the nodes, the stack will hold at most d nodes where d is the
+                  depth of the tree, so we can say that our cost is O(d)
+                    - In a balance binary tree we can say O(d) = O(logn)
+                    - In an unbalanced binary tree, O(d) = O(n)
+                        - In the worst case, the tree is a straight line of right children from the root where every
+                          node in that line also has a left child. The traversal will walk down the line of right children,
+                          adding a new left child to nodes at each step. When the traversal hits the rightmost node,
+                          nodes will hold half of the n total nodes. Half n is O(n), so the worst case is O(n)
+        - The time complexity is O(n)
+            - The worst case is when the tree is balanced and we need to traverse every single node.
 
 
 
