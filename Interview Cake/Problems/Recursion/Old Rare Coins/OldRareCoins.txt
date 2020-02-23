@@ -28,6 +28,7 @@ Different Approaches to the Problem
             - If the amount left after each recursive call is 0, that means we have found 1 way to create the amount.
             - If the amount left is negative, that means this is an invalid way to create the amount, return 0.
             - If we finish using all our denominators, there are no more denominators to meet the amount, return 0.
+
     2) Top down approach, recursive method with memoization
         - If we are using the approach as described in 1). There will be overlapping recursion when calculating the number of ways.
         - In order to prevent doing redundant work, we will use memoization to cache previously calculated results
@@ -44,6 +45,69 @@ Different Approaches to the Problem
             - Space is O(m) + O(n * m) = O(n * m)
                 - O(m) is used by our recursive stack based on the number of denominations
                 - O(n * m) is used by our hashtable memo
+
+    3) Bottom up approach
+        - Our recursive approach was top-down, since it started with the final value for amount and recursively broke the problem
+          down into subproblems with smaller values for amount.
+        - What if instead we try to compute the answer for small values of amount first?
+        - We can use an iterative approach to compute for higher values until arriving at the final amount.
+        - We need to create an array where the index is the amount and the value at each index is the number of ways
+          of getting that amount.
+            - For example, this can be the array to calculate the amount 5 cent, with our first coin (1 cent)
+                int[] waysOfDoing5Cents1 = new int[] {
+                    1, // 0 cent: no coins
+                    1, // 1 cent: 1c coin
+                    1, // 2 cent: 2c coins
+                    1, // 3 cent: 3c coins
+                    1, // 4 cent: 4c coins
+                    1, // 5 cent: 5c coins
+                };
+
+             - Now, when we have our second coin (2 cent), we can build upon our previous array
+                int[] waysOfDoingNCents1And2 = new int[] {
+                    1,      // 0c: no change - we can not add another way with 2c
+                    1,      // 1c: no change - we can not add another way with 2c
+                    1 + 1,  // 2c: new [(2)]
+                    1 + 1,  // 3c: new [(2, 1)]
+                    1 + 2,  // 4c: new [(2, 1, 1), (2,2)]
+                    1 + 2,  // 5c: new [(2, 1, 1, 1), (2, 2, 1)]
+                };
+        - Let's suppose we're partway through already (this is a classic dynamic programming approach).
+          Say we're trying to calculate waysOfDoingNCents1And2[5]. Because we're going bottom-up, we know we already have:
+                1) waysOfDoingNCents1And2 for amounts less than 5
+                2) a fully-populated waysOfDoingNCents1
+
+           So how many new ways should we add to waysOfDoingNCents1[5] to get waysOfDoingNCents1And2[5]?
+            - What are the new ways to get 5c now that we have 2c coins?
+                - this involves us using at least one 2c coin.
+                - this will leave us at 5 - 2 = 3
+                - we know how to get waysOfDoingNCents1And2[3], which is 2. This is our bottom up approach, because
+                  all values are already calculated beforehand
+                        - waysOfDoingNCents1And2[5] = waysOfDoingNCents1[5] + waysOfDoingNCents1And2[5 - 2]
+                - Do need to check if we use two (2c) coins? waysOfDoingNCents1And2[5 - 2 - 2]
+                    - No, this is because we already checked waysOfDoingNCents1And2[1] when calculating waysOfDoingNCents1And2[3].
+                    - waysOfDoingNCents1And2[k] already include the full count of possibilities for getting k, including possibilities
+                      of using 2c any number of times.
+                    - At each new index, we are only interested in how many more possibilities that we might get as we go from k to k + 2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
