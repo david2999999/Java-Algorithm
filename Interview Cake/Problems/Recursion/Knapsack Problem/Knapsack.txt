@@ -8,12 +8,6 @@ Question
     Write a method maxDuffelBagValue() that takes an array of cake type objects and a weight capacity,
     and returns the maximum monetary value the duffel bag can hold.
 
-Side Cases to Consider
-    - What is our duffel bag weight capacity is 0?
-    - What is any of the cakes weigh 0 kg?
-    - This problem can be done in O(n * k) and O(k) space, where n is the number of types of cake
-      and k is the duffel bag's capacity
-
 Thoughts before coding
     - What are some methods we can attempt to use?
         1) Can we just look at the cake with the highest value?
@@ -46,12 +40,15 @@ Answer
                We just need to add our cake value with our maximum cake value at 2kg, and then compare it with our current maximum
                capacity of 3.
 
-
-
-
-
-
-
+Edge Cases to Consider
+    - What is our duffel bag weight capacity is 0?
+        - We will still need to check if there are any cakes with weigh 0.
+    - What is any of the cakes weigh 0 kg?
+        - If we have a cake that weighs 0kg and has a positive value, it is reasonable to return infinity, even if our capacity is 0.
+            - For returning infinity, we have the highest possible Long.MAX_VALUE
+            - Raise an exception indicating the answer is infinity
+        - Our second approach of telling the user it is infinity is more suitable because Long.MAX_VALUE is still a specific number
+          and the specific number is "lossy", it won't be clear if we are talking about an actual number of special case infinity
 
 
 
