@@ -1,5 +1,10 @@
 public class CoinsRecursive {
-    public int makeChange(int amount, int[] denoms, int index) {
+    public int makeChange(int n) {
+        int[] denoms = {25, 10, 5, 1};
+        return makeChange(n, denoms, 0);
+    }
+
+    private int makeChange(int amount, int[] denoms, int index) {
         if (index >= denoms.length - 1) {   // we only have coins that are worth 1 cent
             return 1;
         }
