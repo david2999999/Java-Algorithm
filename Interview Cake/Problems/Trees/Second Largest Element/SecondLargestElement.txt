@@ -11,3 +11,19 @@ Thoughts before coding
             - No, if our largest node has left subtree, that means the 2nd largest element is in this left subtree
             - Where do we find the largest element in the left subtree? It is still the rightmost node
             - So, we have to find the rightmost node in our left subtree if it is present
+
+Answer
+    - For the first solution, we will use a recursive approach
+        - There are 2 base cases we need to look out for
+            - we need to make sure there is at least 2 nodes inside the binary tree, because we are looking for the 2nd highest
+                - The root node must not be null
+                - At least one of the left/right child must not be node
+        - When recursing through the binary search tree, for every node
+            - check if we only have a left subtree and our right children is null
+                - that means we have reached the largest element, and our 2nd largest element is inside the rightmost node in our left subtree
+                - traverse the left subtree to find our 2nd largest value
+            - check if our right child is not null and if the right child does not have any children
+                - this means our right child is the largest node
+                - our current node is the 2nd largest node, because the largest node does not have a left subtree
+                - return our current node
+        - recurse to the right of our tree (since the largest elements are all on the right side)
