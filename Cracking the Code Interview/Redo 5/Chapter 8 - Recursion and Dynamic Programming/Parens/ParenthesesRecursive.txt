@@ -9,7 +9,7 @@ Gotchas
             3 pair of parentheses = 5 - ()(), (())(()), ()()(), ()(()), (())()
 
         This is very similar to the Catalan number where the numbers goes from 1, 1, 2, 5, 14, 42.
-        For each of the catalan number, a string of size of n is created. So the runtime is O(2*Cat(n))
+        For each of the catalan number, a string of size of n is created. So the runtime is O(n * Cat(n))
     - The space complexity of our recursive function is our recursion stack, we recursive all of the way until we have finish using the same number of
         right and left parentheses. So, there are 2 * n parentheses (n for left parentheses, and n for right parentheses).
         Total space = O(2n) = O(n)
