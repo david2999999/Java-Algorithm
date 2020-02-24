@@ -1,0 +1,12 @@
+Question
+    Given an infinite number of quarters (25 cents), dimes (1 O cents), nickels (5 cents), and
+    pennies (1 cent), write code to calculate the number of ways of representing n cents.
+
+Gotcha
+    - We have one cent as a denominator at the last index
+        - Inside our 'for' loop, we make sure we don't overshoot the amount with the current denominator before going to the next denominator
+        - As soon as we can reach our last denominator index, we are able to create one way
+            - This is because for any amount greater than or equal to zero, we are able to create 1 way with 1 cent.
+        - In the other problem inside interview cake, we may or may not have a coin that is worth (1).
+            - so, our last denominator may or may not be able to create 1 way
+            - we have to check if our amount remaining does not go below zero and only create 1 way if the remaining amount equals to 0.
