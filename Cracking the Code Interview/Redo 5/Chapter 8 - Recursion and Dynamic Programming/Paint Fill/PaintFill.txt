@@ -1,0 +1,29 @@
+Question
+    Implement the "paint fill" function that one might see on many image editing programs.
+    That is, given a screen (represented by a two-dimensional array of colors), a point, and a new color,
+    fill in the surrounding area until the color changes from the original color.
+
+Thoughts before Coding
+    - Are we given a square or rectangular screen? or the screen can be a random shape?
+    - Since, we are given a 2D array, our input should include the first row and column
+    - How do we fill out the surrounding area given a row and column
+        - We can go to the top using row - 1
+        - We can go to the bottom using row + 1
+        - We can go to the left using column - 1
+        - We can go to the right using column + 1
+
+Side Cases to consider
+    - When expanding the row and columns, are there any side cases we need to look out for?
+        - We need to make sure our row does not go index out of bound, the row must be
+            - greater than or equal to 0
+            - less than the height of the screen
+        - We need to make sure our column does not go index out of bound, the column must be
+            - greater than or equal to 0
+            - less than the width of the screen
+
+Gotchas
+    - Do not use x and y axis when working with 2D arrays
+        - This is because x represents the horizontal axis and y represents vertical axis
+            - x corresponds to the column number
+            - y corresponds to the row number
+            - screen[y][x]
