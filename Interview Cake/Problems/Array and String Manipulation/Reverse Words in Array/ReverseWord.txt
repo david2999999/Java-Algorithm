@@ -12,3 +12,25 @@ Thoughts Before Coding
           and every single swap requires us to shift the whole array (the length of the swap words are different).
         - Can we do better?
 
+Answer
+    - Can we start with something simpler and just reverse all our characters first?
+    - What do we notice after reversing all of the characters?
+        - We notice that each of the individual words are reversed
+        - We just need to reverse each individual word!
+    - So, how do we reverse each individual word?
+        - For each of the words, we need to find the starting and ending index
+        - Our starting index can start with index 0
+        - Our ending index is whenever we hit a space
+        - Don't forget to account for the last word in the array, where there are no space after the last word
+    - Our solution involves reversing all of the individual characters first then reversing each individual word
+    - What is the space/time complexity of this solution?
+        - time complexity = O(n) + O(n) = O(2 * n) = O(n)
+            - O(n) to reverse every all of the characters in the array first
+            - O(n) to reverse each individual word
+        - space complexity = O(1) - since we are reversing all the words in place
+
+Gotchas
+    - When reversing each individual words in the array, don't forget about the word right before array.length.
+        - This is the one position that does not have a space after the word
+    - We also may need to account for spaces in front of the first word in the array and spaces at the end of our last word
+        - But, in this example, we assume there are no spaces before and after the sentence
