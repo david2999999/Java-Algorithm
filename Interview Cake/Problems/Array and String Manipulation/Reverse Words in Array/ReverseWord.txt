@@ -1,0 +1,14 @@
+Question
+    Write a method reverseWords() that takes a message as an array of characters and reverses the order of the words in place.
+
+Thoughts Before Coding
+    - Since, we are reversing the words in place, we will be able to achieve O(1) space complexity
+    - Can we do try reverse the string, by swapping words at the front and words at the back?
+        - How do we figure out where words start/end?
+        - Once, we know the indices of the two words, how do we swap them?
+        - What if the words that we are swapping have different lengths?
+            - This will result in the whole array being shifted
+        - The runtime complexity of this method will be O(n^2), where we have as many words as characters
+          and every single swap requires us to shift the whole array (the length of the swap words are different).
+        - Can we do better?
+
