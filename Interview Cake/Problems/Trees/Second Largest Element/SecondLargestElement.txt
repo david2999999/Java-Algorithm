@@ -1,0 +1,13 @@
+Question
+    Write a method to find the 2nd largest element in a binary search tree
+
+Thoughts before coding
+    - Before we find the 2nd largest element, we should find the largest element first and try to go from there
+        - How do we find the largest element in a binary tree?
+            - The largest element is the rightmost node of our tree
+    - After finding the largest element, where is our 2nd largest element?
+        - Our 2nd largest element is the parent of our largest element!
+        - But, what if our largest node has a left subtree? Does this rule still hold?
+            - No, if our largest node has left subtree, that means the 2nd largest element is in this left subtree
+            - Where do we find the largest element in the left subtree? It is still the rightmost node
+            - So, we have to find the rightmost node in our left subtree if it is present
