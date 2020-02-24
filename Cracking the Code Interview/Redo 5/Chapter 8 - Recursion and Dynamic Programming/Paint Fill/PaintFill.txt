@@ -16,10 +16,30 @@ Side Cases to consider
     - When expanding the row and columns, are there any side cases we need to look out for?
         - We need to make sure our row does not go index out of bound, the row must be
             - greater than or equal to 0
-            - less than the height of the screen
+            - less than the height of the screen (0 index based)
         - We need to make sure our column does not go index out of bound, the column must be
             - greater than or equal to 0
-            - less than the width of the screen
+            - less than the width of the screen (0 index based)
+Answer
+    - The problem requires the following parameters
+        - A screen with different colors
+        - The initial row and column index to fill in the new color
+        - The new color to be filled in
+    - We will first check if the current color inside our initial row/column is already is the new color
+        - If the current color is the same as our new color, we will return from the method without filling in the paint
+        - We will create a helper recursive function to traverse the grid
+    - The recursive method will be a depth first traversal (breath first traversal also works)
+        - We will first check if the row/columns are not index out of bound
+            - if the index is invalid, we will return from the function
+        - Before, we fill in the color for this pixel, we need to make sure it is equal to our original color
+            - If the color equals our original color
+                - Fill in the row/column with our new color
+                - Recurse to the top with row - 1
+                - Recurse to the bottom with row + 1
+                - Recurse to the left with column - 1
+                - Recurse to the right with column + 1
+    - The recursive function will search outward to each surrounding pixel, and will stop when it finish traversing
+      all the surrounding pixels with our original color.
 
 Gotchas
     - Do not use x and y axis when working with 2D arrays
