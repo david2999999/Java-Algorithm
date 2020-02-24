@@ -1,0 +1,21 @@
+Question
+    Write a method that takes an array of characters and reverses the letters in place.
+
+Thoughts before Coding
+    - Why are we reversing an array of characters instead of a string
+        - This is because a String is immutable and we need a mutable type to be manipulate in place.
+
+Answer
+    - Check the parameters
+        - if the array is null or only has one element, return from the function
+    - Create two variable
+        - one variable will start from the beginning of the array at index 0
+        - one variable will start from the end of the array at index array.length - 1
+    - While our left index is less than our right index
+        - Swap the elements at the two indices
+        - increment our left index
+        - decrement our right index
+
+    - What is the time/space complexity?
+        - time complexity O(n / 2) = O(n), where n is the size of the array
+        - space complexity, we only declare two primitive variables for indices, O(1)

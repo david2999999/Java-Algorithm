@@ -28,7 +28,7 @@ Answer
                         - We need to get inside the loop, save that position, and count number of steps to come back to the position again
                         - So, how do we get inside the loop?
                             - We have our head node of the list. If we move n (number of elements in the array) steps from the head of list, we will definitely get into the loop. This is because
-                              the worst case scenario we have a loop at all the way at the start of our linkedlist.
+                              the worst case scenario we have a loop at all the way at the end of our linkedlist.
                             - After, getting into the loop, count the number of steps to get back to the position again
                     - After, finding the length of loop. Create two pointers, slow/fast
                         - Move fast D number of steps, where D is the length of the loop
