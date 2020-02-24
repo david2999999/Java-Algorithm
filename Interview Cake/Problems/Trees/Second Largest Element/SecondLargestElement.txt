@@ -32,3 +32,24 @@ Answer
             - The height of the tree is O(logn) for a balance tree
             - And O(n) for an unbalanced tree
         - Space complexity = O(h), this is our recursive call stack. We can avoid this call stack by using iterative approach (2nd solution)
+
+    - For our second solution, we will use the iterative approach
+        - We will validate our input first, the same way as our first solution
+            - we need to make sure there is at least 2 nodes inside the binary tree, because we are looking for the 2nd highest
+                - The root node must not be null
+                - At least one of the left/right child must not be node
+        - We will use a while loop instead of recursion, this while loop will continue to iterate until we find our 2nd largest element
+            - We first start with our root node
+                - check if we only have a left subtree and our right children is null
+                    - that means we have reached the largest element, and our 2nd largest element is inside the rightmost node in our left subtree
+                    - traverse the left subtree to find our 2nd largest value
+                - check if our right child is not null and if the right child does not have any children
+                    - this means our right child is the largest node
+                    - our current node is the 2nd largest node, because the largest node does not have a left subtree
+                    - return our current node
+            - In order to traverse to the right subtree, we can do (node = node.right)
+        - What is the time complexity for this iterative solution?
+            - Time complexity = O(h), where h is the height of the tree,
+                - The height of the tree is O(logn) for a balance tree
+                - And O(n) for an unbalanced tree
+            - Space complexity = O(1) - we are not using any data structure or recursive stack
