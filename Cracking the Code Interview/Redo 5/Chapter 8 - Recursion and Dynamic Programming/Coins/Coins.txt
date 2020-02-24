@@ -4,7 +4,7 @@ Question
 
 Answer
     - There are three approaches to this problem, but we will only discuss the first 2 solutions
-    - The first solution is using recursion
+    1) The first solution is using recursion
         - Imagine the amount that we are trying to build is 100 and our denominators are {25, 10, 5, 1}
         - We will first start with our first denominator (quarter)
             - We will check how many ways to create 100 using quarters as long as it does not overshoot the amount
@@ -22,6 +22,19 @@ Answer
         - return the number of ways we have found in each recursive call
         - This first solution has a lot of overlapping recursive calls with the same amount and denominator index, we can fix this using memoization
 
+    2) Our second solution will use recursion with memoization
+        - In our previous problem, we have overlapping recursive calls regarding amount and denominator
+        - We need to find a way to cache our results from previous recursive calls
+        - What is the key and value pairs that we need to cache?
+            - Since, we care about the numbers of ways regarding an amount and denominator
+                - key -> amount and denominator index
+                - value -> number of ways to represent the amount with the denominator index
+        - What data structure are we using for this memo?
+            - Since, we care about both amount and denominator index, we can use a 2D array
+            - Hashtable also works
+        - In each of the recursive call, we should check if our result is already cached in our memo before calculating for the number of ways
+        - But, if our memo does not have the result, we will calculate the result and then store it inside our memo
+        - return the number of ways
 
 Gotcha
     - We have one cent as a denominator at the last index
