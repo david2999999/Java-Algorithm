@@ -27,3 +27,8 @@ Answer
                 - our current node is the 2nd largest node, because the largest node does not have a left subtree
                 - return our current node
         - recurse to the right of our tree (since the largest elements are all on the right side)
+    - What is the time and space complexity for this recursive solution?
+        - Time complexity = O(h), where h is the height of the tree,
+            - The height of the tree is O(logn) for a balance tree
+            - And O(n) for an unbalanced tree
+        - Space complexity = O(h), this is our recursive call stack. We can avoid this call stack by using iterative approach (2nd solution)
