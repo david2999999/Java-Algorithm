@@ -14,6 +14,25 @@ Thoughts Before Coding
             - if we put b1 at the bottom box, we will need to test
                 - if b2 is our 2nd box
                 - if b3 is our 2nd box
+            - if we put b2 at the bottom box, we will need to test
+                - if b1 is our 2nd box
+                - if b3 is our 2nd box
+            - if we put b3 at the bottom box, we will need to test
+                - if b2 is our 2nd box
+                - if b1 is our 2nd box
     - Since, we will only be experimenting with valid boxes, we do not want to try a bigger box on top of a smaller box
-        - we can first sort the boxes in descending order
-        - So, we know the box later down the list is able to be on top of our current box
+        - we can first sort the boxes in descending order in terms of height
+        - So, we know we do not need to search backwards on the list, because all of the elements before our current index
+          will have a greater or equal height.
+
+Answer
+    1) Our first solution will use recursion to find the maximum possible height with different boxes as base
+        - We will first sort our boxes to make sure as we traverse the list, we do not need to search backwards to find a valid box to put
+        - In our main method we will keep track of the maximum height using each of the individual boxes as the base or our bottom of all the boxes.
+            - Then for the maximum height right above the base will be a recursive call to try out all of the other boxes that are smaller than our current box.
+                - If the next box can be put on top of our current box, we will place this box on top of our current box and continue our recursion
+                - After finding the maximum height for each level,
+                    - we can add our current box height to the maximum height
+                    - we can return the maximum height
+            - The base of our recursive call is when we reach the last box to put on top of our stack of boxes
+        - return the maximum height possible
