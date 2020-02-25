@@ -26,7 +26,7 @@ public class StackOfBoxesRecursion {
         return maxHeight;
     }
 
-    public class BoxComparator implements Comparator<Boxes> {
+    public class BoxComparator implements Comparator<Box> {
         @Override
         public int compare(Box b1, Box b2) {
             return b2.height - b1.height;
