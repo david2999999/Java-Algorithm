@@ -36,3 +36,10 @@ Answer
                     - we can return the maximum height
             - The base of our recursive call is when we reach the last box to put on top of our stack of boxes
         - return the maximum height possible
+    2) Our first solution has overlapping recursions
+        - For example if we find try to find the maximum height of {3, 4, ....}
+            - We will try to find the maximum height that starts with 4 {4, ....} when we trying using 4 as our bottom box, even though we have already calculated that from our previous recursion
+        - One of the ways to prevent overlapping recursions is using memoization
+        - We can use an array that is the same size as the number of boxes
+            - the index will reflect the box inside our list of boxes
+            - the value will be the maximum height with this box as the bottom
