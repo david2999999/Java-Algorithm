@@ -19,3 +19,33 @@ Thoughts Before Coding
         - Then we can move to the next row and place a queen at one of the columns assuming it is valid
         - We will continue down the columns for only valid queen placements in each of the rows
         - How can we use this method to find a solution?
+
+Solution
+    - We can use a recursive solution by placing trying to place a queen in each of the rows
+        - Starting from the first row, and testing all of the columns
+            - So, the recursion starts with us placing 1 queen in the first column in the first row
+            - Then we will move onto the next row (recursively move to the next row), testing all of the columns there
+            - Before, we place a queen into a column, we need to make sure if the placement is actually valid
+            - How do we check if a placement is valid?
+                - Since, we are going down the rows one by one, we only need to check the rows above it
+                - The following conditions dictates that it is NOT a valid placement
+                    - If there is a queen in the same column
+                    - If there is a queen in the diagonal of this position
+                    - Note: we do not need to check the current row, cause this is a new row to place our queen
+            - We will traverse downward (continuing our recursive call) downwards only if our placement is valid
+        - What is our base case for the recursive call?
+            - Since we are going down the rows, as soon as our row index (0 based) goes past the size of the matrix, then we know
+              we have finished going through all of the rows. Then we can add this result to our list.
+        - Since each row will only have 1 queen, we do not need to store our board in 8x8 matrix.
+            - We only need a single array column[row] to know which column and row the queen is placed.
+
+
+
+
+
+
+
+
+
+
+
