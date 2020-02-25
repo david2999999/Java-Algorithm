@@ -54,6 +54,28 @@ Thoughts before Coding
                         - The size of the array decrement by 1 every recursive call
                         - n + (n - 1) + (n - 2) + ... = O(n^2)
 
+        2) From our first approach, it seems like we are using a lot of memory creating a new array inside each recursive call, is there a different
+           approach to keep track of the front of the list?
+            - Yes, we can use indices to keep track the front of the lists
+            - In each recursive call, we will have 3 more variable parameters
+                - Each index indicate the front of the array in one of our order arrays
+            - What is the base case for this solution?
+                - When our servedOrderIndex equals our servedOrder array size, that means we have checked all of our served orders
+            - For each of the iteration,
+                - We first make sure takeOutOrders index is less than takeOutOrders.length, we do not want to get index out of bound exception
+                    - If the first element in takeOutOrders equals the first element in servedOrders
+                        - we increment takeOutOrders index
+                - If we did not find our first element in servedOrders from takeOutOrders, we will check the front of dineInOrders
+                - We first make sure dineInOrder index is less than dineInOrders.length
+                    - If the first element in dineInOrders equals the first element in servedOrders
+                        - we will increment dineInOrder index
+                - If we did not the order in the front of either array, that means this is not a first-come first-served system, return false
+                - We will be able to increment our served order index if the cake was found
+                - We will continue our recursive call with the updated indices, which indicates the new front of each list
+            - What is the time and space complexity of this approach?
+                - Time complexity - O(n) - Our recursive calls, which ends when we finish checking our servedOrders
+                - Space complexity - O(n) - Memory used on the recursive call stack
+
 
 
 
