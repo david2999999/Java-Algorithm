@@ -27,54 +27,71 @@ Thoughts before Coding
     - If we continue to look for more orders and removing orders that we have already accounted, after our servedOrders is depleted,
       we will know that it is a valid first-come, first-served.
 
+Answer
     - What are the different approaches to this problem?
-        1) We can use an recursive approach
-            - Where in each iteration, we will check if our first order in served-orders is the first order in either array
-                - If the first order is in front of our takeOutOrders, we will continue our recursion, but we will remove the first element
-                  from takeOutOrders and servedOrders. This means we know that this order is valid and we can move onto the next order.
-                - If the first order is in front of our dineInOrders, we will continue our recursion, but we will remove the first element
-                  from dineInOrders and servedOrders. This means ww know this order is valid and we can move onto the next order.
-                - What if the order is not present in the front of either array?
-                    - This means we do not have a first-come, first-served order, return false
-                - So, how do we remove the first element from the array
-                    - We can create a copy of the array from index (1 -> array.length - 1). Our first item is at index 0.
-                    - Arrays.copyOfRange(orders, 1, orders.length)
-                - What is the base case of this approach?
-                    - We are done after we have verified all of the orders inside servedOrders
-                    - servedOrders.length == 0
-            - What is the time and space complexity of this approach?
-                - Time complexity = O(n) * O(n) = O(n^2)
-                    - O(n) - for the n frames of the recursive call stack, iterating through the array
-                    - O(n) - creating a slice of the array by removing the first element
-                        - For each of the recursive call, a new array is being made, each with 1 length shorter, since we are removing the first element
+    1) We can use an recursive approach
+        - Where in each iteration, we will check if our first order in served-orders is the first order in either array
+            - If the first order is in front of our takeOutOrders, we will continue our recursion, but we will remove the first element
+              from takeOutOrders and servedOrders. This means we know that this order is valid and we can move onto the next order.
+            - If the first order is in front of our dineInOrders, we will continue our recursion, but we will remove the first element
+              from dineInOrders and servedOrders. This means ww know this order is valid and we can move onto the next order.
+            - What if the order is not present in the front of either array?
+                - This means we do not have a first-come, first-served order, return false
+            - So, how do we remove the first element from the array
+                - We can create a copy of the array from index (1 -> array.length - 1). Our first item is at index 0.
+                - Arrays.copyOfRange(orders, 1, orders.length)
+            - What is the base case of this approach?
+                - We are done after we have verified all of the orders inside servedOrders
+                - servedOrders.length == 0
+        - What is the time and space complexity of this approach?
+            - Time complexity = O(n) * O(n) = O(n^2)
+                - O(n) - for the n frames of the recursive call stack, iterating through the array
+                - O(n) - creating a slice of the array by removing the first element
+                    - For each of the recursive call, a new array is being made, each with 1 length shorter, since we are removing the first element
+                - n + (n - 1) + (n - 2) + ... = O(n^2)
+            - Space complexity = O(n^2)
+                - we are making a new array in each of the recursive call stack
+                - The recursive call stack has a size of n
+                    - The size of the array decrement by 1 every recursive call
                     - n + (n - 1) + (n - 2) + ... = O(n^2)
-                - Space complexity = O(n^2)
-                    - we are making a new array in each of the recursive call stack
-                    - The recursive call stack has a size of n
-                        - The size of the array decrement by 1 every recursive call
-                        - n + (n - 1) + (n - 2) + ... = O(n^2)
 
-        2) From our first approach, it seems like we are using a lot of memory creating a new array inside each recursive call, is there a different
-           approach to keep track of the front of the list?
-            - Yes, we can use indices to keep track the front of the lists
-            - In each recursive call, we will have 3 more variable parameters
-                - Each index indicate the front of the array in one of our order arrays
-            - What is the base case for this solution?
-                - When our servedOrderIndex equals our servedOrder array size, that means we have checked all of our served orders
-            - For each of the iteration,
-                - We first make sure takeOutOrders index is less than takeOutOrders.length, we do not want to get index out of bound exception
-                    - If the first element in takeOutOrders equals the first element in servedOrders
-                        - we increment takeOutOrders index
-                - If we did not find our first element in servedOrders from takeOutOrders, we will check the front of dineInOrders
-                - We first make sure dineInOrder index is less than dineInOrders.length
-                    - If the first element in dineInOrders equals the first element in servedOrders
-                        - we will increment dineInOrder index
-                - If we did not the order in the front of either array, that means this is not a first-come first-served system, return false
-                - We will be able to increment our served order index if the cake was found
-                - We will continue our recursive call with the updated indices, which indicates the new front of each list
-            - What is the time and space complexity of this approach?
-                - Time complexity - O(n) - Our recursive calls, which ends when we finish checking our servedOrders
-                - Space complexity - O(n) - Memory used on the recursive call stack
+    2) From our first approach, it seems like we are using a lot of memory creating a new array inside each recursive call, is there a different
+       approach to keep track of the front of the list?
+        - Yes, we can use indices to keep track the front of the lists
+        - In each recursive call, we will have 3 more variable parameters
+            - Each index indicate the front of the array in one of our order arrays
+        - What is the base case for this solution?
+            - When our servedOrderIndex equals our servedOrder array size, that means we have checked all of our served orders
+        - For each of the iteration,
+            - We first make sure takeOutOrders index is less than takeOutOrders.length, we do not want to get index out of bound exception
+                - If the first element in takeOutOrders equals the first element in servedOrders
+                    - we increment takeOutOrders index
+            - If we did not find our first element in servedOrders from takeOutOrders, we will check the front of dineInOrders
+            - We first make sure dineInOrder index is less than dineInOrders.length
+                - If the first element in dineInOrders equals the first element in servedOrders
+                    - we will increment dineInOrder index
+            - If we did not the order in the front of either array, that means this is not a first-come first-served system, return false
+            - We will be able to increment our served order index if the cake was found
+            - We will continue our recursive call with the updated indices, which indicates the new front of each list
+        - What is the time and space complexity of this approach?
+            - Time complexity - O(n) - Our recursive calls, which ends when we finish checking our servedOrders
+            - Space complexity - O(n) - Memory used on the recursive call stack
+
+    3) Our 2nd approach uses O(n) space, we can achieve O(1) memory by using an iterative approach than recursion
+        - What should we keep track in an iterative approach?
+        - We can still use 2 pointers (dineInOrderIndex and takeOutOrderIndex)
+            - Each index will indicate the current 'front' of our array
+        - We then use a 'for' loop to iterate through our servedOrders
+            - If we found our served order in the front of dineInOrder array
+                - increment our dineInOrder index
+            - If we found our served order in the front of takeOutOrder array
+                - increment out takeOutOrder index
+            - If we did not find our served order in either array
+                - return false
+        - Return true after we have finished checking all of the orders
+        - What is the time and space complexity of this approach
+            - Time complexity O(n) - Our loop finished when we reach finish checking all of served orders
+            - Space complexity O(1) - we only created 2 variables to keep track the front of our lists
 
 
 
