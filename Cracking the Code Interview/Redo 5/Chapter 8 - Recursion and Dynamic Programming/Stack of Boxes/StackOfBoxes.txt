@@ -1,0 +1,19 @@
+Question
+    You have a stack of n boxes, with widths w1 , heights h i, and depths di . The boxes
+    cannot be rotated and can only be stacked on top of one another if each box in the stack is strictly
+    larger than the box above it in width, height, and depth. Implement a method to compute the
+    height of the tallest possible stack. The height of a stack is the sum of the heights of each box.
+
+Thoughts Before Coding
+    - For the problem, imagine that be have boxes b1, b2, b3, we will need to find the maximum height of
+        - if b1 is the bottom box
+        - if b2 is the bottom box
+        - if b3 is the bottom box
+    - So, after placing our bottom box, how do we find the maximum height for our boxes above it?
+        - Same process
+            - if we put b1 at the bottom box, we will need to test
+                - if b2 is our 2nd box
+                - if b3 is our 2nd box
+    - Since, we will only be experimenting with valid boxes, we do not want to try a bigger box on top of a smaller box
+        - we can first sort the boxes in descending order
+        - So, we know the box later down the list is able to be on top of our current box
