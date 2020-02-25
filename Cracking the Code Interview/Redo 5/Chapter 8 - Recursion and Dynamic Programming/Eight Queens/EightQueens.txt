@@ -1,0 +1,21 @@
+Question
+    Write an algorithm to print all ways of arranging eight queens on an 8x8 chess board
+    so that none of them share the same row, column, or diagonal. In this case, "diagonal" means all
+    diagonals, not just the two that bisect the board.
+
+Thoughts Before Coding
+    - So, in order for a queen placement (row, column) to be valid
+        - There must not be another queen at the same (row)
+        - There must not be another queen at the same (column)
+        - There must not be another queen in the same diagonal
+            - How do we check if 2 queens are in the same diagonal?
+                - The difference in rows is equal to the difference in columns
+                - For example, if our first queen is at (0, 1) and our 2nd queen is at (2, 3)
+                    - The difference in row is 2
+                    - The difference in column is 2
+                    - So we know they are diagonals of each other
+    - So, how do we find all of the valid queen placements?
+        - We can start with the first row and place a queen at one of the columns
+        - Then we can move to the next row and place a queen at one of the columns assuming it is valid
+        - We will continue down the columns for only valid queen placements in each of the rows
+        - How can we use this method to find a solution?
