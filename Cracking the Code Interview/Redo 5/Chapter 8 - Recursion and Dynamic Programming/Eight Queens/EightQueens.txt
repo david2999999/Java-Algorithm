@@ -38,7 +38,12 @@ Solution
               we have finished going through all of the rows. Then we can add this result to our list.
         - Since each row will only have 1 queen, we do not need to store our board in 8x8 matrix.
             - We only need a single array column[row] to know which column and row the queen is placed.
-
+    - What is the runtime and space complexity of this solution?
+        - Runtime complexity is O(n!)
+            - Think of it this way, we have 8 ways to place our first element
+            - Then as we go down the rows we have 1 less way then the previous row
+                - This is because we can not have queens in the same column
+            - 8 * 7 * 6 ... * 1 = O(n!)
 
 
 
