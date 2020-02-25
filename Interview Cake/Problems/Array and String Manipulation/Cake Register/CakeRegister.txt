@@ -93,7 +93,12 @@ Answer
             - Time complexity O(n) - Our loop finished when we reach finish checking all of served orders
             - Space complexity O(1) - we only created 2 variables to keep track the front of our lists
 
-
+Side Cases we can consider
+    - What if we finished our served orders, but there are still orders in either takeOutOrders or dineInOrders
+        - Is this still consider first-come first-serve?
+        - We may not want our customers to pay but not get their food
+    - We can short circuit our method by checking our parameters into the array
+        - If the total number of takeOutOrders and dineInOrders is less than our servedOrders, we can return false
 
 
 
