@@ -25,3 +25,13 @@ Answer
                     - O(n log n) - for each of the elements, we take O(log n) time to find its complement
                 - Space complexity = O(1)
             - Can we have a faster runtime if we use a data structure?
+        3) We need a data structure that has a very quick lookup time.
+            - We can use HashSet with its lookup time of O(1)
+            - As we iterate through the array
+                - We will check if the difference between are target sum and our current element is inside our HashSet
+                    - If it is inside the HashSet, we have found our pair, return true
+                    - If it is not inside our HashSet, we will store this element and continue on
+                - If we iterate through the whole array, and did not find a pair, we will return false
+            - What is the time and space complexity?
+                - Time complexity = O(n) - we only iterate through the array once
+                - Space complexity = O(n) - we used a HashSet to hold our previous elements
