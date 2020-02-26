@@ -43,3 +43,23 @@ Answer
         - We can use an array that is the same size as the number of boxes
             - the index will reflect the box inside our list of boxes
             - the value will be the maximum height with this box as the bottom
+    3) For our 2nd solution, we can think of the recursion method as whether to put a particular box onto the stack
+        - First we choose whether or not to put box 0 on the stack
+        - Then take a recursive path with box 0 at the bottom and one recursive path with box 0 not at the bottom
+        - return the better of the two options
+            - Then we choose whether or not to put box 1 on the stack
+            - Then take a recursive path with 1 at the bottom and one recursive path with box 1 not at the bottom
+            - Return the better of the two options
+        - How do we start this problem?
+            - We can still sort the ArrayList of boxes again to prevent searching backwards
+            - We will have a stackMap or a memo to store maximum height with a particular bottom, this prevents overlapping recursions
+            - What should be inside our recursive call?
+                - We need to keep track of the current bottom that we are currently trying to test
+                    - The base case will be when we have finished checking through all our boxes
+                    - One recursive path will be finding the height with this bottom
+                        - Check our stackMap to see if we already cache the results with this bottom
+                        - Make sure our current bottom can actually be put on top of our previous bottom
+                            - We need a base case for the beginning where there are no previous box, empty box stack.
+                                - We can use a null value, and allow all current value to be place on top of it
+                    - One recursive path will be finding the height without this bottom
+                - return the maximum of the two paths
