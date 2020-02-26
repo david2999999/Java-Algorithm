@@ -27,3 +27,19 @@ Answer
         - The single breath first search will require looking at 100 million nodes
         - The bi-directional breath first search will require looking at 20,000 nodes.
         - This is a huge difference
+
+Implementation
+    - What information do we need to keep track for breath first search?
+        - Breath first search requires a queue of elements that are waiting to be processed
+        - Since we do not want to traverse the same node twice, we also need a data structure to hold all of the nodes that are already visited
+            - A quick lookup table will be (HashTable)
+    - How do we get path between 2 nodes after we find a collision?
+        - We need to find a way to backtrack our nodes
+        - So, we will need a node path that is able to keep track of its previous node
+        - The root node on source/destination will not have a previous node
+    - How should we do our breath first search for each node and how do we know if there is a collision?
+        - We will do a single level breath first search on our source and destination every time
+        - How do we know if there is a collision?
+            - If we are currently visiting a node from our source side, we can check if this node is already visited on our destination side
+            - If we are currently visiting a node from our destination side, we can check if this node is already visited on our source side
+            - After our collision has been found, we can backtrack the node in our source side and the node in our destination side and merge the two paths
