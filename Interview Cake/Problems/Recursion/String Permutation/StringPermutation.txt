@@ -42,8 +42,8 @@ Answer
 
 Gotcha
     - For insertion of character into every index
-        - We can use a for loop, and this for loop iterates from [0, str.length()]
-        - We should note that the for loop includes the length of the string, this means we would like to insert a character to the index
+        - We can use a 'for' loop, and this 'for' loop iterates from [0, str.length()]
+        - We should note that the 'for' loop includes the length of the string, this means we would like to insert a character to the index
           right after the end of the string. (character index starts with 0, last character is at str.length() - 1). Inserting a new character
           to the end of the string is at index str.length().
             - Note: str.substring(str.length()) - does not cause index out of bound exception, even though there is no character there,

@@ -1,0 +1,25 @@
+Question
+    Write an efficient method that checks whether any permutation of an input string is a palindrome.
+    You can assume the input string only contains lowercase letters.
+
+Thoughts before coding
+    - How can we determine if a string is palindrome?
+        - A palindrome is a string that reads the same backwards as forward.
+        - This means there are even count for each of the characters
+            - There is one exception, where there is a single character at the center of the string
+    - Can we use this information to create a solution?
+        - We can iterate through the string and keep track of the count
+        - After we have finished count, we can check that there is at most one character that has an odd count
+
+Answer
+    1) What data structure can be used to keep track of count?
+        - We can use a HashMap to hold our character and its count
+            - key = character
+            - value = count
+        - After we finish traversing our array, we can just iterate through our HashMap to make sure that there is at most
+          one character that has an odd count.
+        - What is the time and space complexity of this approach?
+            - Time complexity = O(n) + O(n) = O(n)
+                - O(n) - iterate through our string the first time, keeping track of the count of characters
+                - O(n) - iterate through our HashMap to make sure there is at most one character that has an odd count
+            - Space complexity = O(n) - Our HashMap that is keeping track of the count
