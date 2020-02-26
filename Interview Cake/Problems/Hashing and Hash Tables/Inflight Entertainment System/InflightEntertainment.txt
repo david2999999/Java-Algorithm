@@ -1,0 +1,20 @@
+Question
+    Users on longer flights like to start a second movie right when their first one ends, but they complain that the plane usually lands
+    before they can see the ending. So you're building a feature for choosing two movies whose total runtimes will equal the exact flight length.
+
+    Write a method that takes an integer flightLength (in minutes) and an array of integers movieLengths (in minutes) and
+    returns a boolean indicating whether there are two numbers in movieLengths whose sum equals flightLength.
+
+    When building your method:
+        - Assume your users will watch exactly two movies
+        - Don't make your users watch the same movie twice
+        - Optimize for runtime over memory
+
+Answer
+    - What are the different approaches to this problem?
+        1) The first solution can just be comparing an element with every other element using 2 nested 'for' loops
+            - This checks if 2 elements adds up to the target sum
+            - What is the time and space complexity of this solution?
+                - Time complexity = O(n^2) - since we are iterating through the array with 2 nested 'for' loops
+                - Space complexity = O(1)
+            - Can we improve our time complexity by sorting?
