@@ -18,3 +18,10 @@ Answer
                 - Time complexity = O(n^2) - since we are iterating through the array with 2 nested 'for' loops
                 - Space complexity = O(1)
             - Can we improve our time complexity by sorting?
+        2) If we sort our array, we can find our complement of each element by using binary search.
+            - What is the time and space complexity of this method?
+                - Time complexity = O(n log n) + O(n log n) = O(n log)
+                    - O(n log n) - for sorting the elements
+                    - O(n log n) - for each of the elements, we take O(log n) time to find its complement
+                - Space complexity = O(1)
+            - Can we have a faster runtime if we use a data structure?
