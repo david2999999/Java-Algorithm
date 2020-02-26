@@ -1,0 +1,29 @@
+Question
+    Social Network: How would you design the data structures for a very large social network like
+    Facebook or Linkedln? Describe how you would design an algorithm to show the shortest path
+    between two people (e.g., Me-> Bob-> Susan-> Jason-> You).
+
+Thoughts before coding
+    - Lets first simplify the problem and not consider the millions of users
+        - How do we find a path between 2 nodes on a graph?
+            - We can use breath first search to find the shortest path, because each search on a node involves its surrounding neighbors
+            - Can we use depth first search?
+                - No, depth first search does not search its surrounding neighbors, but goes into search neighbor of neighbors
+                - If two users are off by 1 degree of separation, we may miss and end up traversing many other users before coming back to this relatively immediate connection
+
+
+Answer
+    - Is there any way to optimize our breath first search for many users?
+    - We can optimize our breath first search by using a bidirectional breath first search.
+        - This means we will do a breath first search from our source and our destination
+        - After, we find our collision point, we will be able to build a path from our starting node to our ending node
+    - Why is this more efficient?
+        - Single breath first search requires O(k^q)
+            - where k is the number of neighbors
+            - and q is the length of the path between our source and destination
+        - Double breath first search requires O(k^(q/2)) + O(k^(q/2)) = O(k^(q/2))
+
+        - If our path is 5 and each path has 100 friends
+        - The single breath first search will require looking at 100 million nodes
+        - The bi-directional breath first search will require looking at 20,000 nodes.
+        - This is a huge difference
