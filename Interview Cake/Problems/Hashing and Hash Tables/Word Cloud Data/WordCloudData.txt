@@ -15,3 +15,18 @@ Thoughts before Coding
             - Is it by punctuation?
             - Are we accounting for the last word in our string?
         - Do we need to account for special unicode characters?
+
+Solution
+    - We will create a class to tie our methods together
+        - The constructor will receive the our sentence as a parameter
+        - We will construct our HashMap with that parameter
+    - We will create our own split words method instead of the built it in one.
+        - This allows us to add words to our Map in one iteration
+        - Also, allows us to eliminate punctuations
+        - So, how do we split words?
+            - We will split words by spaces, em dashes, and ellipses
+            - We need to make sure to include hyphens and apostrophes to signify a single word
+        - As we find the words, we add them to our map
+    - What is the time and space complexity of this solution?
+        - time complexity = O(n) - We are only iterating the string 1 time with n characters
+        - space complexity = O(n) - We created the HashMap to store the count of our words
