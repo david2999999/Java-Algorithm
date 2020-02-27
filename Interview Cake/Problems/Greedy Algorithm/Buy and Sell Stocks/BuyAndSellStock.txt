@@ -1,0 +1,58 @@
+Question
+    Writing programming interview questions hasn't made me rich yet ... so I might give up and start trading Apple stocks all day instead.
+    First, I wanna know how much money I could have made yesterday if I'd been trading Apple stocks all day.
+    So I grabbed Apple's stock prices from yesterday and put them in an array called stockPrices, where:
+
+    - The indices are the time (in minutes) past trade opening time, which was 9:30am local time.
+    - The values are the price (in US dollars) of one share of Apple stock at that time.
+
+    Write an efficient method that takes stockPrices and returns the best profit I could have made from one purchase and one sale of one share of Apple stock yesterday.
+
+Thoughts before coding
+    - Brute force
+        - Compare the price of each of the earlier times with all of the prices at later times
+        - Keep track of the maximum profit on each iteration
+        - What is the time and space complexity of this approach?
+            - Time complexity = O(n + (n - 1) + (n - 2) + ...) = O(n^2)
+            - Space complexity = O(1)
+        - Can we do better with the runtime?
+            - Can we try sorting the array? which can result in O(nlogn) runtime
+                - No, this won't help us because we need to take the chronological order into consideration
+
+Answer
+    - Lets take a step back and see what do we need to find the current maximum profit at each index
+    - If we are at index i and want to find the maximum profit we can get
+        - we need the minimum stock price that we find at indexes (0 - (i - 1)) assuming i >= 1
+    - We can just find the max profit in one iteration of the array if we keep track of
+        - The minimum stock price from previous indexes
+        - The maximum profit we can currently attain by selling the stock at the current price
+    - This technique is the greedy algorithm
+        - We need to declare two variables, minPrice and maximumProfit
+        - As we iterate through the array
+            - We need to check if the current stock price minus our minPrice will give us a higher profit
+            - Then we can update our minPrice if our current stock price is less than our minPrice
+        - Return the maximumProfit
+
+Side Cases we can consider
+    - What if the stock price stays the same throughout the day?
+        - This will be fine, since our maximum profit will stay at 0
+    - What if the stock price continues to go down throughout the day?
+        - Should we return a negative value indicating we are losing money?
+            - If we decided to go with the approach
+                - Then our minimum stock price can be our first stock in the array
+                - The maximum profit can start with 2nd stock - 1st stock
+        - Should we return a value of zero?
+            - This will mean our profit - expenses will even out.
+            - This does not seem consistent
+        - Should we throw an exception telling the user to not buy the stock?
+
+
+
+
+
+
+
+
+
+
+

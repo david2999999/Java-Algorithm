@@ -1,0 +1,39 @@
+Question
+    Write an efficient method that checks whether any permutation of an input string is a palindrome.
+    You can assume the input string only contains lowercase letters.
+
+Thoughts before coding
+    - How can we determine if a string is palindrome?
+        - A palindrome is a string that reads the same backwards as forward.
+        - This means there are even count for each of the characters
+            - There is one exception, where there is a single character at the center of the string
+    - Can we use this information to create a solution?
+        - We can iterate through the string and keep track of the count
+        - After we have finished count, we can check that there is at most one character that has an odd count
+
+Answer
+    1) What data structure can be used to keep track of count?
+        - We can use a HashMap to hold our character and its count
+            - key = character
+            - value = count
+        - After we finish traversing our array, we can just iterate through our HashMap to make sure that there is at most
+          one character that has an odd count.
+        - What is the time and space complexity of this approach?
+            - Time complexity = O(n) + O(n) = O(n)
+                - O(n) - iterate through our string the first time, keeping track of the count of characters
+                - O(n) - iterate through our HashMap to make sure there is at most one character that has an odd count
+            - Space complexity = O(n) - Our HashMap that is keeping track of the count
+    2) We can save one of the O(n) time complexity from the previous approach by using a HashSet
+        - How do we use a HashSet to solve this problem?
+            - What we really want to know is finding if an element has appeared an odd or even amount of times
+                - We can add an element to the HashSet if it is found
+                - Then remove the element if our element is found again
+            - At the end, we will only have elements that appeared odd times
+            - We can use the size of the HashSet to determine if there is at most one element that has an odd count
+        - What is the time and space complexity of this approach?
+            - Time complexity - O(n)
+                - We iterate through the array one time to add or remove character from HashSet
+            - Space complexity - O(n) or O(k) or O(1)
+                - The space complexity depends on the range of characters that are presents
+                    - If we are using ASCII, then there are 128 different characters
+                    - If we are using unicode, then there are 110,000 symbols
