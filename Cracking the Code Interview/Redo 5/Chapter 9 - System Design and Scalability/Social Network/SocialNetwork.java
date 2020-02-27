@@ -48,4 +48,16 @@ public class SocialNetwork {
 
         return null;
     }
+
+    private LinkedList<Person> mergePaths(BFSData bfs1, BFSData bfs2, int connection) {
+        PathNode end1 = bfs1.visited.get(connection);
+        PathNode end2 = bfs2.visited.get(connection);
+
+        LinkedList<Person> pathOne = end1.collapse(false);
+        LinkedList<Person> pathTwo = end2.collapse(true);
+
+        pathTwo.removeFirst();
+        pathOne.addAll(pathTwo);
+        return pathOne;
+    }
 }
