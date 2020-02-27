@@ -15,3 +15,21 @@ Thoughts before coding
     - One way to get O(n) time is to use counting, where we can build an array call scoreCount,
       where the index is the number and the value represents how many times the number has appeared
 
+Answer
+    - We have decided to use counting to sort our array
+        - We will first created an array (scoreCount) to keep count of the number of times a score appears in our original array
+        - As we iterate through our original array
+            - We increment the value at the specific index, which represents the score
+        - After we got the count of each score
+            - We can create a new array called sortedScores
+            - We will iterate our scoreCount from the back, starting from 100
+                - This means we want the highest scores to be in front of the list
+                - And based on the number of occurrences, we will put as many scores as there are occurrences into our sortedScores
+        - return our sorted array
+    - What is the space and time complexity?
+        - Time complexity = O(n) + O(n) = O(n)
+            - O(n) - iterating through our original array to keep track of the count of scores
+            - O(n) - iterating through our scoreCount array and populating our sortedScores
+        - Space complexity = O(n) + O(n) = O(n)
+            - O(n) - scoreCount array
+            - O(n) - sortedScores array
