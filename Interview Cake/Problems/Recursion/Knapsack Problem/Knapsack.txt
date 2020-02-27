@@ -25,7 +25,7 @@ Answer
         - Using the same approach,
             1) If the cake weighs 2kg, then it would fill up our whole capacity. So, we just need to make sure
                this value is greater than our current max value at capacity 2.
-            2) If the cake weights 1kg, we can take 1kg, but we still have 1kg capacity left.
+            2) If the cake weighs 1kg, we can take 1kg, but we still have 1kg capacity left.
                 - What is the best way to fill that capacity?
                     - We have calculated the maximum value of 1 kg from before!
                     - We will check if add the cake's value to the max value at capacity 1 is better than our current
@@ -37,8 +37,7 @@ Answer
                We just need to add our cake value with our maximum cake value at 1kg, and then compare it with our current
                maximum capacity of 3.
             3) If the cake weighs 1kg, then we can carry 2 more kg, and we know the maximum value of 2kg from before.
-               We just need to add our cake value with our maximum cake value at 2kg, and then compare it with our current maximum
-               capacity of 3.
+               We just need to add our cake value at 2kg, and then compare it with our current maximum value at 3kg.
     - What is the time and space complexity of this solution?
         - time complexity = O(n * k), where n is number of types of cake and k is the capacity of the duffel bag,
           this is because we loop through cake (n cakes) for every capacity (k capacities).
