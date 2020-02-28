@@ -1,0 +1,13 @@
+Question
+    Given an array of integers, find the highest product you can get from three of the integers.
+    The input arrayOfInts will always have at least three integers.
+
+Thoughts before coding
+    - What if we try to brute force the problem by making three iterations of 'for' loop
+        - Multiplying each integer by another integer
+        - Then using the product to multiply another integer
+        - What is the time complexity of this approach?
+            - It is O(n^3), we can do better
+    - What if we try to sort the array in ascending order and take the 3 largest element from the end of the array?
+        - The sorting take O(nlogn) runtime
+    - Since, we must check through each of the elements to find the three largest elements, we must use at least O(n) runtime
