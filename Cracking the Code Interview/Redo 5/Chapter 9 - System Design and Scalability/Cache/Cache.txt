@@ -23,3 +23,23 @@ Thoughts before coding
             - Quick access to a value based on a key
                 - We can easily look up a value based on a key using HashMap
         - We can create a new data structure that has both LinkedList and HashMap
+
+Answer
+    - What should our cache be able to do?
+        - What updates should happen when we insert results into our cache with a query?
+            - When inserting a query and result
+                - if this query is already inside our HashMap
+                    - we will update the value, which is the node and its result
+                - else create a new node and place the query and node inside our HashMap
+                - We will move the node to the front of our LinkedList
+                    - This means we will need to keep track of the head of our list
+                - What should happen if our cache is full?
+                    - We will want to remove the last node in our LinkedList
+                    - This means we will need to keep track of the tail of our list
+        - What updates should happen when we access a query from our cache?
+            - We will first need to check if our query actually exist in our cache
+                - This can be done via our HashMap
+                - If our query is not inside our HashMap, we will return null
+            - If our query is in our cache
+                - We will access the node via our HashMap
+                - Then move the node to the front of our list
