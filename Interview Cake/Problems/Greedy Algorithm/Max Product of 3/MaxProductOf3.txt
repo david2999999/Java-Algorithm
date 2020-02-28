@@ -50,6 +50,12 @@ Answer
             - current lowest
             - current value
 
+    - What is the time and space complexity?
+        - Time complexity = O(n)
+            - We only iterate through the array one time and updating our variables
+        - Space complexity = O(1)
+            - We declare primitive variables to keep track of our values
+
 
 
 
