@@ -1,0 +1,27 @@
+Question
+    Write a method for doing an in-place shuffle of an array.
+    The shuffle must be "uniform," meaning each item in the original array must have the same probability of ending up in each spot in the final array.
+    Assume that you have a method getRandom(floor, ceiling) for getting a random integer that is >= floor and <= ceiling.
+
+Thoughts before Coding
+    - Let's first think of the concept of shuffle
+        - Shuffle means each element has the same probability of ending up in a certain index in the array
+    - Let's not think of an in-place shuffle for now
+        - Let's first create a new array and see how can we do a shuffle using a new array
+        - For our first index in our shuffled array
+            - We have to randomly pick a value from our original array and place it in the first index
+        - For our 2nd index in our shuffled array
+            - We have to randomly pick a value that is other than the value that we have placed in the first index
+        - For our third index in our shuffled array
+            - We have to randomly pick a value that has not been in first/second index
+    - But does each of the value really have the same probability?
+        - We can use some probability to determine this
+        - The chance of a number being picked is (1/n)
+        - The chance of a number being picked the 2nd time instead of the first
+            - ((n - 1) / (n)) * (1 / (n - 1)) = (1/n)
+        - The chance of a number being picked the 3rd time instead of first/2nd
+            - ((n - 1) / (n)) * ((n - 2) / (n - 1)) * (1 / (n - 2)) = (1/n) = (1/n)
+    - This means they all of the same chance of getting picked
+
+
+
