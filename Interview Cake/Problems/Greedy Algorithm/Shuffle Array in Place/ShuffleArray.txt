@@ -23,5 +23,17 @@ Thoughts before Coding
             - ((n - 1) / (n)) * ((n - 2) / (n - 1)) * (1 / (n - 2)) = (1/n) = (1/n)
     - This means they all of the same chance of getting picked
 
-
-
+Answer
+    - We can shuffle this array in place, by making the front of our original array the new shuffled array
+    - So for each of the index
+        - We will pick a random index from (i - (array.length - 1))
+        - Then we will swap the value in our current index with the value in the random index
+        - When a value is placed, we will not be moving it again
+        - Note: we do not need to shuffle the last element in the array, because there will be no more elements to swap with
+    - How do we pick a random index?
+        - Since we have the random function that is given, we can utilize it
+        - We need a range from current index -> index of the end of the array
+        - Random(((array.length - 1) - currentIndex) + 1) + currentIndex;
+    - What is the time and space complexity?
+        - Time complexity = O(n), we are iterating through the array one time and swapping elements
+        - Space complexity = O(1)
