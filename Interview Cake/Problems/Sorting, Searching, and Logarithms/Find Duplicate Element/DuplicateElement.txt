@@ -29,3 +29,52 @@ Thoughts before coding
                     - We can achieve O(1) using a in-place sort. Such as in-place merge sort
                 - But modifying the input may cause unexpected behavior throughout the program
                 - Lets try to find a way without modifying our original input
+
+Answer
+    - In this problem, we are trying to find a needle in a haystack. Instead of cutting our haystack in half,
+      can we try to cut down our possibilities (needles) in half?
+    - Our whole needle range goes from (1 - n)
+        - Can we test if the needle is in (1 - n/2) and ((n/2 + 1) - n)
+        - Our 2 ranges does not overlap
+    - Each subarray has a number of element and also a number of distinct elements
+        - It is the notion of we have more items than possibilities, so we must have at least 1 duplicate. Using the pigeonhole principle
+    - We need to divide our range of needles in half
+        - Our lower bound (floor) value will be set to 1. (Since, our needles are in the range of 1 - n)
+        - Our upper bound (ceiling) value will be set to n, or our array.length - 1
+    - We can use a while loop with the condition (floor <= ceiling)
+        - When our floor equals the ceiling, we have found our duplicate
+        - In each iteration, we have to separate our range in
+            - lower floor - floor
+            - lower ceiling - mid index
+            - upper floor - mid index + 1
+            - upper ceiling - ceiling
+    - We can first search through our original array for values in the lower levels (floor -> mid)
+        - If the count of elements in the range of (floor -> mid) is greater than the number of distinct elements (mid - floor + 1)
+            - then we know there must be a duplicate number because we have more elements than possibilities
+                - we have to continue our search in the lower levels, we can then cut our range in half again to do the same process
+                    - our floor will be the lower floor
+                    - our ceiling will be the lower ceiling
+        - If the count of elements in the range of (floor -> mid) is less than or equal to the number of distinct elements (mid - floor + 1)
+            - Then we know that our duplicate number must be in the upper range of number (mid + 1 -> ceiling)
+            - This is because all of the spaces are taken up by numbers in the upper range
+                - We have to continue our search in the upper levels
+                    - our floor will be upper floor
+                    - our ceiling will be upper ceiling
+        - We will continue to cut our range in half until we only have 1 element left, which is when our floor equals the ceiling
+            - We have found our duplicate value
+    - return floor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
