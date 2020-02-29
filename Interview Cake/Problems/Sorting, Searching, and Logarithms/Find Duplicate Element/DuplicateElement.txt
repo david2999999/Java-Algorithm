@@ -1,0 +1,31 @@
+Question
+    We have an array of integers, where:
+        - The integers are in the range 1 to n
+        - The array has a length of n + 1
+
+    It follows that our array has at least one integer which appears at least twice. But it may have several duplicates, and each duplicate may appear more than twice.
+    Write a method which finds an integer that appears more than once in our array. (If there are multiple duplicates, you only need to find one of them.)
+
+    We're going to run this method on our new, super-hip MacBook Pro With Retina Display™.
+    Thing is, the damn thing came with the RAM soldered right to the motherboard, so we can't upgrade our RAM. So we need to optimize for space!
+
+Thoughts before coding
+    - So, we need to to find a duplicate element in a range of numbers
+        - What is a way to keep track of previous elements? HashSet
+            - We can iterate through our array
+                - checking to see if we have saw this value before
+            - What is the time/space complexity?
+                - Time complexity = O(n)
+                    - iterating through the array once to check for duplicate
+                - Space complexity = O(n)
+                    - Using HashSet to keep track of previous elements
+            - We want to optimize for space, so we have to look for a different approach
+        - Can we try sorting the elements first and then check adjacent elements?
+            - What is the time/space complexity?
+                - Time complexity = O(nlogn) + O(n) = O(nlogn)
+                    - O(nlogn) - to sort the array
+                    - O(n) - to check adjacent elements
+                - Space complexity can take O(n)
+                    - We can achieve O(1) using a in-place sort. Such as in-place merge sort
+                - But modifying the input may cause unexpected behavior throughout the program
+                - Lets try to find a way without modifying our original input
