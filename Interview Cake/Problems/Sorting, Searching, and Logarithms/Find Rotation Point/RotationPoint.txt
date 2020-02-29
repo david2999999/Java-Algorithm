@@ -27,5 +27,27 @@ Thoughts before Coding
         - in this example, the value of (q) is equal to (q), so our rotation point must be on the right
             [q, q, q, q, q, b, c, d, e]
 
+Answer
+    - We should validate if our array has at least 2 elements
+        - if not throw an exception
+    - We will first declare a variable to keep track of the first element inside our array
+    - Then we will have a floor/ceiling index to keep track of the range we are currently searching through
+        - floor is initially 0
+        - ceiling is initially array.length - 1
+    - How do we know if we found our rotation point?
+        - When our floor and ceiling index are adjacent to each other
+        - That means floor is the largest value before we start over
+        - And ceiling will be our first smallest element (aka our rotation point)
+    - Our search will involve a 'while' loop with the conditional (floor < ceiling)
+        - We will get our middle element
+            - We can compare this middle element with the value at the front of the array
+        - if our middle element is greater than or equal to our value at the front
+            - We have to search the right side (middle index -> ceiling) inclusive
+        - if our middle element is less than our value at the front
+            - We have to search the left side (floor -> middle index) inclusive
+        - When our floor and ceiling are adjacent indices
+            - We can break out of our 'while' loop
+    - return ceiling
+
 Gotchas
     - When search to the left/right, we need to make sure it is inclusive of our current middle index
