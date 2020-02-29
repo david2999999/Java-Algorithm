@@ -37,3 +37,24 @@ Thoughts before coding
             - We can loop from the back of the array to create this array productOfValuesAfterIndex
     - Then our solution will be the product of each index
         - productOfValuesBeforeIndex[i] * productOfValuesAfterIndex[i]
+
+Answer
+    - In this solution we are currently using three arrays
+        - productOfValuesBeforeIndex
+        - productOfValuesAfterIndex
+        - productOfValuesExceptAtIndex
+    - We only need to use 1 array
+        - we will first create 1 array productOfValuesExceptAtIndex
+        - Then we will first populate the values with the product before each index
+        - Then we will iterate backward through our array and multiple those product with the product after each index to get our result
+    - Is there any edge cases to consider?
+        - What if there are less than 2 elements inside the array?
+            - We can throw an exception, because we need to find the product of 'other' integers. So, we need at least 2
+        - What if the array is all zeros
+            - We will be fine with zeros
+    - What is the time and space complexity?
+        - Time complexity - O(n) + O(n) = O(n)
+            - O(n) - iterating through the array forward
+            - O(n) - iterating through the array backward
+        - Space complexity - O(n)
+            - We created a new array productOfValuesExceptAtIndex
