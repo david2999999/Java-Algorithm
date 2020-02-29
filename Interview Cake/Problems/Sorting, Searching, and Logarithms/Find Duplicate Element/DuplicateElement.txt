@@ -64,6 +64,10 @@ Answer
             - We have found our duplicate value
     - return floor
 
+    - What is the time and space complexity?
+        - Time complexity = O(nlogn)
+            - We cut our range of needles by half and search through n elements every time
+        - Space complexity = O(1)
 
 
 
