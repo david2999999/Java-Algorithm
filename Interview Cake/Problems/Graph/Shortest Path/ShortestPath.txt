@@ -1,0 +1,10 @@
+Question
+
+
+Gotcha
+    - Queue interface inherits isEmpty method from its super interface.
+    - Converting a list to array with the built in method
+        - list.toArray(new type[list.size()])
+    - Use a HashMap when trying to construct a path
+        - Key - Current Node
+        - Value - Previous Node
