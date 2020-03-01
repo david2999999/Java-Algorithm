@@ -1,5 +1,21 @@
 Question
+    Given information about active users on the network, find the shortest route for a message from one user (the sender) to another (the recipient).
+    Return an array of users that make up this route.
 
+Thoughts before Coding
+    - What data structure can be used to represent a network of users?
+        - Graph!
+    - Now, we need to find shortest path between two nodes
+        - How do we know if there is even a path between 2 nodes?
+            - What traversal can we use?
+                - Breath first search
+                - Depth first search
+        - We should use Breath first search to find the shortest path, because it searches for nodes that are neighbors
+          to our current node first.
+        - If we use a depth first search, we may miss a node by one degree and we will end up searching many other users.
+    - After we know there is a path between 2 nodes
+        - How will we reconstruct our path?
+        - For each of the nodes, we need to know the previous node in order to backtrack our path
 
 Gotcha
     - Queue interface inherits isEmpty method from its super interface.
