@@ -55,6 +55,25 @@ Solution
             - Our space complexity is O(D)
                 - The HashSet to hold all of the illegal colors, which can hold at most D colors
 
+    - Our optimized solution will flow like this
+        - For each of the nodes inside the graph
+            - We will check all its neighboring nodes, to get all of the colors we can't use
+                - We will be storing the colors inside a HashSet for O(1) lookup
+                - If we found our current node inside our neighbors, that means we have found a loop inside the graph
+                    - We have to throw an exception because adjacent nodes can not have the same colors, which in this case itself
+            - Then we will iterate through our colors
+                - pick our first available color
+                - color our node
+    - Is there any side cases we should be worrying about
+        - What if there is a cycle?
+            - Cycle happens when traversing a graph, we are iterating through all the nodes, so this won't be a problem
+        - What if there is a node with no edges?
+            - We are iterating through all the nodes, so we are taking this node into account
+        - What if there is a loop?
+            - This will be a problem, this will mean a node is adjacent to itself.
+              A node can not have the same color as its adjacent node (itself)
+            - So, we will have to throw an exception
+
 
 
 
