@@ -22,3 +22,25 @@ Thoughts before Coding
                   in-stack before adding another element into our queue
               - This will be very inefficient to move elements back and forth just to remove an element from the queue
               - Can we do it in O(1) time?
+
+Solution
+    - Our queue will be implemented with 2 stacks
+        - inStack
+        - outStack
+    - All of the elements that are added to the queue will go into inStack
+        - What is the time complexity?
+            - Time complexity = O(1), we are pushing element into a stack
+    - All of the elements that are remove from the queue will come out of the outStack
+        - What happens if our outStack is empty?
+            - We will move all of the elements from our inStack into outStack
+            - We DO NOT move the elements back into our inStack
+        - We only move elements from out inStack into our outStack only if outStack is empty
+            - This will preserve the order of the elements that are added to the queue
+        - What is the time complexity?
+            - Time complexity worst case is O(m), where we have to move m elements from inStack to outStack
+            - Amortized Time complexity is O(1)
+                - since after using m operations to move the elements, its future remove operation is O(1)
+
+Gotchas
+    - Instead of calling the stacks newStack/oldStack
+        - It is better off to call it inStack and ourStack
