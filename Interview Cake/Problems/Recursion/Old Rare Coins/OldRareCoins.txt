@@ -84,7 +84,7 @@ Different Approaches to the Problem
                 - we know how to get waysOfDoingNCents1And2[3], which is 2. This is our bottom up approach, because
                   all values are already calculated beforehand
                         - waysOfDoingNCents1And2[5] = waysOfDoingNCents1[5] + waysOfDoingNCents1And2[5 - 2]
-                - Do need to check if we use two (2c) coins? waysOfDoingNCents1And2[5 - 2 - 2]
+                - Do we need to check if we use two (2c) coins? waysOfDoingNCents1And2[5 - 2 - 2]
                     - No, this is because we already checked waysOfDoingNCents1And2[1] when calculating waysOfDoingNCents1And2[3].
                     - waysOfDoingNCents1And2[k] already include the full count of possibilities for getting k, including possibilities
                       of using 2c any number of times.
