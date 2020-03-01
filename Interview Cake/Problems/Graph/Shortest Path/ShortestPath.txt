@@ -35,6 +35,22 @@ Answer
             - Because we constructed the path from the end node. So the list is reversed
             - This can be prevented by using a LinkedList and using the addFirst method instead
             - In the current example, we used an ArrayList and all elements are added to the end of the list
+    - Optimizations we can make,
+        - We are currently using 3 data structure in our breath first search
+            - Queue, HashMap, HashSet
+        - When we add values to our HashSet, we are also adding it into our HashMap
+        - We can remove our HashSet and just use HashMap to indicate if a value has already been visited
+    - What is the time and space complexity?
+        - Time complexity = O(n) + O(n) = O(n)
+            - O(n) - for our breath first search
+            - O(n) - backtrack and reconstruct our path via HashMap
+        - Space complexity = O(n) + O(n) + O(n) = O(n)
+            - O(n) - HashMap
+            - O(n) - Queue
+            - O(n) - The list for our path from start to end
+
+Side cases to Consider?
+    - We need to make sure both our starting and ending node is inside our graph.
 
 Gotcha
     - Queue interface inherits isEmpty method from its super interface.
