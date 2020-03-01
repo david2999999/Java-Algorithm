@@ -20,3 +20,51 @@ Thoughts before Coding
           for each of the colors to make sure there is no duplicate color between adjacent nodes
             - If there M edges in each node
             - Then our runtime is O(M * D^N)
+
+Solution
+    - Instead of finding all possible combinations
+        - Can we try coloring the nodes one by one?
+        - How do we know if we have a valid color for a node?
+            - We can first check the colors of its neighboring nodes (illegal colors)
+            - Then we can just use colors that are available and not inside our illegal colors.
+        - What is the time and space complexity of this approach?
+            - For each of the nodes
+                - We check to see if the color of its neighboring nodes to make sure we are no using the same color.
+                    - There are at most O(D) neighbors
+                - Then we iterate over of the color to check for the available color
+                    - There are at most O(D) colors
+                - Then we get one of the available colors and color our node
+            - Time complexity = O(N * (D + D + 1))
+        - We can actually have a tighter bound analysis on the number of neighbors
+            - We are assuming that each of the nodes has at most D neighbors
+            - But some nodes has less than D neighbors
+            - So, if we think of the graph as a whole, there are M edges and 2 * M neighbors
+                - We will be checking O(2M) = O(M) neighbors
+            - We can have a tighter bound of O(N * (D + 1) + M)
+        - We can also optimized our color picking
+            - Instead of finding all the available colors, we can just find the first available color and color our node
+            - The worst case of iterating through our illegal colors is when our illegal colors is at most the number of our neighbors
+            - We can look at the big picture again, if there are M edges and 2 * M neighbors
+                - At worst, we will have to look through O(2M) -> O(M) illegal colors
+            - But we also need keep into consideration our (+1), this is used to check for our last available color (illegalColor.size() + 1)
+            - So, our optimized runtime is O(M + N) for checking for the first available colors out of all the colors
+        - Putting the whole thing together
+            - Our runtime is now O(M + N + M) = O(N + M)
+                - Where N is the total number of nodes
+                - and M is the number of edges
+            - Our space complexity is O(D)
+                - The HashSet to hold all of the illegal colors, which can hold at most D colors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
