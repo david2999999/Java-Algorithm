@@ -17,6 +17,25 @@ Thoughts before Coding
         - How will we reconstruct our path?
         - For each of the nodes, we need to know the previous node in order to backtrack our path
 
+Answer
+    - We will perform a breath first search from our starting node to search for our ending node
+        - What is needed for breath first search?
+            - We need a queue of nodes, so we can process the neighbors of our current node first
+            - To prevent cycles, we will also have a HashSet to hold nodes that we have already traversed
+            - What happens when we find our end node?
+                - How do we backtrack and construct a path?
+        - We can keep track of our current value and previous value with a HashMap
+            - Key = current value
+            - Value = previous value
+            - Our starting node will have a previous value of null, because it is the front of the path
+        - After we have found our ending node
+            - We will use the HashMap to check for the previous value
+            - We will add the values into a list to construct a path
+        - After constructing the path, we will need to reverse it.
+            - Because we constructed the path from the end node. So the list is reversed
+            - This can be prevented by using a LinkedList and using the addFirst method instead
+            - In the current example, we used an ArrayList and all elements are added to the end of the list
+
 Gotcha
     - Queue interface inherits isEmpty method from its super interface.
     - Converting a list to array with the built in method
