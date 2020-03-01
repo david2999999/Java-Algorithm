@@ -21,3 +21,29 @@ Thoughts before Coding
             - We need to save this previous value, so when we remove our current max, we will still have access to our previous max
         - What data structure can we used to keep track of our max?
             - We can use another stack!
+
+Solution
+    - We will have 2 stacks
+        - One stack will store our elements
+        - Another stack will only store our max values
+    - When pushing elements into our stack, we also need to check
+        - If the value of this element is greater than or equal to our maximum element on top of our max stack
+            - We will need to push a new maximum on our max stack
+        - If our max stack is empty, we can just put our element into the max stack as our current maximum value
+    - When popping elements off our stack, we also need to check
+        - If the value is equal to our maximum element on top of our max stack
+            - If the two values are equal, we will pop the element off our max stack
+    - When we want to know what is the current max element
+        - We just need to peek our max stack
+
+
+
+
+
+
+
+
+
+
+
+
