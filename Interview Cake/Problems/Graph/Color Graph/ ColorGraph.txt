@@ -1,0 +1,22 @@
+Question
+    Given an undirected graph with maximum degree D, find a graph coloring using at most D+1 colors.
+
+Thoughts before Coding
+    - Let's first check if there is actually a way for a graph with a maximum degree D to be colored with at most D + 1 colors
+        - For each of the nodes, there will be at most D neighbors
+        - Since, we have D + 1 colors, there will always be at least one color that is not used
+        - So, yes there is a possible coloring
+    - What is the brute force way for this?
+        - Imagine we have 4 colors and 12 nodes
+        - For each of the nodes
+            - Try every possible coloring there is
+            - If the color is legal, then go to the next node
+            - Otherwise check for another color
+        - What is the time complexity of this approach?
+            - Since there are 4 colors for each node
+            - There are (4^12) combinations
+            - This results in O(D^N)
+        - We also need to factor into the fact that we also need to check its neighbors
+          for each of the colors to make sure there is no duplicate color between adjacent nodes
+            - If there M edges in each node
+            - Then our runtime is O(M * D^N)

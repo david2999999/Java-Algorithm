@@ -24,7 +24,7 @@ Answer
     - If we are at index i and want to find the maximum profit we can get
         - we need the minimum stock price that we find at indexes (0 - (i - 1)) assuming i >= 1
     - We can just find the max profit in one iteration of the array if we keep track of
-        - The minimum stock price from previous indexes
+        - The minimum stock price from previous indices
         - The maximum profit we can currently attain by selling the stock at the current price
     - This technique is the greedy algorithm
         - We need to declare two variables, minPrice and maximumProfit
