@@ -36,6 +36,14 @@ Solution
     - When we want to know what is the current max element
         - We just need to peek our max stack
 
+    - What is the time for each of the methods?
+        - Pop() - O(1)
+        - Push() - O(1)
+        - getMax() - O(1)
+    - What is the space complexity?
+        - O(m) additional space
+            - where m is the number of operation on the list
+            - Worst case, each additional operation adds a new maximum to our max stack
 
 
 
