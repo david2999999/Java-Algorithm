@@ -1,0 +1,24 @@
+Question
+    Implement a queue with 2 stacks. Your queue should have an enqueue and a dequeue method and it should be "first in first out" (FIFO).
+
+Thoughts before Coding
+    - What is the difference between queue and stack?
+        - A Queue is first-in first-out data structure
+        - A Stack is last-in first-out data structure
+    - Lets walk through an example of adding elements to our queue
+        - If we add 3 elements into our queue
+            - We will need to push 3 elements into one of our stack
+        - What if we need to remove an element from the queue?
+            - The element that we need to remove is in the bottom of the stack
+            - We need to find a way to reverse our stack, so our bottom most element can be on top to be removed
+            - We can do that by moving all of our elements from one stack to another
+                - We pop elements from our in-stack and push it into our out-stack
+                - This will reverse the order of the elements
+            - then we can pop the element at the top of the out-stack
+        - What if we need to add 1 more element into our queue?
+            - Where would this element be?
+                - It needs to be below our bottom element in our out-stack
+                - It seems like we need to move all of our items from our out-stack back into our
+                  in-stack before adding another element into our queue
+              - This will be very inefficient to move elements back and forth just to remove an element from the queue
+              - Can we do it in O(1) time?
