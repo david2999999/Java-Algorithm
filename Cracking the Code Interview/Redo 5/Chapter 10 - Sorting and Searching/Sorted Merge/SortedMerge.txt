@@ -12,3 +12,23 @@ Thoughts before Coding
         - The last index of array A with elements
         - The last index of array B
         - The index of our merged
+
+Answer
+    - We will declare three variables
+        - last index of A
+        - last index of B
+        - index of our merged Array
+    - We have a 'while' loop with the condition 'indexB >= 0'
+        - This is to make sure we have moved all of our elements in array B over
+        - We do not need our indexA in our 'while' loop because the elements are already in place
+    - In each of the iteration
+        - if our value in indexA is greater than our value in indexB
+            - we will move our value from indexA to the back 'mergedIndex'
+            - Don't forget to check if our indexA is greater than or equal to zero
+                - We do not want get an index out of bound exception
+            - Decrement our indexA after we moved our value
+        - If our value in indexB is greater than the value at indexA
+            - Copy our value from indexB into the mergedIndex
+            - Decrement our indexB
+        - After, we have moved an element from either indexA or indexB
+            - We will decrement our mergedIndex
