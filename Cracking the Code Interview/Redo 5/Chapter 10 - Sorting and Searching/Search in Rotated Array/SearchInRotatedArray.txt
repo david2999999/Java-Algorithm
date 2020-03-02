@@ -43,4 +43,11 @@ Answer
                 - Search on the left, left -> (mid + 1)
                 - If not found on the left
                     - return a search on the right, (mid + 1) -> right
-    - Return -1 if none of these conditions hold
+
+    - What is the time/space complexity?
+        - Time complexity
+            - O(logn), average case -  if there are no duplicate elements
+            - O(n), worst cast - if there are duplicate elements
+        - Space complexity  - recursive stack memory
+            - O(logn), average case -  if there are no duplicate elements
+            - O(n), worst cast - if there are duplicate elements
