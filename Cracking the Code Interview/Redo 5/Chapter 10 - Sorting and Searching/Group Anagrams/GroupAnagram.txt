@@ -14,3 +14,24 @@ Thoughts before coding
                 - O(nlogn) = sorting first string
                 - O(nlogn) = sorting 2nd string
     - We do not actually need to sort the entire array, we just need to be able to group anagrams together
+
+Answer
+    - How do we group a list of anagrams together?
+    - We need a common value to distinguish our group of anagrams
+        - our common value can be the sorted versions of anagrams
+    - How do we group them together?
+        - We can create a list to hold them together
+    - Now we have a common value and a list, we can use a HashMapList to keep track of our list of anagrams
+        - key = sorted string
+        - value = list of anagrams
+
+    - We will first instantiate a HashMapList
+        - where the key is a string and the value is a list of strings
+    - We will iterate through our input array
+        - For each of the strings, we will sort the characters
+        - The sorted string will be our key
+        - We will add the string to our list of anagrams, using the sorted string as key
+    - After we have stored all our anagrams in our HashMapList
+        - We can iterate through our HashMap
+            - And copy our group of anagrams into our array
+    - return our array of grouped anagrams
