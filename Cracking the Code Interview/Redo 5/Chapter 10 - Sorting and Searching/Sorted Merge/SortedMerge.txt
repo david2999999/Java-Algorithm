@@ -1,0 +1,14 @@
+Question
+    You are given two sorted arrays, A and B, where A has a large enough buffer at the
+    end to hold B. Write a method to merge B into A in sorted order.
+
+Thoughts before Coding
+    - Since, we have enough space at the end of array A, we do not need to allocate extra space
+    - If we try to put elements in front of array A, we will be shifting all of the elements over
+        - We should try replacing elements from the end
+    - Our ordering of our merged array is ascending, so the largest element is at the end
+        - We should start comparing our 2 arrays from the end
+    - The information we currently need is
+        - The last index of array A with elements
+        - The last index of array B
+        - The index of our merged
