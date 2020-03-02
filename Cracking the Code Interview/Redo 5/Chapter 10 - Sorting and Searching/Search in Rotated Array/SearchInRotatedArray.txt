@@ -1,0 +1,17 @@
+Question
+    Given a sorted array of n integers that has been rotated an unknown
+    number of times, write code to find an element in the array. You may assume that the array was
+    originally sorted in increasing order.
+
+Thoughts before Coding
+    - This question is very similar to finding to the pivot point in a rotated array
+        - In that example, we search through the array by comparing our middle element with our leftmost element
+        - this will determine if our pivot point is on the left or the right
+    - We can use a similar binary search strategy in this problem
+        - In this question, one half of the array must be sorted in ascending order
+        - For example
+            - If our middle element is greater than our left element
+                - that means our left side is in ascending order
+            - If our middle element is less than our left element
+                - that means our right side is in ascending order
+        - Can we use this rule in our problem?
