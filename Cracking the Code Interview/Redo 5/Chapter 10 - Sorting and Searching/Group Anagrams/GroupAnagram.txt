@@ -1,0 +1,16 @@
+Question
+    Write a method to sort an array ot strings so that all tne anagrams are next to
+    each other.
+
+Thoughts before coding
+    - How do we know if 2 strings are anagrams
+        - The 2 strings has the same character count
+        - The sorted order of the 2 string is the same
+    - We can create a custom Anagram comparator
+        - By sorting both of the strings
+        - Then comparing the values of the sorted strings
+        - What is the time complexity of this approach?
+            - Time complexity = O(nlogn) + O(nlogn) = O(nlogn)
+                - O(nlogn) = sorting first string
+                - O(nlogn) = sorting 2nd string
+    - We do not actually need to sort the entire array, we just need to be able to group anagrams together
