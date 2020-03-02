@@ -11,7 +11,7 @@ Thoughts before Coding
     - The information we currently need is
         - The last index of array A with elements
         - The last index of array B
-        - The index of our merged
+        - The index of our merged = the last index in arrayA without an element
 
 Answer
     - We will declare three variables
