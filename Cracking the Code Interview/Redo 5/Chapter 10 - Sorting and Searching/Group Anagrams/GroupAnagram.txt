@@ -35,3 +35,10 @@ Answer
         - We can iterate through our HashMap
             - And copy our group of anagrams into our array
     - return our array of grouped anagrams
+
+    - What is the time/space complexity?
+        - Time complexity = O(n * klogk) + O(n) = O(n * klogk), where k is the length of the string
+            - O(n * klogk) - for each of the string of the array, we need to sort the characters
+            - O(n) - iterating through all our strings to group the anagrams
+        - Space complexity = O(n)
+            - We create a HashMapList to group all of our strings into anagrams
