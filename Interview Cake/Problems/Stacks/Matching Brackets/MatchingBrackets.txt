@@ -19,3 +19,38 @@ Thoughts before Coding
             - Quickly add a opening bracket
             - Quickly remove our most recent opening bracket if a closing bracket is found
         - We can use a Stack!
+
+Answer
+    - How do we know if a character is
+        - Opening bracket?
+        - Closing bracket?
+    - How do we know if a opening bracket matches a closing bracket?
+        - We can create a HashMap that matches our opening to our closing
+            - Key -> Opening
+            - Value -> Closing
+        - We can then create a HashSet of opening brackets using our keys of our HashMap
+        - We can then create a HashSet of closing brackets using the values of our HashMap
+    - We now have the information to determine our opening/closing brackets
+    - We now now instantiate a Stack to keep track of all our previous opening brackets
+        - This can be done with Deque interface with the implementation ArrayDeque
+    - We will iterate through our String
+        - If the character is an opening bracket
+            - Push it into our stack
+        - If the character is a closing bracket
+            - If our stack is empty
+                - return false, there is no opening bracket to match
+            - Pop our topmost element out of our stack
+            - If our previous opening bracket does not match our current closing bracket
+                - return false, invalid match
+    - return true if our stack is empty, we have finished matching all opening brackets with closing brackets
+
+
+
+
+
+
+
+
+
+
+
