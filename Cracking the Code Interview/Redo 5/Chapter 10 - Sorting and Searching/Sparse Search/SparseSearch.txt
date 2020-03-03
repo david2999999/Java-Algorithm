@@ -1,0 +1,10 @@
+Question
+    Given a sorted array of strings that is interspersed with empty strings, write a
+    method to find the location of a given string.
+
+Thoughts before Coding
+    - We have an sorted array of elements, and we need to find a value
+        - This sounds like a question that needs a modified binary search
+    - How do we handle cases if our middle elements hits an empty String?
+        - We can search to our left/right to find our closest non empty string,
+          before performing our binary search
