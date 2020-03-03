@@ -44,13 +44,13 @@ Answer
                 - return false, invalid match
     - return true if our stack is empty, we have finished matching all opening brackets with closing brackets
 
-
-
-
-
-
-
-
-
-
-
+    - What is the time and space complexity?
+        - Time complexity = O(n)
+            - We iterate through our all our characters once
+        - Space complexity = O(n) + O(n) + O(3) + O(3) + O(3) = O(n)
+            - O(n) - converting our String to character array
+            - O(n) - worst case, all of the code are opening brackets
+            - O(3) - HashMap to make our openers to closers
+            - O(3) - HashSet for openers
+            - O(3) - HashSet for closers
+            - n in this case, is the length of our code
