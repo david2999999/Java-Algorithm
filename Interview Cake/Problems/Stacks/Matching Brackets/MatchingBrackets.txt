@@ -1,0 +1,21 @@
+Question
+    You're working with an intern that keeps coming to you with JavaScript code that won't run because the braces, brackets, and parentheses are off.
+    To save you both some time, you decide to write a braces/brackets/parentheses validator.
+
+    Let's say:
+        '(', '{', '[' are called "openers."
+        ')', '}', ']' are called "closers."
+
+    Write an efficient method that tells us whether or not an input string's openers and closers are properly nested.
+
+Thoughts before Coding
+    - We need to think of a data structure to use
+        - Lets see what do we need
+            - What should we do when we see an opening bracket?
+                - We want to save this opening bracket later to be matched with a closing bracket
+            - What should we do when we see a closing bracket?
+                - We need the last opening bracket to check if it matches with our closing bracket
+        - So we need a data structure to
+            - Quickly add a opening bracket
+            - Quickly remove our most recent opening bracket if a closing bracket is found
+        - We can use a Stack!
