@@ -1,0 +1,10 @@
+Question
+    "Sometimes (when I nest them (my parentheticals) too much (like this (and this))) they get confusing."
+    Write a method that, given a sentence like the one above, along with the position of an opening parenthesis, finds the corresponding closing parenthesis.
+    Example: if the example string above is input with the number 10 (position of the first parenthesis), the output should be 79 (position of the last parenthesis).
+
+Thoughts before Coding
+    - When we think of matching parentheticals, we think of stacks
+    - But, the only elements inside our stack are going to be 'opening' brackets
+    - Instead of our storing our opening brackets, we can just keep a count of the number of opening brackets instead
+    - This will help us attain O(1) space
