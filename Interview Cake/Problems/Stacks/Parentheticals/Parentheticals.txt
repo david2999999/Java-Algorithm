@@ -18,3 +18,12 @@ Solution
             - Return the index
     - What if we do not found a closing paren after looping through the String?
         - Throw an exception or return -1
+
+    - What is the time and space complexity?
+        - Time complexity - O(n)
+            - We only need to iterate through our String once
+        - Space complexity - O(1)
+            - Instead of using a stack, we have used a counter instead
+
+Gotchas
+    - If our stack is only going to contain 1 kind of element, we should just use a counter instead
