@@ -32,3 +32,10 @@ Answer
             - If our mid value is greater than our target value, we have to recurse to the left (high = mid - 1)
             - If our mid value is lower than our target value, we have to recurse to the right (low = mid + 1)
             - If our mid value equals our target, return our mid index
+
+    - What is the time and space complexity of the recursive approach?
+        - Time complexity
+            - Avg Case = O(logn) - Where we do not have many empty string in our array
+            - Worst Case = O(n) - Where there are many empty strings in our array, and we ended up searching multiple indices for our middle element
+        - Space complexity
+            - O(logn) - our recursive stack
