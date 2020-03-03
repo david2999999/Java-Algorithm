@@ -8,3 +8,13 @@ Thoughts before Coding
     - But, the only elements inside our stack are going to be 'opening' brackets
     - Instead of our storing our opening brackets, we can just keep a count of the number of opening brackets instead
     - This will help us attain O(1) space
+
+Solution
+    - We will have a counter to hold our number of parenthesis
+    - We will first starting with the index on our opening parenthesis
+        - If we see an opening parens, we will increment our counter
+        - If we see an closing parens, we will decrement our counter
+            - If our counter reaches zero, we have found our closing parent that we need
+            - Return the index
+    - What if we do not found a closing paren after looping through the String?
+        - Throw an exception or return -1
