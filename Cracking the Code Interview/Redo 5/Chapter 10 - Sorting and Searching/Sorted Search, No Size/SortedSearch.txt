@@ -42,3 +42,8 @@ Solution
             - We will search to the right. (left = mid + 1)
         - Our condition will end if our left goes beyond our right
             - We have failed to find the target element, return -1
+    - What is the time and space complexity?
+        - Time complexity = O(logn) + O(logn) = O(logn)
+            - O(logn) - to find our right index
+            - O(logn) - to find our target value
+        - Space complexity = O(1)
