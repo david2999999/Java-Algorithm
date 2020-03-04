@@ -7,3 +7,19 @@ Thoughts before Coding
     - Since we have 4 kilobytes of memory, we can hold up to 32,000 bits.
     - We can use each individual bit to represent an integer from our array
     - We create create a bit set class of 1000 integers (each consist of 32 bits)
+
+Answer
+    - We will first instantiate a bit set with 1000 integers, (each with 32 bits)
+        - So we have 32,000 bits and can represent our 32,000 numbers
+    - As we iterate through our input array, when we encounter a integer value
+        - we can divide the number by 32 to map the value to a integer in our bitset
+            - we need to make sure to subtract our number by 1 first,
+                - Since our bit array set starts at 0
+                - Our numbers in our array starts at 1
+        - After we found our integer in our bitset, we can check the specific bit that represents our number by mod 32
+        - If this bit is already set
+            - we have found a duplicate value
+            - print this number
+        - If this bit is not set
+            - This is not a duplicate value
+            - We will set the bit
