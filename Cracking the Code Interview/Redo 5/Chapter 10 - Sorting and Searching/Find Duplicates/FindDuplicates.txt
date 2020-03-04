@@ -21,3 +21,8 @@ Answer
     - If this bit is not set
         - This is not a duplicate value
         - We will set the bit
+
+Gotchas
+    - In order to find the proper bit position,
+        - we will need to mod by 0x1F, which is 31
+        - We must not forget that we are 0 based index
