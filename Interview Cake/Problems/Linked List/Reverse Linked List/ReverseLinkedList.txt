@@ -29,3 +29,9 @@ Solution
             - And if we lost our next node, we will not be able to finish traversing the list
     - Our terminating condition will be when we reached the end of our linked list
         - and our reverse linked list will be constructed
+
+    - What is the time and space complexity?
+        - Time complexity = O(n)
+            - We will only be iterating our list one time to create our reverse list
+        - Space complexity = O(1)
+            - We have reversed our linked list using the original inputs
