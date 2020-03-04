@@ -17,4 +17,19 @@ Thoughts Before Coding
         - Time complexity = O(n)
             - We will iterate through our linkedlist once, either detecting our cycle or goes to the end of our linked list
         - Space complexity = O(n)
-            - HashSet to keep track of previous elements
+        - HashSet to keep track of previous elements
+    - Can we we reduce our space complexity to O(1)?
+
+Answer
+    - For this question, we can use the tortoise and the hare technique
+        - Where will have a slow and fast pointer
+    - Our fast pointer will move forward 2 steps at a time
+    - Our slow pointer will move forward 1 step at a time
+    - If our slow pointer ever catches up to our fast pointer, then we know we have a cycle
+        - Will our fast pointer ever skip past our slow pointer if there is a cycle?
+            - No, because if a fast pointer skips over a slow pointer by 1 step
+                - Then in the previous step, where our fast pointer moves back 2 steps,
+                  and our slow pointer moves back 1 step, they will meet.
+    - How do we know if there is no cycle?
+        - Our fast or the fast.next pointer will be null, signaling the end of the list
+
