@@ -1,0 +1,15 @@
+Question
+    Hooray! It's opposite day. Linked lists go the opposite way today.
+    Write a method for reversing a linked list. Do it in place.
+    Your method will have one input: the head of the list.
+    Your method should return the new head of the list.
+
+Thoughts Before Coding
+    - Lets first find a way of not doing it in place and get back to it later
+    - Since, to reverse a linked list, we can push a copy of the node into a stack
+        - Then when we pop all of the elements out, our linked list will be reversed
+    - What is the time and space complexity?
+        - Time complexity = O(n) + O(n)
+            - O(n) - Push our elements into the stack
+            - O(n) - Pop our elements our of the stack to generate a reversed linked list
+        - Space complexity = O(n)
