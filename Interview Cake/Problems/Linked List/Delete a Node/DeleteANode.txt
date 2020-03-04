@@ -8,3 +8,26 @@ Thoughts before Coding
     - In order to delete node b, we must have access to node a, the previous node
     - But currently, we only have access to node b and its next element c
     - Instead of deleting node b, can we try to modify it instead?
+
+Answer
+    - What if we try to copy the value from our next element to our current element
+    - In the previous example
+        - We can do
+            a -> c -> c -> NULL
+        - Then we can just update our next pointer to node.next.next
+            a -> c -> NULL
+        - This will effectively remove our current node
+    - What is the time and space complexity?
+        - Time = O(1)
+        - Space complexity = O(1)
+
+Side Cases to Consider
+    - This technique will not work on the last node
+        - So we will have to throw an exception
+    - There will be 2 side effects to consider
+        - Any references to our current node has been reassigned to our next node.
+          Our current node is given a new value of 'c' and updated the next node.
+          If there are code out there that has a pointer to our current node and thinks its still 'b',
+          it will introduce a bug.
+        - If there are still code our there that references our original next pointer, it will be consider a
+          dangling node, because we could not access it again by traversing the list
