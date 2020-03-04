@@ -1,0 +1,31 @@
+Question
+    Sorted Matrix Search: Given an M x N matrix in which each row and each column is sorted in
+    ascending order, write a method to find an element.
+
+Thoughts before Coding
+    - We can do a binary search on each of the rows, since they are sorted
+        - What is the time complexity of this? O(rlogn), where r equals the number of rows
+    - In order to create a more efficient, we must account for that both our rows and columns are sorted
+
+Answer
+    - Lets try to find pattern in our matrix
+        1) If the first element in our row is greater than our element
+            - Then we know we must search the row above it
+        2) If the last element in our row is less than our element
+            - Then we know we must search the row below it
+        3) If the start of our column is greater than our element
+            - Then we know we must go to our left column
+        4) If the end of our column is less than our element
+            - Then we know we must go to the right columns
+    - We can use rules 2 and 3 to get our solution
+        - We will first start from the top right index
+            - We will first check if our value at the index equals our target value
+                - if it is equal, return true
+            - If the value is greater than our element
+                - Then we know using rule 3, we can move to the left column
+            - If the value is less than our element
+                - We can use rule 2, to move down 1 row
+        - In each of the iteration, we will eliminate either 1 row or 1 column
+    - What if our target element is not inside the matrix?
+        - Our loop will terminate if either row/column index goes index out of bound
+        - return false
