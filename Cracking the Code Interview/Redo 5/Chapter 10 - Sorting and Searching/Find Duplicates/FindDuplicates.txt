@@ -11,15 +11,13 @@ Thoughts before Coding
 Answer
     - We will first instantiate a bit set with 1000 integers, (each with 32 bits)
         - So we have 32,000 bits and can represent our 32,000 numbers
-    - As we iterate through our input array, when we encounter a integer value
-        - we can divide the number by 32 to map the value to a integer in our bitset
-            - we need to make sure to subtract our number by 1 first,
-                - Since our bit array set starts at 0
-                - Our numbers in our array starts at 1
+    - As we iterate through our input array, for each value k
+        - We have to first subtract 1 from k, since our bitset is 0 based and our integers starts at 1
+        - we can divide the number by 32 to get the integer in our bitset that represents the value
         - After we found our integer in our bitset, we can check the specific bit that represents our number by mod 32
-        - If this bit is already set
-            - we have found a duplicate value
-            - print this number
-        - If this bit is not set
-            - This is not a duplicate value
-            - We will set the bit
+    - If this bit is already set
+        - we have found a duplicate value
+        - print this number
+    - If this bit is not set
+        - This is not a duplicate value
+        - We will set the bit
