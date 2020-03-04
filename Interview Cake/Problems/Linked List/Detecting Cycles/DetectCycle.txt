@@ -1,0 +1,20 @@
+Question
+    You have a singly-linked list and want to check if it contains a cycle.
+
+    A singly-linked list is built with nodes, where each node has:
+        - node.next — the next node in the list.
+        - node.value — the data held in the node. For example, if our linked list stores people in line at the movies, node.value might be the person's name.
+
+Thoughts Before Coding
+    - A cycle means when we traverse our linkedlist, we will eventually get back to one of the previous nodes that we have already visited
+    - Can we store all of the previous elements inside a HashSet
+        - Then when as we traverse the list, we can check if our current node is inside our HashSet
+            - If our node is in the HashSet, we have found a cycle, return true
+            - Else, add our current node inside the HashSet
+        - What is the terminating condition if there is no cycle?
+            - Our pointer will eventually become null, ending our while loop
+    - What is the time and space complexity?
+        - Time complexity = O(n)
+            - We will iterate through our linkedlist once, either detecting our cycle or goes to the end of our linked list
+        - Space complexity = O(n)
+            - HashSet to keep track of previous elements
