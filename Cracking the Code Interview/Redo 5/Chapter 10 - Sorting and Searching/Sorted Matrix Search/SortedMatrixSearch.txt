@@ -29,3 +29,9 @@ Answer
     - What if our target element is not inside the matrix?
         - Our loop will terminate if either row/column index goes index out of bound
         - return false
+
+    - What is the time/space complexity?
+        - Time complexity = O(r + c)
+            - In each iteration we eliminate a single row or column
+            - Worst case is if our element is on the bottom left corner
+        - Space complexity = O(1)
