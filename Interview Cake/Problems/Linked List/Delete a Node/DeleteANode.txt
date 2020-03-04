@@ -1,0 +1,10 @@
+Question
+    Delete a node from a singly-linked list, given only a variable pointing to that node.
+
+Thoughts before Coding
+    - Before we delete the node, lets think about how do we delete a node in singly linked list
+    - If we have the nodes
+        a -> b -> c
+    - In order to delete node b, we must have access to node a, the previous node
+    - But currently, we only have access to node b and its next element c
+    - Instead of deleting node b, can we try to modify it instead?
