@@ -13,3 +13,19 @@ Thoughts Before Coding
             - O(n) - Push our elements into the stack
             - O(n) - Pop our elements our of the stack to generate a reversed linked list
         - Space complexity = O(n)
+
+Solution
+    - Can we reverse the linked list in place?
+    - In order to do so, we must modify our next pointer of each node to point to the previous value
+        - How do we handle the case of our first node?
+            - When reversed, its next node value is NULL
+            - We can first declare a NULL node to handle this case
+                - Our first node's next pointer can point to this NULL node
+        - All of the other nodes can point to its previous node
+    - How will be traverse the linked list?
+        - Before pointing our current node to its previous node
+        - We have to make sure to save our next node.
+            - If we do not save our next node, it will be lost when we try to construct our reverse list!
+            - And if we lost our next node, we will not be able to finish traversing the list
+    - Our terminating condition will be when we reached the end of our linked list
+        - and our reverse linked list will be constructed
