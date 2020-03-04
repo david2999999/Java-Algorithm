@@ -33,3 +33,7 @@ Answer
     - How do we know if there is no cycle?
         - Our fast or the fast.next pointer will be null, signaling the end of the list
 
+    - What is the time and space complexity?
+        - Time complexity O(n)
+            - We either hit the end of the list or detect a cycle
+        - Space complexity O(1)
