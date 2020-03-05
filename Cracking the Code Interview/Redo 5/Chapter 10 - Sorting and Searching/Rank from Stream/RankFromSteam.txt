@@ -1,0 +1,24 @@
+Question
+    Rank from Stream: Imagine you are reading in a stream of integers. Periodically, you wish
+    to be able to look up the rank of a number x (the number of values less than or equal to x).
+    Implement the data structures and algorithms to support these operations. That is, implement
+    the method track(int x), which is called when each number is generated, and the method
+    getRankOfNumber(int x), which returns the number of values less than or equal to x (not
+    including x itself).
+
+    EXAMPLE
+        Stream(in order of appearance):5, 1, 4, 4, 5, 9, 7, 13, 3
+        getRankOfNumber(l) 0
+        getRankOfNumber(3) 1
+        getRankOfNumber(4) 3
+
+Thoughts before coding
+    - We need to keep track of all of the elements that are smaller than our current element
+    - One of the ways is to keep track of the elements in a sorted array
+        - When inserting elements into our sorted array
+            - it may take O(n) time to shift all of the elements over to create a space for the new element
+        - When looking for the rank of the element
+            - We can do a binary search on the element
+            - then return the specific index of the element, which will be O(logn)
+            - The time complexity of this operation is O(logn)
+    - Since we are using so much time to insert an element, we should find a more efficient way.
