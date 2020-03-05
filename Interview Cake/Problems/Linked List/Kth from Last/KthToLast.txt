@@ -25,4 +25,4 @@ Solution
             - This is because kth node from the front is 1 based instead of 0 based
                 - Your first node is consider 1st node from the front, not 0th node from the front
         - Then we will move both pointers forward until our fast node reaches the end of the list
-    - After our fast node reaches the end of the list, we know that our slow pointer is kth from last node
+    - After our fast node reaches the end of the list, we know that our slow pointer is kth to last node
