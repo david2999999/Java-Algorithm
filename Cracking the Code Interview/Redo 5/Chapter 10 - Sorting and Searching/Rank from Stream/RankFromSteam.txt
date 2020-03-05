@@ -22,3 +22,30 @@ Thoughts before coding
             - then return the specific index of the element, which will be O(logn)
             - The time complexity of this operation is O(logn)
     - Since we are using so much time to insert an element, we should find a more efficient way.
+
+Solution
+    - We can use a binary search tree, where insertion of node can be O(logn) - balanced binary tree
+    - Now how do we know the rank of the current node?
+        - We will use a recursive approach to solve this problem
+        - If our current node equals our target node, then we only need to find the size of its left subtree
+            - We don't need include our current node in the count because it is zero based
+            - We can do an in-order traversal to find the size of our left tree
+        - What if our target node is less than our current node?
+            - If our left child is null, we have to return -1, we have failed to find our target node
+            - we will have to traverse to the left to find the node
+            - Then return the left tree size of that node
+        - What if our target node is greater than our current node?
+            - If our right child is null, we have to return -1, we have failed to find our target node
+                - If our right child is not null, we have to find the rank of our node in our right subtree
+            - We will need to accumulate the sum of
+                - The number of nodes in our left subtree
+                - our current node
+                - The rank of our node that we have found
+    - It can be very inefficient to always do an in-order traversal when looking for size of our left subtree
+        - We can keep an extra field inside our tree nodes that keeps track of our left subtree
+        - We will update the counter, if any new nodes is inserted to the node's left subtree
+
+
+
+
+
