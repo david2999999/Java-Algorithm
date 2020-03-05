@@ -26,3 +26,9 @@ Solution
                 - Your first node is consider 1st node from the front, not 0th node from the front
         - Then we will move both pointers forward until our fast node reaches the end of the list
     - After our fast node reaches the end of the list, we know that our slow pointer is kth to last node
+
+    - What is the time and space complexity?
+        - Time complexity = O(n) + O(n) = O(n)
+            - O(n) - The fast pointer reaching the end of the list
+            - O(n) - The slow pointer reaching kth to last node
+        - Space complexity = O(1)
