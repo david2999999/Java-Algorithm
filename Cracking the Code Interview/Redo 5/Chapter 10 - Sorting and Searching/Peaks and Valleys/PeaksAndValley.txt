@@ -1,0 +1,28 @@
+Question
+    Peaks and Valleys: In an array of integers, a "peak" is an element which is greater than or equal
+    to the adjacent integers and a "valley" is an element which is less than or equal to the adjacent
+    integers. For example, in the array {5, 8, 6, 2, 3, 4, 6}, {8, 6} are peaks and {5, 2} are valleys. Given an
+    array of integers, sort the array into an alternating sequence of peaks and valleys.
+
+    EXAMPLE
+        Input: {5, 3, 1, 2, 3}
+        Output: {5, 1, 3, 2, 3}
+
+Thoughts before Coding
+    - Seems like we need some form of sorting, can we try to sort our input array and try to go from there?
+    - If we have the values {0 1 4 7 8 9}
+        - Our (0) is in its right place, so we can leave it
+        - Our (1) is in the wrong place, so we can either swap it with (0) or (7)
+            -  {1 0 4 7 8 9}
+        - Our (4) is in the right place
+        - Our (7) is not, so we can either swap it with (4) or (8)
+            - We will swap it with (4)
+            - {1 0 7 4 8 9}
+        - Our (8) is in the right place
+        - Our (9) is not
+            - Swap it with (8)
+            - {1 0 7 4 9 8}
+    - We are following the pattern of swapping our mid element with our lower element
+        - low <= mid <= high    ->        mid >= low <= high
+        - This helps to create a peak at our mid and high and a valley at our low
+    - The basic concept of this is swapping values at odd indices (i) with the value at its previous index (i - 1)
