@@ -26,3 +26,9 @@ Thoughts before Coding
         - low <= mid <= high    ->        mid >= low <= high
         - This helps to create a peak at our mid and high and a valley at our low
     - The basic concept of this is swapping values at odd indices (i) with the value at its previous index (i - 1)
+
+    - What is the time and space complexity?
+        - Time complexity = O(nlogn) + O(n) = O(nlogn)
+            - O(nlogn) - sorted our input array
+            - O(n) - swapping values in odd indices with its previous value
+        - Space complexity = O(1)
