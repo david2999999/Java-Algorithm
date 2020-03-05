@@ -15,3 +15,14 @@ Thoughts before Coding
                 - O(n) - first iteration to get the length of the list
                 - O(n) - second iteration to get the kth node from the end of the list
             - Space complexity = O(1)
+
+Solution
+    - We can also use a 2 pointer approach
+    - Both of our pointers will start at the head of linked list
+        - We will first move the fast node forward k steps.
+            - Be careful we using a 'for' loop that starts with index 0, (i = 0)
+            - Your terminating condition is (i < k - 1)
+            - This is because kth node from the front is 1 based instead of 0 based
+                - Your first node is consider 1st node from the front, not 0th node from the front
+        - Then we will move both pointers forward until our fast node reaches the end of the list
+    - After our fast node reaches the end of the list, we know that our slow pointer is kth from last node
