@@ -1,0 +1,17 @@
+Question
+    You have a linked list and want to find the kth to last node.
+    Write a method kthToLastNode() that takes an integer k and the headNode of a singly-linked list, and returns the kth to last node in the list.
+
+Thoughts before Coding
+    - Since, we have a singly linked list, we can not traverse backwards from the list
+    - But, what can we do if we have the length of the list?
+        - If we have the length of the list
+            - Then we can find our node at length - k position
+        - How do we implement this in code?
+            - We can first iterate through our list one time to keep track of the length of the list
+            - Then we can start from the front of the list again and traverse length - k times
+        - What is the time and space complexity?
+            - Time complexity = O(n) + O(n) = O(n)
+                - O(n) - first iteration to get the length of the list
+                - O(n) - second iteration to get the kth node from the end of the list
+            - Space complexity = O(1)
