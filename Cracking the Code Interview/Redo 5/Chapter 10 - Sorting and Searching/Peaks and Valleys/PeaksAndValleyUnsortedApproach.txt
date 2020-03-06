@@ -13,6 +13,9 @@ Thoughts before Coding
     - The sorting aspect of the approach cost us O(nlogn) runtime
     - We have to find a way to sort the array by peaks and valley without using sorting.
 
+Side Cases to Consider
+    - We should validate our parameter to make sure our array has at least 2 values
+
 Answer
     - Based on the previous approach, we made sure each of our odd indexes is a peak.
     - Can we do the same for an unsorted array?
