@@ -37,3 +37,49 @@ Design Goals
         - Our shortlinks should be as short as possible. Having shorter links that our competitors could be a business advantage
         - Following a shortlink should be fast
         - Shortlinks should be resilient to load spikes, such as being on a reddit post
+
+Data Model
+    - Be careful how you name things, this will help communicate clearly and it'll show that we care
+      about using descriptive and consistent names
+    - Let's call our main entity a 'Link', which is a mapping between a shortlink on our site, and a longLink,
+      where we redirect people when they visit the short link
+            - Link
+                - shortLink
+                - longLink
+    - The shortLink could be one that are server randomly generate or one that the user chooses
+    - We actually do not need to store the whole ShortLink (ca.ke/mysite), we just need to store
+      the "slug", which the part at the end (mysite)
+    - Let's rename our shortlink field
+            - Link
+                - slug
+                - longLink
+    - Our longLink does not make sense without the shortLink, so we will rename it to destination
+            - Link
+                - slug
+                - destination
+    - Now we can call this whole model/table ShortLink to be more specifc
+            - ShortLink
+                - slug
+                - destination
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
