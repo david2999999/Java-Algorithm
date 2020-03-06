@@ -62,7 +62,12 @@ Data Model
                 - slug
                 - destination
 
-
+Sketching the Code
+    - Pseudocode is fine in this process, we want to create a naive sketch, so we can get on the same page
+      and will have a starting point to optimize.
+    - There may be tricky issues that needs to be thought through, jot down a note and come back to it later
+    - This is basically a skeleton to start building things out from, think about what endpoints/views we will need
+      and what each one will have to do.
 
 
 
