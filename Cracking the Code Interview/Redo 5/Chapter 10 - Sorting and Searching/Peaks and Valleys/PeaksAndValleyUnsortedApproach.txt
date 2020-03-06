@@ -30,3 +30,8 @@ Answer
     - Is there any side cases to consider when finding the maximum value between 3 indices?
         - We need to make sure our indices does not go index out of bound when we check
         - So, if there is an index out of bound, we can label the value as Integer.MIN_VALUE
+
+    - What is the time and space complexity?
+        - Time complexity = O(n/2) = O(n)
+            - We iterate through all of the odd indices and swap with the largest element
+        - Space complexity = O(1)
