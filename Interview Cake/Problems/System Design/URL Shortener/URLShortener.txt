@@ -6,3 +6,23 @@ Question
 Scope the Project
     - System questions are intentionally left open end, so we have to ask questions and make some decisions
       about what exactly you are building to get on the same page as your interviewer.
+
+Features
+    - Is this full web application with an user interface, or just an API that allows users to perform HTTP calls?
+        - We will build an API to start
+    - Since, this is an API, do we need authentication or user accounts or developer API key?
+        - No, lets just make it open to start
+    - Can people modify or delete links?
+        - We will leave that out for now
+    - If people can't delete links, do they persist forever? or do we automatically filter old ones?
+        - What policies can we use for removing old ones?
+            1) We could remove links that are created some time ago, like 6 months
+            2) We could remove links that has not been visited for quiet some time, like 6 months
+        - Our 2nd choice seems to be less frustrating the our first choice
+            - But, what if the link is on the private, an internal resource link for company or universities?
+            - What if someone has these URLs on a pamphlet, did not give out any pamphlets for a few months,
+              then started giving them out again?
+                - This seems reasonable thing that might happen, if the link suddenly stopped working, it
+                  will be quite frustrating for users.
+            - What is a book has shortlinks printed on them in a million copies?
+        - We will decide to let links exist forever.
