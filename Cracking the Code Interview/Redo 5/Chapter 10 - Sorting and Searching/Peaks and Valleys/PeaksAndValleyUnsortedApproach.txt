@@ -12,3 +12,18 @@ Thoughts before Coding
     - In our previous approach, we have sorted our input array first before arranging it into peaks and valleys.
     - The sorting aspect of the approach cost us O(nlogn) runtime
     - We have to find a way to sort the array by peaks and valley without using sorting.
+
+Answer
+    - Based on the previous approach, we made sure each of our odd indexes is a peak.
+    - Can we do the same for an unsorted array?
+        - Yes, for each of the values in odd indices
+            - We can swap it with the largest number between the index right before, current, and right after
+            - This will put the largest value in the middle, creating peak
+        - Can we make sure this does not break our previous sequence that we have already processed?
+            - If we are swapping our left value with our mid, and our left value is a valley
+            - We know that our left value is greater than our mid, since we deciding to use left as a peak
+            - We are putting an even smaller value (our mid) into our left side, which creates an even deeper value
+                - So we are sure that we will not break previous sequence
+    - Is there any side cases to consider when finding the maximum value between 3 indices?
+        - We need to make sure our indices does not go index out of bound when we check
+        - So, if there is an index out of bound, we can label the value as Integer.MIN_VALUE
