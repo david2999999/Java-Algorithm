@@ -26,3 +26,8 @@ Features
                   will be quite frustrating for users.
             - What is a book has shortlinks printed on them in a million copies?
         - We will decide to let links exist forever.
+    - Should we allow users to customize their shortlinks or do we auto-generate?
+        - Our users may want to append custom descriptions to our shortened URL.
+            - So, we will allow that to a certain number of characters
+    - Do we need analytics, so we can know how many clicked on a link?
+        - Good idea, but let's leave it out to start
