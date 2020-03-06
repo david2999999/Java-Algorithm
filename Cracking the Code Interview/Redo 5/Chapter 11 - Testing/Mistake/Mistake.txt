@@ -1,0 +1,15 @@
+Question
+    Mistake: Find the mistake(s) in the following code:
+        unsigned int i;
+            for (i = 100; i >= 0; --i)
+            printf("%d\n", i);
+
+Answer
+    - We have declared an unsigned integer, which only allow values that are greater than or equal to 0.
+    - Our for loop does not determinate, because our 'i' will never hit a negative value
+    - Also, we are trying to use '%d' to print out an unsigned integer,
+        - We should change the print format to '%u'
+    - In order to properly print values from 1 - 100, descending order
+        - Our condition must be 'i > 0'
+    - In order to properly print values from 0 - 100,
+        - We must use 'break' when we have reached number 0
