@@ -28,6 +28,12 @@ Features
         - We will decide to let links exist forever.
     - Should we allow users to customize their shortlinks or do we auto-generate?
         - Our users may want to append custom descriptions to our shortened URL.
-            - So, we will allow that to a certain number of characters
     - Do we need analytics, so we can know how many clicked on a link?
         - Good idea, but let's leave it out to start
+
+Design Goals
+    - Some design goals have higher priority than others, so we need to think about the order of goals
+        - We should be able to store a lot of links, since the links does not have expiration
+        - Our shortlinks should be as short as possible. Having shorter links that our competitors could be a business advantage
+        - Following a shortlink should be fast
+        - Shortlinks should be resilient to load spikes, such as being on a reddit post
