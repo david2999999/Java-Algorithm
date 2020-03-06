@@ -1,0 +1,8 @@
+Question
+    Design a URL shortener
+        You know, like bit.ly.
+        Let's call it ca.ke!
+
+Scope the Project
+    - System questions are intentionally left open end, so we have to ask questions and make some decisions
+      about what exactly you are building to get on the same page as your interviewer.
