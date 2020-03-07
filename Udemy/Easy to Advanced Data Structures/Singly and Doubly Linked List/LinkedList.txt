@@ -21,3 +21,12 @@ Singly vs Doubly Linked Lists
     - Doubly linked list holds a reference to the next and previous node
     - Maintaining a reference to the head and the tail of a linked list allows quick
       additions/removals from both ends of your list
+
+Pros and Cons of Linked List
+    - Singly Linked List
+        - uses less memory
+        - simpler implementation
+        - can easily access previous elements
+    - Doubly Linked List
+        - Can be traversed backwards
+        - Takes 2x memory
