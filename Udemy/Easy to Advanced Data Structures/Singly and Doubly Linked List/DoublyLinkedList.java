@@ -183,6 +183,31 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
         return false;
     }
+
+    public int indexOf(Object obj) {
+        int index = 0;
+        Node<T> current;
+
+        if (obj == null) {
+            for (current = head; current != null; current = current.next, index++) {
+                if (current.data == null) {
+                    return index;
+                }
+            }
+        } else {
+            for (current = head; current != null; current = current.next, index++) {
+                if (obj.equals(current.data)) {
+                    return index;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    public boolean contains(Object obj) {
+        return indexOf(obj) != -1;
+    }
 }
 
 
