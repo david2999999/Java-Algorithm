@@ -1,0 +1,9 @@
+Dynamic Array
+    - The dynamic array can grow and shrink in size
+    - How can we implement a dynamic array
+        - One way is to use a static array
+            - Create a static array with an initial capacity
+            - Add elements to the underlying static array keeping track of
+              the number of elements
+            - If adding another element will exceed the capacity, then create a new
+              static array with twice the capacity and copy the original elements into it.
