@@ -3,3 +3,12 @@ Static Array
       indexable from the range [0, n-1]
     - Question: What is meant by being indexable?
         - This means that each slot/index in the array can be referenced with a number
+    - Arrays are contiguous chain of memory, each of the memory addresses are adjacent
+
+    - When and where is static array used?
+        - Storing and accessing sequential data
+        - Storing objects
+        - Used by IO routines as buffer
+        - Lookup tables and inverse lookup tables
+        - returning multiple values from a function
+        - dynamic programming to cache answers to subproblems
