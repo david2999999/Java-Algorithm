@@ -1,0 +1,11 @@
+What is a Linked List?
+    - A linked list is a sequential list of nodes that hold data which point to other nodes
+      also containing data.
+
+Where are Linked Lists used?
+    - Used in many List, Queue, and Stack implementation
+    - Great for creating circular lists
+    - Can model real world objects such as trains
+    - Used in separate chaining, which is present in certain HashTable implementations to deal
+      with hash collision
+    - Often used in the implementation of adjacency lists for graphs
