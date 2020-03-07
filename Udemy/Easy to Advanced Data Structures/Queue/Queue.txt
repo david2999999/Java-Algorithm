@@ -1,0 +1,11 @@
+What is a Queue?
+    - A queue is a linear data structure which models real world queues by
+      having two primary operations
+      - Enqueue
+      - Dequeue
+
+When and where is a queue used?
+    - Any waiting line models a queue, for example a lineup at a movie theatre
+    - Can be used to efficiently keep track of the x most recently added elements
+    - Web server request management where you want first come first serve
+    - Breath first search (BFS) graph traversal
