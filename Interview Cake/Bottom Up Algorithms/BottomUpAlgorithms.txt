@@ -1,3 +1,0 @@
-Gotcha
-    - Bottom-up algorithm is a way to avoid recursion, saving the memory cost that recursive calls incur when building its call stack.
-    - Bottom-up approach solves the problem by starting from the beginning, while recursion mostly starts from the end and works backwards.

@@ -1,5 +1,0 @@
-$ curl --data '{"destination": "interviewcake.com"}' https://ca.ke/api/v1/shortlink
-    {
-      "slug": "ae8uFt",
-      "destination": "interviewcake.com"
-    }
