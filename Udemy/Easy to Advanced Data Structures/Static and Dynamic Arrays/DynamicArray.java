@@ -45,6 +45,51 @@ public class DynamicArray<T> implements Iterable<T> {
         arr[length++] = element;
     }
 
+    public T removeAt(int index) {
+        if (index >= length || index < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        T data = arr[index];
+        T[] newArray = (T[]) new Object[length - 1];
+        for (int i = 0, j = 0; i < length; i++, j++) {
+            if (i == index) {
+                j--;
+            } else {
+                newArray[j] = arr[i];
+            }
+        }
+
+        arr = newArray;
+        capacity = --length;
+        return data;
+    }
+
+    public boolean remove(Object obj) {
+        for (int i = 0; i < length; i++) {
+            if (arr[i].equals(obj)) {
+                removeAt(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public int indexOf(Object object) {
+        for (int i = 0; i < length; i++) {
+            if (arr[i].equals(object)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public boolean contains(Object object) {
+        return indexOf(object) != -1;
+    }
+
     private void resize() {
         if (length + 1 >= capacity) {
             if (capacity == 0) {
