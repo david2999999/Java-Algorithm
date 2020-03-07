@@ -69,6 +69,16 @@ Sketching the Code
     - This is basically a skeleton to start building things out from, think about what endpoints/views we will need
       and what each one will have to do.
 
+Views/Pages/Endpoints
+    - We are making an API, so let's make it REST-style.
+        - Our endpoint for creating a ShortLink should be named after the entity we are creating
+        - We can also version our APIs
+        - Our way to create an endpoint becomes ca.ke/api/v1/shortlink
+    - In order to create a new ShortLink, we'll send a POST request there.
+        - Our POST request will include on required argument, the destination our ShortLink will point to.
+        - It also takes in an optional slug argument
+            - if the slug is not provided, we will auto generate one
+
 
 
 
