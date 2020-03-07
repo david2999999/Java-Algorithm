@@ -208,6 +208,34 @@ public class DoublyLinkedList<T> implements Iterable<T> {
     public boolean contains(Object obj) {
         return indexOf(obj) != -1;
     }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private Node<T> current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        }
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "DoublyLinkedList{" +
+                "size=" + size +
+                ", head=" + head +
+                ", tail=" + tail +
+                '}';
+    }
 }
 
 
