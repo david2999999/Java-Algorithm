@@ -39,4 +39,26 @@ public class DynamicArray<T> implements Iterable<T> {
 
         this.length = 0;
     }
+
+    public void add(T element) {
+        resize();
+        arr[length++] = element;
+    }
+
+    private void resize() {
+        if (length + 1 >= capacity) {
+            if (capacity == 0) {
+                capacity = 1;
+            } else {
+                capacity *= 2;
+            }
+
+            T[] newArray = (T[]) new Object[capacity];
+            for (int i = 0; i < length; i++) {
+                newArray[i] = arr[i];
+            }
+
+            arr = newArray;
+        }
+    }
 }
