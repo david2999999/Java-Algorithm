@@ -9,3 +9,15 @@ Where are Linked Lists used?
     - Used in separate chaining, which is present in certain HashTable implementations to deal
       with hash collision
     - Often used in the implementation of adjacency lists for graphs
+
+Terminology
+    - Head: The first node in a linked list
+    - Tail: The last node in a linked list
+    - Pointer: reference to another node
+    - Node: an object containing data and pointer(s)
+
+Singly vs Doubly Linked Lists
+    - Singly linked list only hold a reference to the next node
+    - Doubly linked list holds a reference to the next and previous node
+    - Maintaining a reference to the head and the tail of a linked list allows quick
+      additions/removals from both ends of your list
