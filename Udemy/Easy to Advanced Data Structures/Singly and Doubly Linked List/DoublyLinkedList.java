@@ -68,7 +68,143 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
         size++;
     }
+
+    public T peekFirst() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            return head.data;
+        }
+    }
+
+    public T peekLast() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            return tail.data;
+        }
+    }
+
+    public T removeFirst() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        T data = head.data;
+        head = head.next;
+        --size;
+
+        if (isEmpty()) {
+            tail = null;
+        } else {
+            head.prev = null;
+        }
+
+        return data;
+    }
+
+    public T removeLast() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        T data = tail.data;
+        tail = tail.prev;
+        size--;
+
+        if (isEmpty()) {
+            head = null;
+        } else {
+            tail.next = null;
+        }
+
+        return data;
+    }
+
+    private T remove(Node<T> node) {
+        if (node.prev == null) {
+            return removeFirst();
+        }
+
+        if (node.next == null) {
+            return removeLast();
+        }
+
+        node.next.prev = node.prev;
+        node.prev.next = node.next;
+
+        T data = node.data;
+
+        node.data = null;
+        node = node.prev = node.next = null;
+
+        --size;
+        return data;
+    }
+
+    public T removeAt(int index) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException();
+        }
+
+        Node<T> current;
+
+        if (index < size / 2) {
+            for (int i = 0; current = head; i != index; i++) {
+                current = current.next;
+            }
+        } else {
+            for (int i = size - 1, current = tail; i != index; i--) {
+                current = current.prev;
+            }
+        }
+
+        return remove(current);
+    }
+
+    public boolean remove(Object obj) {
+        Node<T> current;
+
+        if (obj == null) {
+            for (current = head; current != null; current = current.next) {
+                if (current.data == null) {
+                    remove(current);
+                    return true;
+                }
+            }
+        } else {
+            for (current = head; current != null; current = current.next) {
+                if (obj.equals(current.data)) {
+                    remove(current);
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
