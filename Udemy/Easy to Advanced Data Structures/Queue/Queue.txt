@@ -9,3 +9,16 @@ When and where is a queue used?
     - Can be used to efficiently keep track of the x most recently added elements
     - Web server request management where you want first come first serve
     - Breath first search (BFS) graph traversal
+
+Breath First Traversal
+    - Expanding the frontier of one node outwards
+        - Visiting the neighbors of our current node first before visiting the neighbor of neighbors
+    - Add the starting node to our queue
+        - Mark our starting queue as visited
+    - While our queue is not empty
+        - We will dequeue from our queue
+            - Iterate through all the neighbors
+                - if the neighbor is not visited yet
+                    - Add the neighbor to the queue
+                    - Mark the neighbor as visited
+    - After the queue is emptied, we have visited every node
