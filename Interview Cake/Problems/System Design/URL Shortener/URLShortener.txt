@@ -98,6 +98,19 @@ Views/Pages/Endpoints
         - We might want to reserve or block shortlinks for pages we need
         - Or we can add a prefix to our URL. (ex. ca.ke/w/about)
 
+Slug Generation
+    - We should check the design goals, and design around those goals
+    - The first 2 design goals that pops up are
+        - We should be able to store a lot of links
+        - Our shortlinks should be as short as possible
+    - We notice that the more characters we allow in our shortlinks, the more different
+      shortlinks we can have without making shortlinks longer.
+        - if we allow c different character, for n character long slug, we will have c^n distinct possibilities
+    - The road path for us becomes
+        - Figure out the max set of characters we can allow in our random shortlinks
+        - Figure out how many distinct shortlinks we want to accommodate
+        - Figure our how long our shortlinks must be to accommodate must be to accommodate that many distinct possibilities
+
 
 
 
