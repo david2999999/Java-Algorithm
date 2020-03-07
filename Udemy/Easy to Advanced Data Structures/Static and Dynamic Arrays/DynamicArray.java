@@ -106,4 +106,26 @@ public class DynamicArray<T> implements Iterable<T> {
             arr = newArray;
         }
     }
+
+    @Override
+    public Iterator<T> iterator() {
+        int index = 0;
+
+        public boolean hasNext() {
+            return index < length;
+        }
+
+        public T next() {
+            return arr[index++];
+        }
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "DynamicArray{" +
+                    "arr=" + java.util.Arrays.toString(arr) +
+                    ", length=" + length +
+                    ", capacity=" + capacity +
+                '}';
+    }
 }
