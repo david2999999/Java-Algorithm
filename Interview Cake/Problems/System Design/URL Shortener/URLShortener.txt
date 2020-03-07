@@ -111,6 +111,34 @@ Slug Generation
         - Figure out how many distinct shortlinks we want to accommodate
         - Figure our how long our shortlinks must be to accommodate must be to accommodate that many distinct possibilities
 
+What Characters can we allow in our randomly generated slugs?
+    1) We should only allow characters that are actually allows in URL
+    2) We should probably pick characters that are relatively easy to type
+        - Some people may want to type the shortlink while reading it off a paper
+    - We may ask to search on stack overflow for the allowed characters that are in the URL
+        - This will include "only alphanumerics, the special characters "$-_.+!*'(),"
+        - And also reserved characters such as '?', which is used to mark the beginning of a query string
+          and '#' where marks the beginning of a fragment/anchor
+    - What about upper/lower case letters?
+        - Domain names are not case sensitive
+        - But the path portion of an url is path sensitive
+        - Lowercase and Capital versions of the same letter can be treated as different characters in our slugs.
+    - The usage of the apostrophe character seems a little iffy, since URLs can be surrounded by single quotes in html
+    - In keeping with point (2), we should remove all special characters from our list
+        - This removal of 8 characters can be a exchange for readability and typeability
+        - What if the user wants to specify their own slug and wants special characters?
+            - We will allow user customized slugs to have special characters
+    - So currently we have a-z, A-Z, and 0-9, where we have 26 + 26 + 10 = 62 possible characters
+        - We allow user generated slugs to have special characters, for a total of 72
+
+
+
+
+
+
+
+
+
 
 
 
