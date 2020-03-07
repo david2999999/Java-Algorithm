@@ -16,4 +16,9 @@ public class URLShortener {
         String responseBody = String.format("{'slug' : '%s'}", slug);
         return new Response(HttpStatus.OK200, responseBody);
     }
+
+    public Response redirect(Request request) {
+        String destination = DB.getLinkDestination(request.getPath());
+        return new Reponse(HTTPStatus.FOUND302, destination);
+    }
 }

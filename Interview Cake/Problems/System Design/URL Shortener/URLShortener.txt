@@ -88,7 +88,15 @@ Views/Pages/Endpoints
         - How we do ensure a randomly generate slug hasn't already been used?
         - If there is an collision, how do we handle it?
 
-
+    - Now, we need to handle how should we redirect the user after a link?
+        - Our shortened URLs should be as short as possible
+            - We gave them this format ca.ke/$slug
+        - One potential challenge when creating web app for our service is
+            - we may need to differentiate our own pages from shortlinks
+                - example 'ca.ke/about'
+            - Our backend needs to know "about" is not a shortlink slug
+        - We might want to reserve or block shortlinks for pages we need
+        - Or we can add a prefix to our URL. (ex. ca.ke/w/about)
 
 
 
