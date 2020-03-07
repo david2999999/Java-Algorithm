@@ -82,6 +82,11 @@ Views/Pages/Endpoints
         - Since we are not making that a requirement for now
             - We can return an error 501
 
+    - We currently do not have exact implementation on how to create a slug
+        - What character can we use in randomly generated slug?
+        - What characters are allowed in URLs?
+        - How we do ensure a randomly generate slug hasn't already been used?
+        - If there is an collision, how do we handle it?
 
 
 
