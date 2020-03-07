@@ -131,6 +131,18 @@ What Characters can we allow in our randomly generated slugs?
     - So currently we have a-z, A-Z, and 0-9, where we have 26 + 26 + 10 = 62 possible characters
         - We allow user generated slugs to have special characters, for a total of 72
 
+How many distinct slugs do we need?
+    - This is a good question to ask your interviewer, she may have the answer to this question
+    - There is not right or wrong answer, the important thing is to have organized thinking
+
+    - How many new slugs might we create on a busy day?
+        - Maybe 100,000 per minute?
+        - That is 145 million new links a day
+        - 52.5 billion in a year
+        - 5.2 trillion in 100 years
+    - If we can accommodate that many slugs, we expect we'll be able to keep handing our random slugs effectively
+
+
 
 
 
