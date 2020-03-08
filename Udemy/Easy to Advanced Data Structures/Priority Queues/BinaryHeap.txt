@@ -1,0 +1,17 @@
+Ways of Implementing a Priority Queue
+    - Priority Queues are usually implemented with heap since this gives them the best possible
+      time complexity
+    - PQ is an abstract data type, hence heap are not the only way to implement PQ
+        - We can use an unsorted list to implement a PQ, but it will not give us the best time complexity
+    - There are many types of heaps we could use to implement a PQ
+        - Binary Heap
+        - Fibonacci Heap
+        - Binomial Heap
+        - Pairing Heap
+
+Binary Heap
+    - A binary tree that supports the heap invariant.
+        - In a binary tree every node has exactly two children
+    - A complete binary tree is a tree in which at every level, except possibly the last is completely filled
+      and all the nodes are as far left as possible
+        - This will be helpful later when we are inserting element into the heap
