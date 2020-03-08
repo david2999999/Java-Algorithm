@@ -142,4 +142,33 @@ public class PriorityQueue<T extends Comparable<T>> {
             swim(i);
         }
     }
+
+    private void swim(int k) {
+        int parent = (k - 1) / 2;
+
+        while (k > 0 && less(k, parent)) {
+            swap(parent, k);
+            k = parent;
+            parent = (k - 1) / 2;
+        }
+    }
+
+    private void sink(int k) {
+        while (true) {
+            int left = 2 * k + 1;
+            int right = 2 * k + 2;
+            int smallest = left;
+
+            if (right < heapSize && less(right, left)) {
+                smallest = right;
+            }
+
+            if (left >= heapSize || less(k, smallest)) {
+                break;
+            }
+
+            swap(smallest, k);
+            k = smallest;
+        }
+    }
 }
