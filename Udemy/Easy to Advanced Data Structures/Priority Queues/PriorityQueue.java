@@ -171,4 +171,55 @@ public class PriorityQueue<T extends Comparable<T>> {
             k = smallest;
         }
     }
+
+    private void mapAdd(T value, int index) {
+        TreeSet<Integer> set = map.get(value);
+
+        if (set == null) {
+            set = new TreeSet<>();
+            set.add(index);
+            map.put(value, set);
+        } else {
+            set.add(index);
+        }
+    }
+
+    private void mapRemove(T value, int index) {
+        TreeSet<Integer> set = map.get(value);
+        set.remove(index);
+
+        if (set.size() == 0) {
+            map.remove(value);
+        }
+    }
+
+    private Integer mapGet(T value) {
+        TreeSet<Integer> set = map.get(value);
+        if (set != null) {
+            return set.last();
+        }
+
+        return null;
+    }
+
+    private void mapSwap(T val1, T val2, int val1Index, int val2Index) {
+        Set<Integer> set1 = map.get(val1);
+        Set<Integer> set2 = map.get(val2);
+
+        set1.remove(val1Index);
+        set1.add(val2Index);
+
+        set2.remove(val2Index);
+        set2.add(val1Index);
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "PriorityQueue{" +
+                "heapSize=" + heapSize +
+                ", heapCapacity=" + heapCapacity +
+                ", heap=" + heap +
+                ", map=" + map +
+                '}';
+    }
 }
