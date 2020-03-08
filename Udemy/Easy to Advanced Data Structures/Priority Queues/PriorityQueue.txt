@@ -5,3 +5,13 @@ What is Priority Queue?
           elements are removed from the PQ
     - PQ only supports comparable data, meaning the data inserted into the PQ must be ordered in
       some way either from least to greatest or greatest to least.
+
+What is a Heap?
+    - A heap is a tree based DS that satisfies the heap property.
+    - If A is a parent node of B then A is ordered with respect to B for all nodes A,B in the heap.
+    - There are 2 types of heaps
+        - Max heap, where the parent element is greater than its children
+        - Min heap, where the children elements are greater than the parent
+    - Heap is not the same as priority queue
+        - Priority queue is an abstract data type
+        - Heap is just an implementation that full fills the PQ properties
