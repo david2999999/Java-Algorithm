@@ -45,6 +45,11 @@ Removing Elements from Binary Heap in O(logn)
     - The inefficient of the removal algorithm comes from the search for the element.
         - We can use a HashTable to find our where a node is index at
     - A hashtable provides a constant time lookup and update for a mapping from a key to a value
+    - How do we deal with multiple values?
+        - Instead of mapping one value to one position, we will map one value to multiple positions
+            - We can maintain a Set or Tree set of indexes for which a particular node value maps to
+        - Does it matter which position we remove the values from?
+            - No, as long as we fulfill the heap invariant, we are fine
 
 
 
