@@ -26,3 +26,23 @@ Adding Elements to Binary Heap
     - Then we use 'bubbling up' to move it to the right position
         - This bubbling procedure compares our new element with its parent element
         - If the order violates the heap invariant, we will swap the two elements
+
+Removing Elements from a Binary Heap
+    - How do we perform a polling operation in our binary heap?
+        - We swap the root of our tree with our rightmost element
+            - Our swap may violate the heap invariant
+            - So we have to perform 'bubbling down' on our root node
+    - How do we perform a removal of a node from our heap?
+        - We have to find the node
+        - Then we will swap the node with the rightmost element of our tree
+        - Remove the node that we are trying to delete
+        - If we violate the heap invariant, we have to bubble up/down to satisfy heap invariant
+    - What is the time complexity of polling/removal?
+        - Polling - O(logn)
+        - Removing - O(n) - We may need to search the entire tree for the node.
+
+
+
+
+
+
