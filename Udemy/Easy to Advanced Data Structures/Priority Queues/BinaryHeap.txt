@@ -20,3 +20,9 @@ Binary Heap Representation with array
     - Let i be the parent node index (zero based)
         - Left child index: 2i + 1
         - Right child index: 2i + 2
+
+Adding Elements to Binary Heap
+    - We insert the element at our bottom left of our tree
+    - Then we use 'bubbling up' to move it to the right position
+        - This bubbling procedure compares our new element with its parent element
+        - If the order violates the heap invariant, we will swap the two elements
