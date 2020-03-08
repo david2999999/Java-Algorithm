@@ -15,3 +15,8 @@ Binary Heap
     - A complete binary tree is a tree in which at every level, except possibly the last is completely filled
       and all the nodes are as far left as possible
         - This will be helpful later when we are inserting element into the heap
+
+Binary Heap Representation with array
+    - Let i be the parent node index (zero based)
+        - Left child index: 2i + 1
+        - Right child index: 2i + 2
