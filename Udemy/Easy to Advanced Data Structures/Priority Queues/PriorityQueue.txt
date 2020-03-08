@@ -1,0 +1,7 @@
+What is Priority Queue?
+    - Priority queue is an abstract data type that operate similar to a normal queue.
+        - Each of the element has a certain priority
+        - The priority of the elements in which the priority queue determine the order in which
+          elements are removed from the PQ
+    - PQ only supports comparable data, meaning the data inserted into the PQ must be ordered in
+      some way either from least to greatest or greatest to least.
