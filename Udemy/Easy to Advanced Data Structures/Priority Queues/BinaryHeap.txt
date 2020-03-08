@@ -41,6 +41,10 @@ Removing Elements from a Binary Heap
         - Polling - O(logn)
         - Removing - O(n) - We may need to search the entire tree for the node.
 
+Removing Elements from Binary Heap in O(logn)
+    - The inefficient of the removal algorithm comes from the search for the element.
+        - We can use a HashTable to find our where a node is index at
+    - A hashtable provides a constant time lookup and update for a mapping from a key to a value
 
 
 
