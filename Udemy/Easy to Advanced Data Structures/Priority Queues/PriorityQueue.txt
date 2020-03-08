@@ -15,3 +15,10 @@ What is a Heap?
     - Heap is not the same as priority queue
         - Priority queue is an abstract data type
         - Heap is just an implementation that full fills the PQ properties
+
+When and where is a PQ used?
+    - Used in certain implementations of Dijkstra's shortest path algorithm
+    - Anytime you need to dynamically fetch the next best or next worst element
+    - Huffman encoding (lossless data compression)
+    - Best First Search algorithms such as A* use PQS to continuously grab the next most promising node
+    - Using by Minimum Spanning Tree algorithms
