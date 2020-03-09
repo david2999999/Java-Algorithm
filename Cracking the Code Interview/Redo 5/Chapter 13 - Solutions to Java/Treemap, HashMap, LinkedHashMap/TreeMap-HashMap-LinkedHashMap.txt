@@ -16,3 +16,8 @@ TreeMap
     - Keys are ordered, so you can iterate through the keys in sorted order
         - Each key must implement the Comparable interface
     - Implemented by a Red-Black-Tree
+
+LinkedHashMap
+    - Offers O(1) lookup and insertion
+    - Keys are ordered by their insertion order
+    - Implemented by double-linked buckets
