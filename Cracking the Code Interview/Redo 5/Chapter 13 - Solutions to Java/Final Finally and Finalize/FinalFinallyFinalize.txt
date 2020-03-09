@@ -7,3 +7,13 @@ Final
         - When applied to a reference variable, there reference variable cannot point to any other object in the heap
         - When applied to a method, the method can not be overridden
         - When applied to a class, the class can not be subclassed
+
+Finally
+    - Used in a try/catch block to ensure that a segment of code is always executed
+        - Examples can be
+            - Closing HTTP URL connections
+            - Closing Database connections
+            - Clean up work
+            - logging
+    - 'finally' block will execute even if an exception is thrown
+        - but will not execute if the JVM exits from the try block
