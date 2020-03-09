@@ -21,3 +21,10 @@ LinkedHashMap
     - Offers O(1) lookup and insertion
     - Keys are ordered by their insertion order
     - Implemented by double-linked buckets
+
+When you might need ordering in real life?
+    - Suppose you are creating a mapping of names to Person objects. And you need to periodically output the people in alphabetical order by name
+        - A TreeMap allows you to do this
+    - TreeMap also offers a way to, given a name, output the next 10 people
+    - A LinkedHashMap is useful when you need the ordering of the keys to match the ordering of insertion
+        - This might be useful in caching situations, when you want to delete the oldest element
