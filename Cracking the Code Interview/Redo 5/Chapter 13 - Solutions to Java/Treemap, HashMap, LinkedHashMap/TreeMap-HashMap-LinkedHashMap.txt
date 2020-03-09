@@ -10,3 +10,9 @@ HashMap
     - Offers O(1) lookup and insertion
     - Ordering of the keys are arbitrary
     - it is implemented with an array of LinkedList
+
+TreeMap
+    - Offers O(logn) lookup and insertion
+    - Keys are ordered, so you can iterate through the keys in sorted order
+        - Each key must implement the Comparable interface
+    - Implemented by a Red-Black-Tree
