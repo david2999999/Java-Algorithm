@@ -1,0 +1,12 @@
+Question
+    TreeMap, HashMap, LinkedHashMap: Explain the differences between TreeMap, HashMap, and
+    LinkedHashMap. Provide an example of when each one would be best.
+
+What does all of the different maps provide?
+    - They all offer a key->value map and a way to iterate through the keys
+    - The difference between these classes is the time complexity and the ordering of the keys
+
+HashMap
+    - Offers O(1) lookup and insertion
+    - Ordering of the keys are arbitrary
+    - it is implemented with an array of LinkedList
