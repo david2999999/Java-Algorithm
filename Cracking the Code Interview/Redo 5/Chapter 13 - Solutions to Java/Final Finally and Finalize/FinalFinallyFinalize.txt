@@ -1,0 +1,9 @@
+Question
+    What is the difference between final, finally, and finalize?
+
+Final
+    - Used to control whether a variable, method or class is "changeable"
+        - When applied to a primitive variable, the value of the variable cannot change
+        - When applied to a reference variable, there reference variable cannot point to any other object in the heap
+        - When applied to a method, the method can not be overridden
+        - When applied to a class, the class can not be subclassed
