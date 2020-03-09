@@ -17,3 +17,11 @@ Finally
             - logging
     - 'finally' block will execute even if an exception is thrown
         - but will not execute if the JVM exits from the try block
+
+Finalize
+    - The Java's garbage collector calls the finalize() method just before actually destroying the object
+    - A class can override the finalize() method from the object class to define custom behavior
+        - Clean up
+        - Open files
+        - release resources
+        - etc
